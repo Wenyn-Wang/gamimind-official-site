@@ -1,0 +1,6 @@
+config/database.yml
+config/secrets.yml
+
+public/*
+log/*
+
