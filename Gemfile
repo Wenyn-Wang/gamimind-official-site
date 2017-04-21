@@ -44,3 +44,5 @@ group :development do
 end
 
 gem "react_on_rails", "~> 6"
+
+gem 'mini_racer', platforms: :ruby
