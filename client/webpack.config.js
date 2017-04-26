@@ -13,6 +13,7 @@ const config = {
     'es5-shim/es5-sham',
     'babel-polyfill',
     './app/bundles/OfficialSite/startup/registration',
+    './app/assets/styles/OfficialSite/index.scss',
   ],
 
   output: {
@@ -43,6 +44,18 @@ const config = {
         use: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(scss|css)$/,
+        use: [ 
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: 'autoprefixer',
+            }
+          }, 'sass-loader?sourceMap' ]
+      }
     ],
   },
 };
