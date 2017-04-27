@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types';
 import { AppContainer } from "react-hot-loader"
 import { render } from "react-dom"
 import ReactOnRails from "react-on-rails"
@@ -9,14 +10,14 @@ const consoleErrorReporter = ({ error }) => {
   return null
 }
 consoleErrorReporter.propTypes = {
-  error: React.PropTypes.instanceOf(Error).isRequired
+  error: PropTypes.instanceOf(Error).isRequired
 }
 
 const HomeHotLoader = (props, railsContext, domNodeId) => {
   const renderApp = (Component) => {
     const element = (
-      <AppContainer errorReporter={consoleErrorReporter}>
-        <Component />
+      <AppContainer errorReporter={ consoleErrorReporter }>
+        <Component { ...props } { ...railsContext } />
       </AppContainer>
     )
     render(element, document.getElementById(domNodeId))
