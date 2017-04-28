@@ -7,8 +7,8 @@ const pathLib = require('path')
 const config = require('./webpack.base.config.js')
 
 config.entry.push(
-  './app/bundles/OfficialSite/startup/registration',
-  './app/assets/styles/OfficialSite/index.scss'
+  './app/bundles/officialSite/startup/registration',
+  './app/assets/styles/officialSite/index.scss'
 )
 
 config.devtool = 'eval-source-map'

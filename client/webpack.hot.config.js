@@ -9,8 +9,8 @@ const config = require('./webpack.base.config.js')
 config.entry.push(
   'webpack-dev-server/client?http://localhost:3500',
   'react-hot-loader/patch',
-  './app/bundles/OfficialSite/startup/registrationHot',
-  './app/assets/styles/OfficialSite/index.scss'
+  './app/bundles/officialSite/startup/registrationHot',
+  './app/assets/styles/officialSite/index.scss'
 )
 
 config.devtool = 'eval-source-map'
