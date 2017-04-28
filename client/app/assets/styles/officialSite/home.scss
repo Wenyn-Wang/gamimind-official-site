@@ -1,0 +1,28 @@
+main{
+  section#contact-us {
+    background: url('~images/home/contact-us-bg.jpg');
+    background-size: cover;
+    background-position: 50%;
+    text-align: center;
+
+    .contact-us-center {
+      background: rgba(255, 255, 255, 0.8);
+      width: 50%;
+      margin: 60px auto;
+      padding: 50px 100px;
+      height: 300px;
+      overflow: hidden;
+      display: inline-block;
+
+      h1 {
+        margin: 0;
+      }
+
+      .company-info {
+        padding: 60px 0px;
+        line-height: 30px;
+        font-size: 20px;
+      }
+    }
+  }
+}

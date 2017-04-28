@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
- class ContactUs extends React.Component {
+class ContactUs extends React.Component {
   render() {
     return (
       <section id="contact-us">
