@@ -22,4 +22,4 @@ config.plugins.push(
 
 module.exports = config
 
-console.log('Webpack dev build for Rails') // eslint-disable-line no-console
+console.log('\x1b[32m%s\x1b[0m', 'Webpack dev build for Rails');  // eslint-disable-line no-console
