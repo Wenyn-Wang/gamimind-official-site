@@ -7,9 +7,9 @@
     "npm": "4.1.1"
   },
   "scripts": {
-    "build:test": "webpack --config webpack.config.js",
-    "build:production": "NODE_ENV=production webpack --config webpack.config.js",
-    "build:development": "webpack -w --config webpack.config.js"
+    "build:production": "NODE_ENV=production webpack --config webpack.prod,config.js --color",
+    "build:development": "webpack -w --config webpack.dev.config --color",
+    "hmr": "webpack-dev-server --config webpack.hot.config --progress --color"
   },
   "cacheDirectories": [
     "node_modules",
@@ -41,6 +41,8 @@
     "eslint-watch": "^3.1.0",
     "node-sass": "^4.5.2",
     "postcss-loader": "^1.3.3",
-    "sass-loader": "^6.0.3"
+    "react-hot-loader": "3.0.0-beta.6",
+    "sass-loader": "^6.0.3",
+    "webpack-dev-server": "^2.4.2"
   }
 }
