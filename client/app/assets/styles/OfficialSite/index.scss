@@ -1,2 +1,13 @@
 @import '../comments/normalize.scss';
+@import '../comments/color.scss';
+@import '../comments/button.scss';
+@import '../comments/fontWeight.scss';
 
+@import './home.scss';
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  background-color: $white;
+  font-family: 'Noto Sans TC';
+}
