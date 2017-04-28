@@ -16,6 +16,10 @@ const config = {
     path        : pathLib.resolve(__dirname, '../app/assets/javascripts/webpack/'),
   },
   resolve   : {
+    modules     : [__dirname, 'node_modules'],
+    alias       : {
+      images : 'app/assets/images',
+    },
     extensions  : ['.js', '.jsx'],
   },
   plugins   : [],
@@ -47,6 +51,13 @@ const config = {
               plugins : 'autoprefixer',
             }
           }, 'sass-loader?sourceMap' ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          'url-loader?limit=1000000',
+          'img-loader'
+        ]
       }
     ],
   },
