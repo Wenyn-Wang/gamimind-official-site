@@ -1,0 +1,56 @@
+$header-height: 60px;
+
+#app-container > header {
+  height: $header-height;
+  
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  transition: all .3s;
+  top: -$header-height;
+  background: $white;
+  color: $primary;
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  box-sizing: border-box;
+
+  &.show {
+    top: 0;
+  }
+
+  &.opacity-bg {
+    background-color: rgba(0, 0, 0, 0);
+    color: $white;
+
+    #logo img:last-child {
+      opacity: 0;
+    }
+  }
+
+  #logo {
+    width: 200px;
+    height: 30px;
+    position: relative;
+    flex: initial;
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      &:last-child {
+        opacity: 1;
+      }
+    }
+  }
+
+  nav{
+    flex: 1;
+    text-align: right;
+
+
+  }
+}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { AppContainer } from "react-hot-loader"
 import { render } from "react-dom"
 import ReactOnRails from "react-on-rails"
-import Home from "../components/Home"
+import Home from "../components/home/Home"
 
 const consoleErrorReporter = ({ error }) => {
   console.error(error) // eslint-disable-line
