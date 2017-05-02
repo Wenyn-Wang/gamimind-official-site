@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import { AppContainer } from "react-hot-loader"
 import { render } from "react-dom"
 import ReactOnRails from "react-on-rails"

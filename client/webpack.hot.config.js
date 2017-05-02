@@ -5,9 +5,10 @@
 const webpack = require('webpack')
 const pathLib = require('path')
 const config = require('./webpack.base.config.js')
+const { HMR_PORT } = process.env
 
 config.entry.push(
-  'webpack-dev-server/client?http://localhost:3500',
+  `webpack-dev-server/client?http://localhost:${HMR_PORT}`,
   'react-hot-loader/patch',
   './app/bundles/officialSite/startup/registrationHot',
   './app/assets/styles/officialSite/index.scss'
@@ -15,7 +16,7 @@ config.entry.push(
 
 config.devtool = 'eval-source-map'
 config.devServer = {
-  port: 3500,
+  port: HMR_PORT,
   hot: true,
   stats: {
     hash: false,
