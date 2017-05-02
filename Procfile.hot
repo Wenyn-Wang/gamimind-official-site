@@ -1,3 +1,2 @@
-web: HMR=1 rails s -p 3000
-client: sh -c 'rm app/assets/javascripts/webpack/* || true && cd client && yarn run hmr'
-
+web: HMR=1 HMR_PORT=3500 rails s -p 3000
+client: sh -c 'rm app/assets/javascripts/webpack/* || true && cd client && bundle exec rake react_on_rails:locale && HMR_PORT=3500 yarn run hmr'
