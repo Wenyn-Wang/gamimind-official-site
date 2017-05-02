@@ -63,7 +63,7 @@ class ContactUs extends React.Component {
           }
         </div>
       </section>
-    );
+    )
   }
 }
 

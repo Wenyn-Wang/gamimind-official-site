@@ -10,7 +10,7 @@ const consoleErrorReporter = ({ error }) => {
   return null
 }
 consoleErrorReporter.propTypes = {
-  error: PropTypes.instanceOf(Error).isRequired
+  error: PropTypes.instanceOf(Error).isRequired,
 }
 
 const HomeHotLoader = (props, railsContext, domNodeId) => {
