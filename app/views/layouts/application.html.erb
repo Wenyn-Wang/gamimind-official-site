@@ -10,5 +10,8 @@
 
   <body>
     <%= yield %>
+    <% if ENV["HMR"] == "1" %>
+      <%= javascript_include_tag "http://localhost:#{ENV["HMR_PORT"]}/webpack-bundle.js" %>
+    <% end %>
   </body>
 </html>
