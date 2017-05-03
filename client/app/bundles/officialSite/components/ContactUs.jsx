@@ -8,7 +8,7 @@ const icon_style = {
   height: '100%',
 }
 
-class ContactUs extends React.Component {
+class ContactUs extends Component {
   constructor(props) {
     super(props)
 
@@ -39,7 +39,7 @@ class ContactUs extends React.Component {
                 <div className="company-info">
                   <p>電話：+886-2-23681580</p>
                   <p>email：info@gamemind.org</p>
-                  <p>地址：台北市中山區羅斯福路三段302號12樓之1</p>
+                  <p>地址：台北市中正區羅斯福路三段302號12樓之1</p>
                 </div>
 
                 <div className="btn primary" onClick={ this.showForm }>合作洽談</div>
