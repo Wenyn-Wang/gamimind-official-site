@@ -7,8 +7,8 @@ const pathLib = require('path')
 const config = require('./webpack.base.config.js')
 
 config.entry.push(
-  './app/bundles/OfficialSite/startup/registration',
-  './app/assets/styles/OfficialSite/index.scss'
+  './app/bundles/officialSite/startup/registration',
+  './app/assets/styles/officialSite/index.scss'
 )
 
 config.devtool = 'eval-source-map'
@@ -22,4 +22,4 @@ config.plugins.push(
 
 module.exports = config
 
-console.log('Webpack dev build for Rails') // eslint-disable-line no-console
+console.log('\x1b[32m%s\x1b[0m', 'Webpack dev build for Rails');  // eslint-disable-line no-console
