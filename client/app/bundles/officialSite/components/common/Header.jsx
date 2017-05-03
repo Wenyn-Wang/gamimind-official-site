@@ -43,10 +43,8 @@ class Header extends React.Component {
     this.last_known_pos = current_pos
 
     next_show = scroll_dir === UP
-    if(this.last_known_pos < 50) {
-      next_show = true
-      next_opacity_bg = true
-    }
+    if(this.last_known_pos < 50) next_show = true
+    if(this.last_known_pos < 80) next_opacity_bg = true
     if(next_show !== show || next_opacity_bg !== opacity_bg) {
       this.setState({ 
         opacity_bg: next_opacity_bg,
