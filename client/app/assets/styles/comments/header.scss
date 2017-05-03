@@ -90,8 +90,9 @@ $header-height: 60px;
     .hamburger {
       content: '';
       display: block;
-      border-bottom: 2px solid white;
-      border-top: 2px solid white;
+      border-color: inherit;
+      border-bottom: 2px solid;
+      border-top: 2px solid;
       height: 100%;
       box-sizing: border-box;
       cursor: pointer;
@@ -99,7 +100,8 @@ $header-height: 60px;
       &:after {
         content: '';
         display: block;
-        border-bottom: 2px solid white;
+        border-color: inherit;
+        border-bottom: 2px solid;
         height: 100%;
         transform: translateY(-50%);
       }
