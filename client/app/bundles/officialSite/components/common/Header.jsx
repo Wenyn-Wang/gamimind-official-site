@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { HOME_PAGE, SERVICE_PAGE } from '../../constants/url'
 import cx from 'classnames'
 
 const logo_white = require('images/home/header/logo-gamemind-white.svg')
@@ -73,10 +75,10 @@ class Header extends React.Component {
         </div>
 
         <nav>
-          <span>服務</span>
-          <span>技術</span>
-          <span>部落格</span>
-          <span>合作洽談</span>
+          <Link to={ SERVICE_PAGE }>服務</Link>
+          <Link to={ HOME_PAGE }>技術</Link>
+          <Link to={ HOME_PAGE }>部落格</Link>
+          <Link to={ HOME_PAGE }>合作洽談</Link>
         </nav>
       </header>
     )
