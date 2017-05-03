@@ -2,7 +2,6 @@ $header-height: 60px;
 
 #app-container > header {
   height: $header-height;
-  
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -12,8 +11,9 @@ $header-height: 60px;
   color: $primary;
   display: flex;
   align-items: center;
-  padding: 0px 20px;
+  padding: 0px 40px;
   box-sizing: border-box;
+  font-size: 20px;
 
   &.show {
     top: 0;
@@ -41,7 +41,7 @@ $header-height: 60px;
   }
 
   #logo {
-    width: 200px;
+    width: 130px;
     height: 30px;
     position: relative;
     flex: initial;
@@ -109,13 +109,23 @@ $header-height: 60px;
   }
 
   @media (max-width: $mobile) {
+    padding: 0px;
+    font-size: 12px;
+
     .hamburger-container {
       display: block;
+      transform: scale(0.7);
+      padding: 10px;
     }
 
-    nav .nav-container {
-      display: none;
+    nav {
+      padding-right: 10px;
+      
+      .nav-container {
+        display: none;
+      }
     }
+    
   }
 
   @media (max-width: $smaller-mobile) {
