@@ -120,7 +120,11 @@ $header-height: 60px;
 
   @media (max-width: $smaller-mobile) {
     #logo {
-      width: 100px;
+      width: 120px;
+    }
+
+    .hamburger-container {
+      margin-right: 10px;
     }
   }
 }
