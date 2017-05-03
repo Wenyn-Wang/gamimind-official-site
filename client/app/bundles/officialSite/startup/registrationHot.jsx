@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { AppContainer } from 'react-hot-loader'
 import { render } from 'react-dom'
 import ReactOnRails from 'react-on-rails'
-import Home from '../components/home/Home'
 import HomeApp from './HomeApp'
 
 const consoleErrorReporter = ({ error }) => {
