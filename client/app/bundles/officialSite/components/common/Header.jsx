@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Drawer from 'material-ui/Drawer'
+import MenuItem from 'material-ui/MenuItem'
 import { HOME_PAGE, SERVICE_PAGE } from '../../constants/url'
 import cx from 'classnames'
 
@@ -55,6 +57,12 @@ class Header extends React.Component {
     }
   }
 
+  openHamburger = () => {
+    if (!this.state.hamburger_open) {
+      this.setState({ hamburger_open: true })
+    }
+  }
+
   closeHamburger = () => {
     if (this.state.hamburger_open)
       this.setState({ hamburger_open: false })
@@ -84,6 +92,10 @@ class Header extends React.Component {
 
     return (
       <header className={ class_name }>
+        <div className="hamburger-container">
+          <div className="hamburger" onClick={ this.openHamburger }/>
+        </div>
+
         <Link to={ HOME_PAGE }>
           <div id="logo">
             <img src={ logo_white } />
@@ -95,6 +107,18 @@ class Header extends React.Component {
           { this.renderNavLink() }
           <Link to={ HOME_PAGE } className={ contact_us_class }>合作洽談</Link>
         </nav>
+
+        <Drawer
+          openSecondary
+          docked          = { false }
+          width           = { 200 }
+          open            = { this.state.hamburger_open }
+          onRequestChange = { (hamburger_open) => this.setState({ hamburger_open }) }
+        >
+          <div className="material-drawer">
+            { this.renderNavLink() }
+          </div>
+        </Drawer>
       </header>
     )
   }

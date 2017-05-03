@@ -51,7 +51,8 @@ $header-height: 60px;
       height: auto;
       position: absolute;
       left: 0;
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
 
       &:last-child {
         opacity: 1;
@@ -75,6 +76,49 @@ $header-height: 60px;
           color: lighten($primary, 10%);
         }
       }
+    }
+  }
+
+  .hamburger-container {
+    display: none;
+    flex: none;
+    margin-left: auto;
+    width: 28px;
+    height: 20px;
+    margin-right: 20px;
+
+    .hamburger {
+      content: '';
+      display: block;
+      border-bottom: 2px solid white;
+      border-top: 2px solid white;
+      height: 100%;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        display: block;
+        border-bottom: 2px solid white;
+        height: 100%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    .hamburger-container {
+      display: block;
+    }
+
+    nav .nav-container {
+      display: none;
+    }
+  }
+
+  @media (max-width: $smaller-mobile) {
+    #logo {
+      width: 100px;
     }
   }
 }
