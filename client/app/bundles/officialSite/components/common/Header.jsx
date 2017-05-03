@@ -16,7 +16,7 @@ class Header extends React.Component {
     this.last_known_pos = 0
     this.state = {
       show            : true,
-      opacity_bg      : false,
+      opacity_bg      : true,
       hamburger_open  : false,
     }
 
@@ -60,25 +60,40 @@ class Header extends React.Component {
       this.setState({ hamburger_open: false })
   }
 
+  renderNavLink() {
+    return (
+      <div className="nav-container">
+        <Link to={ SERVICE_PAGE } className="nav-link">服務</Link>
+        <Link to={ HOME_PAGE } className="nav-link">技術</Link>
+        <Link to={ HOME_PAGE } className="nav-link">部落格</Link>
+      </div>
+    )
+  }
+
   render() {
     const { show, opacity_bg } = this.state
     const class_name = cx({ 
       show,
       'opacity-bg': opacity_bg,
     })
+    const contact_us_class = cx({
+      btn : true,
+      primary   : !opacity_bg,
+      secondary : opacity_bg,
+    })
 
     return (
       <header className={ class_name }>
-        <div id="logo">
-          <Link to={ HOME_PAGE }><img src={ logo_white } /></Link>
-          <Link to={ HOME_PAGE }><img src={ logo_blue } /></Link>
-        </div>
+        <Link to={ HOME_PAGE }>
+          <div id="logo">
+            <img src={ logo_white } />
+            <img src={ logo_blue } />
+          </div>
+        </Link>
 
         <nav>
-          <Link to={ SERVICE_PAGE }>服務</Link>
-          <Link to={ HOME_PAGE }>技術</Link>
-          <Link to={ HOME_PAGE }>部落格</Link>
-          <Link to={ HOME_PAGE }>合作洽談</Link>
+          { this.renderNavLink() }
+          <Link to={ HOME_PAGE } className={ contact_us_class }>合作洽談</Link>
         </nav>
       </header>
     )

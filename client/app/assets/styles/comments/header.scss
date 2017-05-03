@@ -26,6 +26,18 @@ $header-height: 60px;
     #logo img:last-child {
       opacity: 0;
     }
+
+    nav {
+      .nav-container {
+        .nav-link {
+          color: $white;
+
+          &:hover {
+            color: darken($white, 10%);
+          }
+        }
+      }
+    }
   }
 
   #logo {
@@ -47,10 +59,22 @@ $header-height: 60px;
     }
   }
 
-  nav{
+  nav {
     flex: 1;
     text-align: right;
 
+    .nav-container {
+      display: inline-block;
+      
+      .nav-link {
+        color: $primary;
+        padding: 0px 20px;
+        transition: all .3s;
 
+        &:hover {
+          color: lighten($primary, 10%);
+        }
+      }
+    }
   }
 }
