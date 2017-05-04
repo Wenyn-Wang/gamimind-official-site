@@ -8,7 +8,7 @@ import cx from 'classnames'
 const logo_white = require('images/home/header/logo-gamemind-white.svg')
 const logo_blue = require('images/home/header/logo-gamemind-blue.svg')
 
-class Header extends React.Component {
+class Header extends Component {
   constructor(prop){
     super(prop)
 

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Cover from './Cover'
 import ContactUs from './ContactUs'
 
-export default class Home extends React.Component {
+export default class Home extends Component {
   render() {
     return (
       <main>

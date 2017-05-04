@@ -1,6 +1,6 @@
 import {
   BrowserRouter as Router,
-  Route, Link, Redirect,
+  Route, Link, Redirect, Switch,
 } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
@@ -13,17 +13,18 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import muiTheme from '../constants/materialUITheme/HomePageTheme'
 
 injectTapEventPlugin()
- class HomeApp extends React.Component {
+ class HomeApp extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={ muiTheme }>
         <Router>
           <div id="app-container">
             <Header />
-            
-            <Route exact path={ HOME_PAGE } component={ Home } />
-            <Route path={ SERVICE_PAGE } component={ Service } />
-            <Redirect to={ HOME_PAGE } />
+            <Switch>
+              <Route exact path={ HOME_PAGE } component={ Home } />
+              <Route path={ SERVICE_PAGE } component={ Service } />
+              <Redirect to={ HOME_PAGE } />
+            </Switch>
           </div>
         </Router>
       </MuiThemeProvider>
