@@ -1,7 +1,6 @@
 import ReactOnRails from 'react-on-rails'
 import HomeApp from './HomeApp'
 
-ReactOnRails.register({ 
+ReactOnRails.register({
   Home    : HomeApp,
-  Service : HomeApp,
 })
