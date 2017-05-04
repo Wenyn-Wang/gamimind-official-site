@@ -15,10 +15,11 @@
   }
 
   &.secondary {
-    border: 1px solid $white;
+    box-shadow: inset 0px 0px 0px 1px $white;
+    box-sizing: border-box;
 
     &:hover{
-      border: 1px solid darken($white, 10%);
+      box-shadow: inset 0px 0px 0px 1px darken($white, 10%);
       color: darken($white, 10%);
     }
   }
