@@ -14,8 +14,13 @@ main {
       color: $white;
       flex-direction: column;
 
-      .center{
+      .center {
         padding: 10%;
+
+        h2 {
+          font-size: 20px;
+          padding: 30px 0px;
+        }
       }
     }
     .cover-right {
@@ -28,6 +33,21 @@ main {
         width: 40%;
         margin: auto;
         padding: 10%;
+      }
+    }
+
+    @media(max-width: $mobile) {
+      .cover-left .center {
+        h1 {
+          font-size: 20px;
+        }
+
+        h2 {
+           font-size: 16px;
+        }
+      }
+      .cover-right {
+        display: none;
       }
     }
   }
