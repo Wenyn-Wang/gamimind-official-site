@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 export default class Home extends React.Component {
   render() {
     return (
-      <section id="cover">
+      <section id="cover" className="blue-bottom">
         <div className="cover-left">
           <div className="center">
             <h1>人工智慧，為你解析數據下的商機</h1>
