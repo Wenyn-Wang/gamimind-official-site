@@ -1,5 +1,34 @@
 main {
   section#cover {
+    min-height: 100vh;
+    height: 500px;
+    background: url('~images/home/cover/cover-bg.png') no-repeat;
+    background-size: cover;
+    display: flex;
+    position: relative;
 
+    .cover-left {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      color: $white;
+      flex-direction: column;
+
+      .center{
+        padding: 10%;
+      }
+    }
+    .cover-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+
+      & > p {
+        background: url('~images/home/cover/cover-right.svg') no-repeat;
+        width: 40%;
+        margin: auto;
+        padding: 10%;
+      }
+    }
   }
 }
