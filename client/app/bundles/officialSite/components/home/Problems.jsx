@@ -14,7 +14,7 @@ const radar_icon6 = require('images/home/problems/radar-icon-6.png')
 const Problems = () => {
   return (
     <section id="problems">
-      <h1>我們了結您的問題</h1>
+      <h1>我們了解您的問題</h1>
       <div className="problem-container">
         <div className="radar-contaimer">
           <div className="radar">
