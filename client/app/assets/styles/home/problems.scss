@@ -1,5 +1,74 @@
 main {
   section#problems {
-    
+    .problem-container {
+      .radar-container {
+        .radar {
+          background: url('~images/home/problems/radar-bg.png') no-repeat;
+          width: 390px;
+          height: 390px;
+          position: relative;
+          margin: 100px auto;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: $primary;
+            border-radius: 50%;
+            transform: translate(-50%,-50%);
+            animation: sonar 4s cubic-bezier(0, 0, 0.25, 1) infinite;
+          }
+
+          .icons {
+            left: 5%;
+            top: 5%;
+            width: 90%;
+            height: 90%;
+            border-radius: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+
+            img {
+              position: absolute;
+              width: 45px;
+              height: auto;
+              $left: 100px, 70px, 20px,
+              91px, 50px, 90px,
+              146px, 200px, 250px,
+              200px, 241px, 260px;
+              $top: 250px, 200px, 150px,
+              120px, 60px,  20px,
+              59px,  60px,  90px,
+              145px, 160px, 230px;
+
+              @for $i from 1 through 12 {
+                &:nth-child(#{$i}) {
+                  left: nth($left, $i);
+                  top: nth($top, $i);
+                  animation: radarIcon 4s (($i/4)+0.6)+s;
+                  animation-fill-mode: both;
+                  animation-iteration-count: infinite;
+                }
+              }
+            }
+          }
+
+          .radar-stem {
+            background: url('~images/home/problems/radar-stem.png') no-repeat;
+            position: absolute;
+            top: 46%;
+            left: 16%;
+            width: 152px;
+            height: 207px;
+            animation: rotate360 4s linear infinite;
+            transform-origin: 133px 19.4px;
+          }
+        }
+    }
+    }
   }
 }

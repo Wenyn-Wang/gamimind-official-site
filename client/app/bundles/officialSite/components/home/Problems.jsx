@@ -19,9 +19,15 @@ const Problems = () => {
       </div>
 
       <div className="problem-container">
-        <div className="radar-contaimer">
+        <div className="radar-container">
           <div className="radar">
             <div className="icons">
+              <img src={ radar_icon1 } />
+              <img src={ radar_icon2 } />
+              <img src={ radar_icon3 } />
+              <img src={ radar_icon4 } />
+              <img src={ radar_icon5 } />
+              <img src={ radar_icon6 } />
               <img src={ radar_icon1 } />
               <img src={ radar_icon2 } />
               <img src={ radar_icon3 } />
