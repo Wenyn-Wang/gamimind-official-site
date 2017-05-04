@@ -8,7 +8,7 @@ const config = require('./webpack.base.config.js')
 
 config.entry.push(
   './app/bundles/officialSite/startup/registration',
-  './app/assets/styles/officialSite/index.scss'
+  './app/assets/styles/home/index.scss'
 )
 
 config.devtool = 'eval-source-map'

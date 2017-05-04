@@ -11,7 +11,7 @@ config.entry.push(
   `webpack-dev-server/client?http://localhost:${HMR_PORT}`,
   'react-hot-loader/patch',
   './app/bundles/officialSite/startup/registrationHot',
-  './app/assets/styles/officialSite/index.scss'
+  './app/assets/styles/home/index.scss'
 )
 
 config.devtool = 'eval-source-map'
