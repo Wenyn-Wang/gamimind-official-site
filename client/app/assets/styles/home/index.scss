@@ -6,6 +6,7 @@
 @import '../common/header.scss';
 
 @import './cover.scss';
+@import './problems.scss';
 @import './contact-us.scss';
 
 html, body , div[id^="Home-react-component"] {
@@ -19,8 +20,29 @@ html, body , div[id^="Home-react-component"] {
 main {
   position: relative;
 
-  section.blue-bottom{
-    border-bottom: 20px solid $sail;
+  section {
+    &.blue-bottom{
+      border-bottom: 20px solid $sail;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-top: 60px;
+
+      h1 {
+        display: inline-block;
+        
+        &::after {
+          content: '';
+          width: 85%;
+          height: 2px;
+          background: $font-black;
+          display: block;
+          margin: auto;
+          transform: translateY(10px);
+        }
+      }
+    }
   }
 }
 
