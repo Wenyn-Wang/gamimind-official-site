@@ -23,6 +23,7 @@ main {
         }
       }
     }
+
     .cover-right {
       flex: 1;
       display: flex;
@@ -34,6 +35,18 @@ main {
         margin: auto;
         padding: 10%;
       }
+    }
+
+    &::after {
+      content: '';
+      background: url('~images/home/cover/scroll.svg') no-repeat;
+      position: absolute;
+      width: 16px;
+      height: 25px;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      
     }
 
     @media(max-width: $mobile) {
