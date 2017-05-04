@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
-export default class Home extends React.Component {
+export default class Service extends Component {
   render() {
     return (
       <main>
