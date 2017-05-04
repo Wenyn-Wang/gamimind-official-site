@@ -1,0 +1,140 @@
+$header-height: 60px;
+
+#app-container > header {
+  height: $header-height;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  transition: all .3s;
+  top: -$header-height;
+  background: $white;
+  color: $primary;
+  display: flex;
+  align-items: center;
+  padding: 0px 40px;
+  box-sizing: border-box;
+  font-size: 20px;
+
+  &.show {
+    top: 0;
+  }
+
+  &.opacity-bg {
+    background-color: rgba(0, 0, 0, 0);
+    color: $white;
+
+    #logo img:last-child {
+      opacity: 0;
+    }
+
+    nav {
+      .nav-container {
+        .nav-link {
+          color: $white;
+
+          &:hover {
+            color: darken($white, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  #logo {
+    width: 130px;
+    height: 30px;
+    position: relative;
+    flex: initial;
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:last-child {
+        opacity: 1;
+      }
+    }
+  }
+
+  nav {
+    flex: 1;
+    text-align: right;
+
+    .nav-container {
+      display: inline-block;
+      
+      .nav-link {
+        color: $primary;
+        padding: 0px 20px;
+        transition: all .3s;
+
+        &:hover {
+          color: lighten($primary, 10%);
+        }
+      }
+    }
+  }
+
+  .hamburger-container {
+    display: none;
+    flex: none;
+    margin-left: auto;
+    width: 28px;
+    height: 20px;
+    margin-right: 20px;
+
+    .hamburger {
+      content: '';
+      display: block;
+      border-color: inherit;
+      border-bottom: 2px solid;
+      border-top: 2px solid;
+      height: 100%;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        display: block;
+        border-color: inherit;
+        border-bottom: 2px solid;
+        height: 100%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0px;
+    font-size: 12px;
+
+    .hamburger-container {
+      display: block;
+      transform: scale(0.7);
+      padding: 10px;
+    }
+
+    nav {
+      padding-right: 10px;
+      
+      .nav-container {
+        display: none;
+      }
+    }
+    
+  }
+
+  @media (max-width: $smaller-mobile) {
+    #logo {
+      width: 120px;
+    }
+
+    .hamburger-container {
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 import PropTypes from 'prop-types'
-import { AppContainer } from "react-hot-loader"
-import { render } from "react-dom"
-import ReactOnRails from "react-on-rails"
-import Home from "../components/Home"
+import { AppContainer } from 'react-hot-loader'
+import { render } from 'react-dom'
+import ReactOnRails from 'react-on-rails'
+import HomeApp from './HomeApp'
 
 const consoleErrorReporter = ({ error }) => {
   console.error(error) // eslint-disable-line
@@ -22,7 +22,9 @@ const HomeHotLoader = (props, railsContext, domNodeId) => {
     )
     render(element, document.getElementById(domNodeId))
   }
-  renderApp(Home)
+  renderApp(HomeApp)
 }
 
-ReactOnRails.register({ Home: HomeHotLoader })
+ReactOnRails.register({
+  Home    : HomeHotLoader,
+})

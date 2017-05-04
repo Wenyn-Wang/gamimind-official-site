@@ -3,12 +3,23 @@
 @import '../common/button.scss';
 @import '../common/fontWeight.scss';
 @import '../common/device.scss';
+@import '../common/header.scss';
 
 @import './home.scss';
 
-html, body {
+html, body , div[id^="Home-react-component"] {
   height: 100%;
   min-height: 100%;
   background-color: $white;
   font-family: 'Noto Sans TC';
+  color: $font-black;
+}
+
+main {
+  position: relative;
+}
+
+#app-container {
+  min-height: 100%;
+  position: relative;
 }

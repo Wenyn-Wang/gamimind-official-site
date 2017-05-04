@@ -1,4 +1,6 @@
-import ReactOnRails from "react-on-rails"
-import Home from "../components/Home"
+import ReactOnRails from 'react-on-rails'
+import HomeApp from './HomeApp'
 
-ReactOnRails.register({ Home })
+ReactOnRails.register({
+  Home    : HomeApp,
+})
