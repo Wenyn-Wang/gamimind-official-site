@@ -25,4 +25,6 @@ const HomeHotLoader = (props, railsContext, domNodeId) => {
   renderApp(HomeApp)
 }
 
-ReactOnRails.register({ Home: HomeHotLoader })
+ReactOnRails.register({
+  Home    : HomeHotLoader,
+})
