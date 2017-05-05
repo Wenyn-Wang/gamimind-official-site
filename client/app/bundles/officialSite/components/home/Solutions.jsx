@@ -1,5 +1,20 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+
+const card_list = [{
+  title   : 'Line / Facebook 行銷方案',
+  content : '遠離百萬殭屍大軍！活化百萬粉絲團，提升用戶轉換率，有效運用粉絲價值',
+  link    : '/',
+}, {
+  title   : '企業自媒體經營方案',
+  content : '不要再把流量送給對手了！掌握自己的流量、分析客群、精準銷售',
+  link    : '/',
+}, {
+  title   : '客戶關係管理方案',
+  content : '你的KPI就是我的KPI！預測用戶行為、掌握最佳時機，上門就下單',
+  link    : '/',
+}]
 
 const Solutions = () => {
   return (
@@ -9,9 +24,23 @@ const Solutions = () => {
       </div>
 
       <ul className="solutions-container">
-        
-      </ul>
+        {
+          card_list.map((card, index) => (
+            <li key={ index }>
+              <div className="card-img">
+                <div className="big-img">
+                  <span />
+                  <span />
+                </div>
+              </div>
 
+              <h2>{ card.title }</h2>
+              <p>{ card.content }</p>
+              <Link to={ card.link  }>暸解更多</Link>
+            </li>
+          ))
+        }
+      </ul>
     </section>
   )
 }
