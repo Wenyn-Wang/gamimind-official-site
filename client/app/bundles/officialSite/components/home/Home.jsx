@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Cover from './Cover'
 import Problems from './Problems'
+import Solutions from './Solutions'
 import ContactUs from './ContactUs'
 
 export default class Home extends Component {
@@ -10,6 +11,7 @@ export default class Home extends Component {
       <main>
         <Cover />
         <Problems />
+        <Solutions />
         <ContactUs />
       </main>
     )
