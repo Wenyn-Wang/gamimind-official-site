@@ -4,8 +4,6 @@ main {
       position: relative;
 
       .radar-container {
-        position: relative;
-
         .radar {
           background: url('~images/home/problems/radar-bg.png') no-repeat;
           width: 390px;
@@ -125,11 +123,11 @@ main {
         .problems {
           position: static;
 
-          .problem{
+          .problem {
             position: static;
             width: 100%;
             box-sizing: border-box;
-            padding: 20px;
+            padding: 15px 40px;
             display: flex;
             align-items: center;
 
@@ -159,7 +157,6 @@ main {
           }
         }
       }
-
 
       @media (max-width: $mobile) {
         .radar-container {
