@@ -52,15 +52,6 @@ main {
     }
 
     @media(max-width: $mobile) {
-      .cover-left .center {
-        h1 {
-          font-size: 20px;
-        }
-
-        h2 {
-           font-size: 16px;
-        }
-      }
       .cover-right {
         display: none;
       }

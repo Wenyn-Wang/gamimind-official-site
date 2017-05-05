@@ -4,6 +4,8 @@ main {
       position: relative;
 
       .radar-container {
+        position: relative;
+
         .radar {
           background: url('~images/home/problems/radar-bg.png') no-repeat;
           width: 390px;
@@ -99,10 +101,73 @@ main {
             right: 10%;
           }
 
+
           p {
             text-align: left;
-            margin: 15px 0px;
-            line-height: 30px;
+          }
+        }
+      }
+
+      @media (max-width: $pad) {
+        .radar-container {
+          height: 275px;
+          margin: 60px 0px 20px;
+
+          .radar {
+            transform: scale(.7) translateX(-50%);
+            transform-origin: left top;
+            margin: auto;
+            position: absolute;
+            left: 50%;
+          }
+        }
+
+        .problems {
+          position: static;
+
+          .problem{
+            position: static;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+
+            .img-container {
+              height: auto;
+              max-width: 170px;
+              width: 30%;
+              vertical-align: middle;
+              display: inline-block;
+              flex: initial;
+              margin-right: 20px;
+
+              img {
+                width: 100%;
+                height: auto;
+              }
+            }
+
+            p {
+              margin: 15px 0px;
+              line-height: 30px;
+              vertical-align: middle;
+              display: inline-block;
+              white-space: normal;
+              flex: 1;
+            }
+          }
+        }
+      }
+
+
+      @media (max-width: $mobile) {
+        .radar-container {
+          height: 200px;
+          margin: 40px 0px 20px;
+
+          .radar {
+            transform: scale(.5) translateX(-50%);
           }
         }
       }

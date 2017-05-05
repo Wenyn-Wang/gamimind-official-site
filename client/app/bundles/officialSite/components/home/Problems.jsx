@@ -42,15 +42,15 @@ const Problems = () => {
         
         <ul className="problems">
           <li className="problem">
-            <img src={ problem_img1 } />
+            <div className="img-container"><img src={ problem_img1 } /></div>
             <p>總是抓不住用戶的心，花大錢買廣告卻看不到業績起飛？</p>
           </li>
           <li className="problem">
-            <img src={ problem_img2 } />
+            <div className="img-container"><img src={ problem_img2 } /></div>
             <p>經營 Facebook/Line 社群許久，卻苦於無法將粉絲轉為忠實顧客？</p>
           </li>
           <li className="problem">
-            <img src={ problem_img3 } />
+            <div className="img-container"><img src={ problem_img3 } /></div>
             <p>有百萬粉絲，卻全是殭屍，想成為客戶肚子裡的蛔蟲，卻永遠只能當旁邊的蒼蠅？</p>
           </li>
         </ul>
