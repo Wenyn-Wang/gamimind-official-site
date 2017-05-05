@@ -1,5 +1,77 @@
 main {
   section#solutions {
     background: $lighter-blue;
+   
+    .solutions-container {
+      margin: 100px auto;
+      width: 90%;
+      display: flex;
+
+      li {
+        @include cardShadow;
+        flex: 1;
+        margin: 10px;
+        padding: 30px;
+        box-sizing: border-box;
+        background: white;
+
+        .card-img {
+          height: 120px;
+
+          .big-img {
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: auto;
+          }
+        }
+
+        &:nth-child(1) {
+          .card-img .big-img {
+            background-image: url('~images/home/solutions/mobile.png');
+            width: 120px;
+            height: 120px;
+          }
+        }
+        &:nth-child(2) {
+          .card-img .big-img {
+            background-image: url('~images/home/solutions/pc.png');
+            width: 201px;
+            height: 115px;
+          }
+        }
+        &:nth-child(3) {
+          .card-img .big-img {
+            background-image: url('~images/home/solutions/crm.png');
+            width: 129px;
+            height: 115px;
+          }
+        }
+
+        h3 {
+          text-align: center;
+        }
+
+        p {
+          line-height: 27px;
+          margin-bottom: 30px;
+        }
+
+        a {
+          width: 105px;
+          margin: auto;
+          display: block;
+          color: $primary;
+          transition: all .3s;
+
+          &:hover {
+            color: lighten($primary, 10%);
+          }
+
+          svg {
+            vertical-align: top;
+          }
+        }
+      }
+    }
   }
 }
