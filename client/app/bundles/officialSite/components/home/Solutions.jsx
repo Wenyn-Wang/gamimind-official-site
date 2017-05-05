@@ -9,7 +9,7 @@ const Solutions = () => {
       </div>
 
       <ul className="solutions-container">
-        å
+        
       </ul>
 
     </section>
