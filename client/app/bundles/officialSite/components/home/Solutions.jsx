@@ -29,10 +29,11 @@ const Solutions = () => {
           card_list.map((card, index) => (
             <li key={ index }>
               <div className="card-img">
-                <div className="big-img">
-                  <span />
-                  <span />
+                <div className="icon-container">
+                  <div />
+                  <div />
                 </div>
+                <div className="big-img" />
               </div>
 
               <h3>{ card.title }</h3>
