@@ -9,7 +9,7 @@ main {
           width: 390px;
           height: 390px;
           position: relative;
-          margin: 100px auto;
+          margin: auto;
 
           &::before {
             content: '';
@@ -115,7 +115,6 @@ main {
           .radar {
             transform: scale(.7) translateX(-50%);
             transform-origin: left top;
-            margin: auto;
             position: absolute;
             left: 50%;
           }

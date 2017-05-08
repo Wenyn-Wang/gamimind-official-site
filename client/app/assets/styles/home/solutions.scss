@@ -1,0 +1,218 @@
+main {
+  section#solutions {
+    background: $lighter-blue;
+   
+    .solutions-container {
+      margin: auto;
+      width: 90%;
+      display: flex;
+
+      @mixin slideUpAnimation {
+        &::before {
+          animation: slideUp 3s ease-in-out infinite;
+        }
+
+         &::after {
+          animation: slideUp 3s .2s ease-in-out infinite;
+        }
+      }
+
+      @mixin fadeInAnimation {
+         &::before {
+          animation: fadeIn 3s ease-in-out infinite;
+        }
+      }
+
+      li {
+        @include cardShadow;
+        flex: 1;
+        margin: 10px;
+        padding: 30px;
+        box-sizing: border-box;
+        background: white;
+        position: relative;
+
+        .card-img {
+          height: 120px;
+          position: relative;
+
+          .icon-container {
+            position: absolute;
+
+            &::before, &::after {
+              content: '';
+              display: block;
+              position: absolute;
+            }
+          }
+
+          .big-img {
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: auto;
+            position: relative;
+          }
+        }
+
+        // line & facebook
+        &:nth-child(1) {
+          .card-img {
+            .big-img {
+              background-image: url('~images/home/solutions/mobile.png');
+              width: 120px;
+              height: 120px;
+              transform: translateX(-10px);
+            }
+          } 
+
+          .icon-container {
+            left: 50%;
+            top: 10%;    
+            height: 90px;
+            width: 56px;
+            overflow: hidden;
+            transform: translateX(-50%);
+
+             &::before {
+              background-image: url('~images/home/solutions/mobile-icon1.png');
+              width: 29px;
+              height: 28px;
+              left: 15px;
+              bottom: -50%;
+            }
+
+             &::after {
+              background-image: url('~images/home/solutions/mobile-icon2.png');
+              width: 29px;
+              height: 28px;
+              left: 20px;
+              bottom: -50%;
+              transform: translateY(30px);
+            }
+          }
+
+          &:hover .icon-container {
+              @include slideUpAnimation;
+          }
+
+          @media (max-width: $pad) {
+            .icon-container {
+              @include slideUpAnimation;
+            }
+          }
+        }
+
+        // 企業自媒體經營方案
+        &:nth-child(2) {
+          .card-img .big-img {
+            background-image: url('~images/home/solutions/pc.png');
+            width: 201px;
+            height: 115px;
+          }
+
+          .icon-container {
+            left: 50%;
+            top: 8%;
+            height: 62px;
+            width: 111px;
+            z-index: 1;
+            overflow: hidden;
+            transform: translateX(-50%);
+
+             &::before {
+              background-image: url('~images/home/solutions/pc_view.png');
+              width: 95px;
+              height: 39px;
+              left: 7px;
+              transform: translateY(20px);
+              bottom: -50%;
+            }
+          }
+
+          &:hover .icon-container {
+            @include slideUpAnimation;
+          }
+
+          @media (max-width: $pad) {
+            .icon-container {
+              @include slideUpAnimation;
+            }
+          }
+        }
+
+        // 客戶關係管理方案
+        &:nth-child(3) {
+          .card-img .big-img {
+            background-image: url('~images/home/solutions/crm.png');
+            width: 129px;
+            height: 115px;
+          }
+
+          .icon-container {
+            left: 50%;
+            top: 0%;
+            height: 116px;
+            width: 130px;
+            overflow: hidden;
+            transform: translateX(-50%);
+
+             &::before {
+              background-image: url('~images/home/solutions/crm-light-bulb.png');
+              width: 29px;
+              height: 67px;
+              right: 0px;
+              top: 0px;
+              opacity: 0;
+            }
+          }
+
+          &:hover .icon-container {
+            @include fadeInAnimation;
+          }
+
+          @media (max-width: $pad) {
+            .icon-container {
+              @include fadeInAnimation;
+            }
+          }
+        }
+
+        h3 {
+          text-align: center;
+        }
+
+        p {
+          line-height: 27px;
+          margin-bottom: 30px;
+        }
+
+        a {
+          width: 105px;
+          margin: auto;
+          display: block;
+          color: $primary;
+          transition: all .3s;
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
+
+          &:hover {
+            color: lighten($primary, 10%);
+          }
+
+          svg {
+            vertical-align: top;
+          }
+        }
+      }
+    }
+
+
+    @media (max-width: $pad) {
+      .solutions-container {
+        display: block;
+      }
+    }
+  }
+}

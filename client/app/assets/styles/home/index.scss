@@ -5,9 +5,11 @@
 @import '../common/device.scss';
 @import '../common/header.scss';
 @import '../common/animations.scss';
+@import '../common/mixin.scss';
 
 @import './cover.scss';
 @import './problems.scss';
+@import './solutions.scss';
 @import './contact-us.scss';
 
 html, body , div[id^="Home-react-component"] {
@@ -23,13 +25,15 @@ main {
   font-size: 20px;
 
   section {
+    padding: 50px 0px;
+
     &.blue-bottom{
       border-bottom: 20px solid $sail;
     }
 
     .section-title {
       text-align: center;
-      margin-top: 55px;
+      padding-bottom: 100px;
 
       h1 {
         display: inline-block;
@@ -46,9 +50,15 @@ main {
       }
     }
   }
+  @media(max-width: $pad) { 
+    section .section-title {
+      padding-bottom: 20px;
+    }
+  }
+
   @media(max-width: $mobile) {
     font-size: 16px;
-    
+
     h1 {
       font-size: 20px;
     }

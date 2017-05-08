@@ -1,3 +1,5 @@
+// -- problems --
+
 @keyframes rotate360 {
   from{
     transform: rotate(-60deg);
@@ -38,6 +40,38 @@
     transform: scale(1);
   }
   100% {
+    opacity: 0;
+  }
+}
+
+// -- solutions --
+
+@keyframes slideUp {
+  0% {
+    bottom: -50%;
+  }
+  20% {
+    bottom: 50%;
+  }
+  70%{
+    bottom: 50%;
+  }
+  100%{
+    bottom: 150%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  70%{
+    opacity: 1;
+  }
+  100%{
     opacity: 0;
   }
 }
