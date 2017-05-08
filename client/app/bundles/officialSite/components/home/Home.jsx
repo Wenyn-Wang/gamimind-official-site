@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Cover from './Cover'
 import Problems from './Problems'
