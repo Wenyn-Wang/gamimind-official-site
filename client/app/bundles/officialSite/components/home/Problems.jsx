@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React from 'react'
 
 const problem_img1 = require('images/home/problems/p-1.png')
 const problem_img2 = require('images/home/problems/p-2.png')
