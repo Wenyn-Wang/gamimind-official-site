@@ -1,0 +1,65 @@
+main {
+  section#cooperation-process {
+    background: url('~images/home/cover/cover-bg.png') no-repeat;
+    background-size: cover;
+
+    .section-title h1 {
+      color: $white;
+
+      &::after {
+        background: $white;
+      }
+    }
+
+    .cooperation-process-content {
+      color: $white;
+      display: flex;
+      width: 90%;
+      margin: auto;
+      position: relative;
+      padding-bottom: 100px;
+
+      li {
+        flex: 1;
+        text-align: center;
+        border-bottom: 2px solid;
+        padding: 15px;
+        position: relative;
+
+        .point {
+          display: inline-block;
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background: $white;
+          left: 0;
+          top: 100%;
+          transform: translateY(-50%);
+
+          &::after {
+            content: '';
+            display: block;
+            border: 1px solid;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) .point::after{
+            animation: scalePoint 2s (0.5 * $i)+s linear infinite;
+          }
+        }
+
+        &:last-child {
+          flex: initial;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
