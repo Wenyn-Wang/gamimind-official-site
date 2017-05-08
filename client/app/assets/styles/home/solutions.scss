@@ -8,17 +8,17 @@ main {
       display: flex;
 
       @mixin slideUpAnimation {
-        div:nth-child(1) {
+        &::before {
           animation: slideUp 3s ease-in-out infinite;
         }
 
-        div:nth-child(2) {
+         &::after {
           animation: slideUp 3s .2s ease-in-out infinite;
         }
       }
 
       @mixin fadeInAnimation {
-        div:nth-child(1) {
+         &::before {
           animation: fadeIn 3s ease-in-out infinite;
         }
       }
@@ -39,7 +39,9 @@ main {
           .icon-container {
             position: absolute;
 
-            div {
+            &::before, &::after {
+              content: '';
+              display: block;
               position: absolute;
             }
           }
@@ -71,7 +73,7 @@ main {
             overflow: hidden;
             transform: translateX(-50%);
 
-            div:nth-child(1) {
+             &::before {
               background-image: url('~images/home/solutions/mobile-icon1.png');
               width: 29px;
               height: 28px;
@@ -79,7 +81,7 @@ main {
               bottom: -50%;
             }
 
-            div:nth-child(2) {
+             &::after {
               background-image: url('~images/home/solutions/mobile-icon2.png');
               width: 29px;
               height: 28px;
@@ -117,7 +119,7 @@ main {
             overflow: hidden;
             transform: translateX(-50%);
 
-            div:nth-child(1) {
+             &::before {
               background-image: url('~images/home/solutions/pc_view.png');
               width: 95px;
               height: 39px;
@@ -154,7 +156,7 @@ main {
             overflow: hidden;
             transform: translateX(-50%);
 
-            div:nth-child(1) {
+             &::before {
               background-image: url('~images/home/solutions/crm-light-bulb.png');
               width: 29px;
               height: 67px;
