@@ -16,7 +16,6 @@ export default class Home extends Component {
         <div className="cover-right">
           <p />
         </div>
-
       </section>
     )
   }

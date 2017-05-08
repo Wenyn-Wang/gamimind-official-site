@@ -4,8 +4,10 @@
 @import '../common/fontWeight.scss';
 @import '../common/device.scss';
 @import '../common/header.scss';
+@import '../common/animations.scss';
 
 @import './cover.scss';
+@import './problems.scss';
 @import './contact-us.scss';
 
 html, body , div[id^="Home-react-component"] {
@@ -18,9 +20,42 @@ html, body , div[id^="Home-react-component"] {
 
 main {
   position: relative;
+  font-size: 20px;
 
-  section.blue-bottom{
-    border-bottom: 20px solid $sail;
+  section {
+    &.blue-bottom{
+      border-bottom: 20px solid $sail;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-top: 55px;
+
+      h1 {
+        display: inline-block;
+        
+        &::after {
+          content: '';
+          width: 85%;
+          height: 2px;
+          background: $font-black;
+          display: block;
+          margin: auto;
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+  @media(max-width: $mobile) {
+    font-size: 16px;
+    
+    h1 {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
   }
 }
 
