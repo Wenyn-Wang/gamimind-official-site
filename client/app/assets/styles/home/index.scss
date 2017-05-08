@@ -5,7 +5,8 @@
 @import '../common/device.scss';
 @import '../common/header.scss';
 
-@import './home.scss';
+@import './cover.scss';
+@import './contact-us.scss';
 
 html, body , div[id^="Home-react-component"] {
   height: 100%;
@@ -17,6 +18,10 @@ html, body , div[id^="Home-react-component"] {
 
 main {
   position: relative;
+
+  section.blue-bottom{
+    border-bottom: 20px solid $sail;
+  }
 }
 
 #app-container {
