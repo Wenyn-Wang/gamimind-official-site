@@ -14,6 +14,7 @@ main {
         padding: 30px;
         box-sizing: border-box;
         background: white;
+        position: relative;
 
         .card-img {
           height: 120px;
@@ -32,6 +33,7 @@ main {
             height: 120px;
           }
         }
+
         &:nth-child(2) {
           .card-img .big-img {
             background-image: url('~images/home/solutions/pc.png');
@@ -39,6 +41,7 @@ main {
             height: 115px;
           }
         }
+
         &:nth-child(3) {
           .card-img .big-img {
             background-image: url('~images/home/solutions/crm.png');
@@ -62,6 +65,10 @@ main {
           display: block;
           color: $primary;
           transition: all .3s;
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
 
           &:hover {
             color: lighten($primary, 10%);
