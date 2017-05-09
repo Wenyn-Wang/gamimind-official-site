@@ -46,3 +46,8 @@ end
 gem "react_on_rails", "~> 6"
 
 gem 'mini_racer', platforms: :ruby
+
+gem "carrierwave", '~> 1.0.0'
+gem "carrierwave-base64", '~> 2.4.0'
+gem "fog", '~> 1.38.0'
+gem "mini_magick", '~> 4.6.1'

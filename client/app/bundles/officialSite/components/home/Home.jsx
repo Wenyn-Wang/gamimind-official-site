@@ -3,6 +3,7 @@ import Cover from './Cover'
 import Problems from './Problems'
 import Solutions from './Solutions'
 import Technology from './Technology'
+import CooperationProcess from './CooperationProcess'
 import ContactUs from './ContactUs'
 
 export default class Home extends Component {
@@ -13,6 +14,7 @@ export default class Home extends Component {
         <Problems />
         <Solutions />
         <Technology />
+        <CooperationProcess />
         <ContactUs />
       </main>
     )
