@@ -13,7 +13,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import muiTheme from '../constants/materialUITheme/HomePageTheme'
 
 injectTapEventPlugin()
- class HomeApp extends Component {
+class HomeApp extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={ muiTheme }>
