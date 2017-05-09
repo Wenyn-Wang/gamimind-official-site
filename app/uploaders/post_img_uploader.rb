@@ -10,7 +10,7 @@ class PostImgUploader < CarrierWave::Uploader::Base
 
   version :thumbnail do
     process resize_to_fill: [190, 190] #TODO size
-    def full_filename(for_file = model.logo.file)
+    def full_filename(*)
       "thumbnail.png"
     end
   end
