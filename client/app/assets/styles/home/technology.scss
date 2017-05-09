@@ -1,2 +1,86 @@
 main section#technology {
+  .container{
+    ul li {
+      width: 120px;
+      height: 120px;
+      display: inline-block;
+      border-radius: 50%;
+      background: $curious-blue;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      line-height: 120px;
+    }
+
+    &.triangle{
+      position: relative;
+      width: 400px;
+      height: 346.4px;
+      margin: 0px auto 60px;
+
+      .lines {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        .line {
+          width: 100%;
+          height: 1px;
+          background: $curious-blue;
+          position: absolute;
+
+          &:nth-child(1) {
+            transform: rotate(60deg);
+            transform-origin: left;
+            top: 0;
+            left: 50%;
+          }
+
+          &:nth-child(2) {
+            bottom: 0px;
+          }
+
+          &:nth-child(3) {
+            transform: rotate(120deg);
+            transform-origin: left;
+            top: 0;
+            left: 50%;
+          }
+        }
+      }
+
+      ul li {
+        position: absolute;
+
+        &:nth-child(1) {
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &:nth-child(2) {
+          left: 0;
+          bottom: 0;
+          transform: translate(-50%, 50%);
+        }
+        
+        &:nth-child(3) {
+          right: 0;
+          bottom: 0;
+          transform: translate(50%, 50%);
+        }
+      }
+
+      .text {
+        text-align: center;
+        width: 190px;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 26px;
+        font-size: 18px;
+      }
+    }
+  }
 }

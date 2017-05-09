@@ -58,7 +58,13 @@ class TechnologyTriangle extends Component {
     const { current_index } = this.state
 
     return (
-      <div className="container">
+      <div className="container triangle">
+        <div className="lines">
+          <div className="line" />
+          <div className="line" />
+          <div className="line" />
+        </div>
+
         <ul>
           {
             content.map((content, index) => (
@@ -75,10 +81,8 @@ class TechnologyTriangle extends Component {
           }
         </ul>
 
-        <div className="content">
+        <div className="text">
           { content[current_index].text }
-          <br />
-          { current_index }
         </div>
       </div>
     )
