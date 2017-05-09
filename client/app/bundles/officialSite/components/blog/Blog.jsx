@@ -1,13 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import MediaQuery from 'react-responsive'
 import ArticleCard from './ArticleCard'
+import { MOBILE_WIDTH } from '../../constants/device'
 
 const Blog = ({ articles }) => {
   return (
     <main id="blog">
       <h1 className="hidden-title">遊戲思維 - 部落格</h1>
       <div className="banner">
-        <img src={ require('images/blog/banner-m.png') } />
+        <MediaQuery minWidth={ MOBILE_WIDTH + 1 }>
+          <img src={ require("images/blog/banner.png") } />
+        </MediaQuery>
+        <MediaQuery maxWidth={ MOBILE_WIDTH }>
+          <img src={ require("images/blog/banner-m.png") } />
+        </MediaQuery>
       </div>
       <ul className="articles">
         {
