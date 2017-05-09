@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ArticleCard = ({ title, img, brief, date }) => {
+const ArticleCard = ({ title, slug, img, brief, date }) => {
   return (
     <div className="article-card">
       <div className="card-img" style={{ backgroundImage: `url(${img})` }} />
@@ -18,6 +18,7 @@ const ArticleCard = ({ title, img, brief, date }) => {
 
 ArticleCard.defaultProps = {
   title: PropTypes.string,
+  slug : PropTypes.string,
   img  : PropTypes.string,
   brief: PropTypes.string,
   date : PropTypes.string,
