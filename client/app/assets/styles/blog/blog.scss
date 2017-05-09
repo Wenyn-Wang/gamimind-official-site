@@ -12,56 +12,33 @@
     height: 400px;
   }
   .articles {
-    width: 960px;
+    max-width: 960px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: 60px auto 0;
-    @media (max-width: $pad)    { width: 90%; }
-    @media (max-width: $mobile) { width: 100%; text-align: center; }
 
     .article-card {
-      width: 302px;
-      height: 516px;
-      display: inline-block;
-      margin: 30px auto;
-      border: 2px solid $darker-white;
-      background-size: cover;
-      background-position: 50%;
-      &:hover { @include cardShadow; }
-      .card-img {
-        width: 100%;
-        height: 256px;
-        background-size: cover;
-        display: inline-block;
-      }
       &:nth-child(1), &:nth-child(2) {
-        width: 960px;
+        width: 98%;
         height: 240px;
-        margin: 24px auto;
+        margin: 24px 1%;
         .card-img {
           width: 40%;
           height: 100%;
         }
       }
-      .card-info {
-        display: inline-block;
-        vertical-align: top;
-        padding: 20px 16px;
-        .date {
-          font-size: 14px;
-          display: inline-block;
-        }
-        p.brief {
-          word-break: break-all;
-          height: 56px;
-          font-size: 15px;
-        }
-        .reading {
-          padding: 6px 12px;
-          cursor: pointer;
-          border-radius: 4px;
-          border: 2px solid $darker-gray;
-          display: inline-block;
+    }
+    @media (max-width: $pad)    { width: 90%; }
+    @media (max-width: $mobile) { width: 100%; }
+    @media (max-width: $smaller-mobile) {
+      .article-card:nth-child(1), .article-card:nth-child(2) {
+        width: 94%;
+        height: auto;
+        margin: 10px auto;
+        .card-img {
+          width: 100%;
+          height: 256px;
         }
       }
     }

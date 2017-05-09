@@ -6,10 +6,11 @@ const ArticleCard = ({ title, img, brief, date }) => {
     <div className="article-card">
       <div className="card-img" style={{ backgroundImage: `url(${img})` }} />
       <div className="card-info">
-        <div className="date">{ date }</div>
+        <div className="date upper">{ date }</div>
         <h2>{ title }</h2>
         <p className="brief">{ brief }</p>
         <div className="reading">繼續閱讀</div>
+        <div className="date downer">{ date }</div>
       </div>
     </div>
   )
