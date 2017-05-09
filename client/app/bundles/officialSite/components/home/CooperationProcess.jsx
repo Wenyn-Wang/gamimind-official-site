@@ -2,7 +2,7 @@ import React from 'react'
 
 const CooperationProcess = () => {
   return (
-    <section id="cooperation-process" className="blue-bottom">
+    <section id="cooperation-process">
       <div className="section-title">
         <h1>合作流程</h1>
       </div>
