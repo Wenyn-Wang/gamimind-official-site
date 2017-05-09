@@ -1,5 +1,7 @@
 import React from 'react'
 
+const step = ['商業目標確認', '遊戲思維導入', '專案開發', '動態成效追蹤', '']
+
 const CooperationProcess = () => {
   return (
     <section id="cooperation-process">
@@ -8,29 +10,16 @@ const CooperationProcess = () => {
       </div>
 
       <ul className="cooperation-process-content">
-        <li>
-          <span className="point" />
-          <p>商業目標確認</p>
-        </li>
-        <li>
-          <span className="point"/>
-          <p>遊戲思維導入</p>
-        </li>
-        <li>
-          <span className="point" />
-          <p>商業目標確認</p>
-        </li>
-        <li>
-          <span className="point" />
-          <p>專案開發</p>
-        </li>
-        <li>
-          <span className="point" />
-          <p>動態成效追蹤</p>
-        </li>
-        <li>
-          <span className="point" />
-        </li>
+        {
+          step.map((text, index)=>(
+            <li key={ index }>
+              <span className="point" />
+              {
+                text && <p>{ text }</p>
+              }
+            </li>
+          ))
+        }
       </ul>
     </section>
   )
