@@ -32,6 +32,12 @@ const CooperationProcess = () => {
           <span className="point" />
         </li>
       </ul>
+      <ul>
+        <li>123132</li>
+        <li>123132</li>
+        <li>123132</li>
+        <li>123132</li>
+      </ul>
     </section>
   )
 }
