@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     scope controller: "posts", path: "/posts", as: "posts" do
       post '/' => :index, as: "index"
-      get '/show' => :show, as: "show"
+      post '/show' => :show, as: "show"
     end
   end
 end
