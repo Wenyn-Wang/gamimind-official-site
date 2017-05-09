@@ -1,6 +1,6 @@
 import React from 'react'
 
-const step = ['商業目標確認', '遊戲思維導入', '專案開發', '動態成效追蹤', '']
+const steps = ['商業目標確認', '遊戲思維導入', '專案開發', '動態成效追蹤', '']
 
 const CooperationProcess = () => {
   return (
@@ -11,7 +11,7 @@ const CooperationProcess = () => {
 
       <ul className="cooperation-process-content">
         {
-          step.map((text, index)=>(
+          steps.map((text, index)=>(
             <li key={ index }>
               <span className="point" />
               {
