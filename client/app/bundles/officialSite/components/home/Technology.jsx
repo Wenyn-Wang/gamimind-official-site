@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import MediaQuery from 'react-responsive'
 import TechnologyTriangle from './TechnologyTriangle'
 import { PAD_WIDTH } from '../../constants/deviceTypes'
-import map from 'lodash/map'
 
 const content = [{
   title : '人工智慧',
@@ -30,8 +29,8 @@ const Technology = () => {
         <div className="container">
           <ul>
             {
-              content.map((content, index) => (
-                <li key = { content.title }>
+              content.map((content) => (
+                <li key= { content.title }>
                   <div className="circle">{ content.title }</div>
                   <p>{ content.text }</p>
                 </li>
