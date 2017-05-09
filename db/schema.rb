@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20170509081428) do
     t.string   "slug"
     t.string   "title"
     t.text     "content",    limit: 65535
-    t.string   "brief"
+    t.string   "brief",                    default: ""
     t.string   "img"
     t.integer  "status"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
