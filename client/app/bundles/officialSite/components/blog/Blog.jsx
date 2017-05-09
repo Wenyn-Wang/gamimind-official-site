@@ -6,7 +6,9 @@ const Blog = ({ articles }) => {
   return (
     <main id="blog">
       <h1 className="hidden-title">遊戲思維 - 部落格</h1>
-      <div className="banner" />
+      <div className="banner">
+        <img src={ require('images/blog/banner-m.png') } />
+      </div>
       <ul className="articles">
         {
           articles.map((article, idx) => (
