@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import HardwareKeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 
@@ -29,16 +28,13 @@ const Solutions = () => {
           card_list.map((card, index) => (
             <li key={ index }>
               <div className="card-img">
-                <div className="icon-container">
-                  <div />
-                  <div />
-                </div>
+                <div className="icon-container" />
                 <div className="big-img" />
               </div>
 
               <h3>{ card.title }</h3>
               <p>{ card.content }</p>
-              <Link to={ card.link  }>
+              <Link to={ card.link }>
                 <span>暸解更多</span>
                 <HardwareKeyboardArrowRight />
               </Link>
