@@ -6,7 +6,7 @@ class TechnologyTriangle extends Component {
     super(props)
 
     this.MAX_INDEX = 2
-    this.INTERVAL = 2 * 1000
+    this.INTERVAL = 3 * 1000
     this.INTERVAL_ID = 0
     this.tmp_index = 0
     this.state = {
