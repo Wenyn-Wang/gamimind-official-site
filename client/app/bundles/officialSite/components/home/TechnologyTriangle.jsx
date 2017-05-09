@@ -73,7 +73,7 @@ class TechnologyTriangle extends Component {
                 data-index    = { index }
                 onMouseEnter  = { this.handleHoverOn }
                 onMouseLeave  = { this.handleHoverOff }
-                className     = { index == current_index ? "active" : "" }
+                className     = { index == current_index ? "active circle" : "circle" }
               >
                 { content.title }
               </li>

@@ -3,7 +3,7 @@ main section#technology {
   background-position: 50% 90%;
 
   .container {
-    ul li {
+    ul .circle {
       width: 120px;
       height: 120px;
       display: inline-block;
@@ -11,7 +11,6 @@ main section#technology {
       background: $curious-blue;
       text-align: center;
       color: white;
-      font-size: 24px;
       line-height: 120px;
       transition: all .3s;
 
@@ -58,8 +57,9 @@ main section#technology {
         }
       }
 
-      ul li {
+      ul .circle {
         position: absolute;
+        font-size: 24px;
 
         &:nth-child(1) {
           left: 50%;
@@ -88,6 +88,27 @@ main section#technology {
         transform: translate(-50%, -50%);
         line-height: 26px;
         font-size: 18px;
+      }
+    }
+  }
+
+  @media (max-width: $pad) {
+    background-position: 50%;
+
+     .container {
+      ul li {
+        text-align: center;
+
+        .circle {
+          font-size: 18px;
+          display: inline-block;
+        }
+
+        p {
+          width: 85%;
+          margin: 20px auto 40px;
+          line-height: 22px;
+        }
       }
     }
   }

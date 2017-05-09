@@ -27,7 +27,18 @@ const Technology = () => {
       </MediaQuery>
 
       <MediaQuery maxWidth={ PAD_WIDTH }>
-        <div className="container" />
+        <div className="container">
+          <ul>
+            {
+              content.map((content, index) => (
+                <li key = { content.title }>
+                  <div className="circle">{ content.title }</div>
+                  <p>{ content.text }</p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </MediaQuery>
     </section>
   )
