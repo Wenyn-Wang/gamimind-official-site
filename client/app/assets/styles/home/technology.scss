@@ -1,4 +1,7 @@
 main section#technology {
+  background: url('~images/home/technology/technology-bg.png') no-repeat;
+  background-position: 50% 90%;
+
   .container {
     ul li {
       width: 120px;
@@ -21,7 +24,7 @@ main section#technology {
       position: relative;
       width: 400px;
       height: 346.4px;
-      margin: 60px auto;
+      margin: 60px auto 100px;
 
       .lines {
         position: absolute;
