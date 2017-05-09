@@ -1,5 +1,5 @@
 main section#technology {
-  .container{
+  .container {
     ul li {
       width: 120px;
       height: 120px;
@@ -10,9 +10,14 @@ main section#technology {
       color: white;
       font-size: 24px;
       line-height: 120px;
+      transition: all .3s;
+
+      &:hover, &.active {
+        background: $viking;
+      }
     }
 
-    &.triangle{
+    &.triangle {
       position: relative;
       width: 400px;
       height: 346.4px;
