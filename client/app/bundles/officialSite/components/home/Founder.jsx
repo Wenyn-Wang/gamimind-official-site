@@ -4,7 +4,7 @@ import { PAD_WIDTH } from '../../constants/deviceTypes'
 
 const founders = [{
   selfie        : require('images/home/founder/seanc.png'),
-  name_ch       : '陳勢仁',
+  name_ch       : '陳識仁',
   name_en       : 'Sean Chen',
   title         : '執行董事暨共同創辦人',
   introduction  : '資深專業經理人、商業智慧',
@@ -22,7 +22,7 @@ const founders = [{
   name_en       : 'Mia Chen',
   title         : '技術長暨共同創辦人',
   introduction  : '網頁全端開發、跨端整合技術、網路爬蟲',
-  link          : '',
+  link          : 'https://www.linkedin.com/in/mia81514/',
 }, {
   selfie        : require('images/home/founder/wenyn.png'),
   name_ch       : '王汶鈺',
@@ -40,6 +40,10 @@ const founders = [{
 }]
 
 const Founder = () => {
+  const openWindow = (url) => {
+    window.open(url, '_blank')
+  }
+
   return (
     <section id="founder">
       <div className="section-title">
@@ -63,16 +67,16 @@ const Founder = () => {
 
             return [(
               <MediaQuery 
-                key       = { founder.name_en + '1' }
+                key       = { founder.name_en }
                 minWidth  = { PAD_WIDTH + 1 }
                 { ...media_query_attr }
               >
-                <div className="circle">
+                <div className="circle" onClick={ () => openWindow(founder.link) }>
                   <img src={ founder.selfie } />
                   <div className="circle-content">
                     <p className="name-ch">{ founder.name_ch }</p>
                     <p className="name-en">{ founder.name_en }</p>
-                    <a className="linkedin-icon" href={ founder.link } />
+                    <span className="linkedin-icon" href={ founder.link } />
                   </div>
                 </div>
                 
@@ -83,7 +87,7 @@ const Founder = () => {
               </MediaQuery>
             ), (
               <MediaQuery 
-                key       = { founder.name_en + '2' }
+                key       = { founder.name_en + 'm' }
                 maxWidth  = { PAD_WIDTH  }
                 { ...media_query_attr }
               >

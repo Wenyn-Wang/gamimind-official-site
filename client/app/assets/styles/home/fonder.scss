@@ -21,6 +21,7 @@ main {
           color: $white;
           position: relative;
           margin: auto;
+          cursor: pointer;
           
           img {
             position: absolute;
@@ -34,9 +35,20 @@ main {
             padding: 50px 0px 0px;
             box-sizing: border-box;
             text-align: center;
-            background: rgba(0, 0, 0, 0.4);
             position: relative;
             border-radius: 50%;
+            transition: all .4s;
+
+            * {
+              position: relative;
+              top: 100%;
+
+              @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                  transition: all .4s $i/10+s;
+                }
+              }
+            } 
 
             .name-ch {
               font-size: 28px;
@@ -51,7 +63,16 @@ main {
               background: url('~images/home/founder/icon-linkedin.png') no-repeat;
               width: 21px;
               height: 21px;
-              display: inline-block;
+              display: block;
+              margin: auto;
+            }
+
+            &:hover {
+              background: rgba(0, 0, 0, 0.4);
+
+              * {
+                top: 0;
+              }
             }
           }
         }
@@ -86,6 +107,7 @@ main {
             max-height: 140px;
             flex: initial;
             margin-right: 20px;
+            cursor: default;
           }
 
           .info {
