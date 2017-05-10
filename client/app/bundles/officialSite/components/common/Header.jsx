@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Drawer from 'material-ui/Drawer'
-import { HOME_PAGE, SERVICE_PAGE } from '../../constants/url'
+import { HOME, SERVICE, BLOG } from '../../constants/url'
 import cx from 'classnames'
 
 const logo_white = require('images/home/header/logo-gamemind-white.svg')
@@ -70,9 +70,9 @@ class Header extends Component {
   renderNavLink() {
     return (
       <div className="nav-container">
-        <Link to={ SERVICE_PAGE } className="nav-link">服務</Link>
-        <Link to={ HOME_PAGE } className="nav-link">技術</Link>
-        <Link to={ HOME_PAGE } className="nav-link">部落格</Link>
+        <Link to={ SERVICE } className="nav-link">服務</Link>
+        <Link to={ HOME } className="nav-link">技術</Link>
+        <Link to={ BLOG } className="nav-link">部落格</Link>
       </div>
     )
   }
@@ -95,7 +95,7 @@ class Header extends Component {
           <div className="hamburger" onClick={ this.openHamburger }/>
         </div>
 
-        <Link to={ HOME_PAGE }>
+        <Link to={ HOME }>
           <div id="logo">
             <img src={ logo_white } />
             <img src={ logo_blue } />
@@ -104,7 +104,7 @@ class Header extends Component {
 
         <nav>
           { this.renderNavLink() }
-          <Link to={ HOME_PAGE } className={ contact_us_class }>合作洽談</Link>
+          <Link to={ HOME } className={ contact_us_class }>合作洽談</Link>
         </nav>
 
         <Drawer
