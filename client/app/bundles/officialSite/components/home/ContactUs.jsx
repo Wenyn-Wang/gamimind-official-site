@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import keys from 'lodash/keys'
+import values from 'lodash/values'
 import TextField from 'material-ui/TextField'
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
+import { createContact } from '../../apis/contactApis'
 
 const icon_style = {
   width: '100%',
@@ -66,6 +68,12 @@ export default class ContactUs extends Component {
     })
   }
 
+  submitForm = () => {
+    const { contact, error } = this.state
+    if (values(error).indexOf(true) != -1) return
+    createContact(contact)
+  }
+
   render() {
     const { show_form, contact, error } = this.state
 
@@ -123,7 +131,7 @@ export default class ContactUs extends Component {
                     onChange={ this.handleInputChange } /><br />
                 </div>
 
-                <div className="btn primary" onClick={ this.hideForm }>立即送出</div>
+                <div className="btn primary" onClick={ this.submitForm }>立即送出</div>
               </div>
           }
         </div>
