@@ -2,8 +2,9 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Drawer from 'material-ui/Drawer'
-import { HOME_PAGE, SERVICE_PAGE } from '../../constants/url'
 import cx from 'classnames'
+import { Link as ScrollLink } from'react-scroll'
+import { HOME_PAGE } from '../../constants/url'
 
 const logo_white = require('images/home/header/logo-gamemind-white.svg')
 const logo_blue = require('images/home/header/logo-gamemind-blue.svg')
@@ -70,7 +71,7 @@ class Header extends Component {
   renderNavLink() {
     return (
       <div className="nav-container">
-        <Link to={ SERVICE_PAGE } className="nav-link">服務</Link>
+        <ScrollLink  to="solutions" smooth duration={500} className="nav-link">服務</ScrollLink>
         <Link to={ HOME_PAGE } className="nav-link">技術</Link>
         <Link to={ HOME_PAGE } className="nav-link">部落格</Link>
       </div>
