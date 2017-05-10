@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import keys from 'lodash/keys'
 import TextField from 'material-ui/TextField'
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
@@ -9,7 +8,7 @@ const icon_style = {
   height: '100%',
 }
 
-class ContactUs extends Component {
+export default class ContactUs extends Component {
   constructor(props) {
     super(props)
 
@@ -108,8 +107,3 @@ class ContactUs extends Component {
     )
   }
 }
-
-ContactUs.propTypes = {
-}
-
-export default ContactUs
