@@ -71,6 +71,7 @@ $header-height: 60px;
         color: $primary;
         padding: 0px 20px;
         transition: all .3s;
+        cursor: pointer;
 
         &:hover {
           color: lighten($primary, 10%);
