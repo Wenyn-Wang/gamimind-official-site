@@ -8,5 +8,9 @@ Rails.application.routes.draw do
       post '/' => :index, as: "index"
       post '/show' => :show, as: "show"
     end
+
+    scope controller: "contacts", path: "/contacts", as: "contacts" do
+      post '/create' => :create, as: "create"
+    end
   end
 end
