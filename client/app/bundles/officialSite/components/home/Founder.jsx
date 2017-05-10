@@ -50,13 +50,6 @@ const Founder = () => {
         <h1>創辦人</h1>
       </div>
 
-      <MediaQuery 
-        minWidth  = { PAD_WIDTH + 1 }
-        className = "founders"
-        component = "ul"
-      >
-      </MediaQuery>
-
       <ul className="founders">
         {
           founders.map((founder) => {
