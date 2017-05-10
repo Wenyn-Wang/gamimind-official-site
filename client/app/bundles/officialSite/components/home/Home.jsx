@@ -3,7 +3,7 @@ import Cover from './Cover'
 import Problems from './Problems'
 import Solutions from './Solutions'
 import CooperationProcess from './CooperationProcess'
-import ContactUs from './ContactUs'
+import ContactUs from '../contactUs/ContactUs'
 
 export default class Home extends Component {
   render() {
