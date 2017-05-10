@@ -95,6 +95,10 @@ main {
     }
 
     @media (max-width: $pad) {
+      .section-title {
+        padding-bottom: 20px;
+      }
+      
       .founders {
         .founder {
           width: 100%;
