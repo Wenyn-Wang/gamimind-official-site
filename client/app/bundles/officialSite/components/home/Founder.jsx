@@ -1,4 +1,6 @@
 import React from 'react'
+import MediaQuery from 'react-responsive'
+import { PAD_WIDTH } from '../../constants/deviceTypes'
 
 const founders = [{
   selfie        : require('images/home/founder/seanc.png'),
@@ -44,25 +46,61 @@ const Founder = () => {
         <h1>創辦人</h1>
       </div>
 
+      <MediaQuery 
+        minWidth  = { PAD_WIDTH + 1 }
+        className = "founders"
+        component = "ul"
+      >
+      </MediaQuery>
+
       <ul className="founders">
         {
-          founders.map((founder) => (
-            <li key={ founder.name_en } className="founder">
-              <div className="circle">
-                <img src={ founder.selfie } />
-                <div className="circle-content">
+          founders.map((founder) => {
+            const media_query_attr = {
+              className : 'founder',
+              component : 'li',
+            }
+
+            return [(
+              <MediaQuery 
+                key       = { founder.name_en + '1' }
+                minWidth  = { PAD_WIDTH + 1 }
+                { ...media_query_attr }
+              >
+                <div className="circle">
+                  <img src={ founder.selfie } />
+                  <div className="circle-content">
+                    <p className="name-ch">{ founder.name_ch }</p>
+                    <p className="name-en">{ founder.name_en }</p>
+                    <a className="linkedin-icon" href={ founder.link } />
+                  </div>
+                </div>
+                
+                <div className="info">
+                  <p className="title">{ founder.title }</p>
+                  <p className="introduction">{ founder.introduction }</p>
+                </div>
+              </MediaQuery>
+            ), (
+              <MediaQuery 
+                key       = { founder.name_en + '2' }
+                maxWidth  = { PAD_WIDTH  }
+                { ...media_query_attr }
+              >
+                <div className="circle">
+                  <img src={ founder.selfie } />
+                </div>
+                
+                <div className="info">
+                  <p className="title">{ founder.title }</p>
+                  <p className="introduction">{ founder.introduction }</p>
                   <p className="name-ch">{ founder.name_ch }</p>
                   <p className="name-en">{ founder.name_en }</p>
                   <a className="linkedin-icon" href={ founder.link } />
                 </div>
-              </div>
-              
-              <div className="info">
-                <p className="title">{ founder.title }</p>
-                <p className="introduction">{ founder.introduction }</p>
-              </div>
-            </li>
-          ))
+              </MediaQuery>
+            )]
+          })
         }
       </ul>
     </section>

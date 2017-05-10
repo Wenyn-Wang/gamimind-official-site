@@ -68,5 +68,62 @@ main {
         }
       }
     }
+
+    @media (max-width: $pad) {
+      .founders {
+        .founder {
+          width: 100%;
+          margin: auto;
+          padding: 30px 0px;
+          display: flex;
+          align-items: center;
+          max-width: 500px;
+
+          .circle {
+            display: inline-block;
+            width: 30%;
+            max-width: 140px;
+            max-height: 140px;
+            flex: initial;
+            margin-right: 20px;
+          }
+
+          .info {
+            flex: 1;
+            text-align: left;
+
+            .title {
+              margin: 0px;
+            }
+
+            .introduction {
+              margin: 10px 0px 20px;
+            }
+
+            .name-ch, .name-en {
+              display: inline-block;
+            }
+
+            .name-ch {
+              font-size: 24px;
+              font-weight: $medium;
+            }
+
+            .name-en {
+              padding-left: 10px;
+              font-size: 14px;
+            }
+
+            .linkedin-icon {
+              background: url('~images/home/founder/icon-linkedin-m.png') no-repeat;
+              width: 83px;
+              height: 31px;
+              display: block;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 }
