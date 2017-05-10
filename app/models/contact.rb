@@ -1,11 +1,11 @@
 class Contact < ActiveRecord::Base
 
   def self.valid_attrs(params)
-    name = params[:name].to_s
-    company = params[:company].to_s
-    phone = params[:phone].to_s
-    email = params[:email].to_s
-    time = params[:time].to_s
+    name = params[:name].to_s.strip
+    company = params[:company].to_s.strip
+    phone = params[:phone].to_s.strip
+    email = params[:email].to_s.strip
+    time = params[:time].to_s.strip
     return if name.blank? || company.blank? || phone.blank? || email.blank?
     return {
       name: name,
