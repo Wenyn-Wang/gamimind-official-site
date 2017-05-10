@@ -36,9 +36,7 @@ class ContactForm extends Component {
   isValid = (field_idx, value) => {
     if (field_idx == 3) // email
       return !!value.match(email_pattern)
-    else if ([0, 1, 2].indexOf(field_idx) != -1) //name, company, phone
-      return value.length > 0
-    return true
+    return value.length > 0 //name, company, phone, time
   }
 
   handleInputChange = (event) => {
@@ -63,6 +61,7 @@ class ContactForm extends Component {
   submitForm = () => {
     const { contact, error } = this.state
     if (values(error).indexOf(true) != -1) return
+    if (values(contact).indexOf("") != -1) return
     createContact(contact).then(res => {
       this.props.goNext()
     })
@@ -105,7 +104,8 @@ class ContactForm extends Component {
             floatingLabelText="希望聯絡時間"
             name="time"
             value={ contact.time }
-            onChange={ this.handleInputChange } /><br />
+            onChange={ this.handleInputChange }
+            errorText={ error.email && "請輸入您方便聯絡的時間" } /><br />
         </div>
 
         <div className="btn primary" onClick={ this.submitForm }>
