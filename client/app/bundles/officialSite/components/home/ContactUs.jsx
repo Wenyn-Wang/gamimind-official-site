@@ -7,6 +7,7 @@ const icon_style = {
   width: '100%',
   height: '100%',
 }
+const email_pattern = /.+@.+\..+/
 
 export default class ContactUs extends Component {
   constructor(props) {
@@ -21,6 +22,12 @@ export default class ContactUs extends Component {
         email   : "",
         time    : "",
       },
+      error : {
+        name    : false,
+        company : false,
+        phone   : false,
+        email   : false,
+      },
     }
   }
 
@@ -32,22 +39,35 @@ export default class ContactUs extends Component {
     this.setState({ show_form : false })
   }
 
+  isValid = (field_idx, value) => {
+    if (field_idx == 3) // email
+      return !!value.match(email_pattern)
+    else if ([0, 1, 2].indexOf(field_idx) != -1) //name, company, phone
+      return value.length > 0
+    return true
+  }
+
   handleInputChange = (event) => {
     const { name, value } = event.target
-    const { contact } = this.state
-    const fields = keys(contact)
-    if (fields.indexOf(name) == -1) return
+    const { contact, error } = this.state
+    const idx = keys(contact).indexOf(name)
+    if (idx == -1) return
+    const field_error = !this.isValid(idx, value)
     this.setState({
       ...this.state,
       contact: {
         ...contact,
         [name] : value,
       },
+      error : {
+        ...error,
+        [name]: field_error,
+      }
     })
   }
 
   render() {
-    const { show_form, contact } = this.state
+    const { show_form, contact, error } = this.state
 
     return (
       <section id="contact-us">
@@ -76,22 +96,26 @@ export default class ContactUs extends Component {
                     floatingLabelText="姓名"
                     name="name"
                     value={ contact.name }
-                    onChange={ this.handleInputChange } /><br />
+                    onChange={ this.handleInputChange }
+                    errorText={ error.name && "請輸入姓名" } /><br />
                   <TextField
                     floatingLabelText="公司名稱"
                     name="company"
                     value={ contact.company }
-                    onChange={ this.handleInputChange } /><br />
+                    onChange={ this.handleInputChange }
+                    errorText={ error.company && "請輸入公司名稱" } /><br />
                   <TextField
-                    floatingLabelText="電話"
+                    floatingLabelText="聯絡電話"
                     name="phone"
                     value={ contact.phone }
-                    onChange={ this.handleInputChange } /><br />
+                    onChange={ this.handleInputChange }
+                    errorText={ error.phone && "請輸入聯絡電話" } /><br />
                   <TextField
                     floatingLabelText="Email"
                     name="email"
                     value={ contact.email }
-                    onChange={ this.handleInputChange } /><br />
+                    onChange={ this.handleInputChange }
+                    errorText={ error.email && "請輸入正確的Email" } /><br />
                   <TextField
                     floatingLabelText="希望聯絡時間"
                     name="time"
