@@ -54,7 +54,7 @@ class TechnologyTriangle extends Component {
   }
 
   render() {
-    const { content } = this.props
+    const { contents } = this.props
     const { current_index } = this.state
 
     return (
@@ -67,7 +67,7 @@ class TechnologyTriangle extends Component {
 
         <ul>
           {
-            content.map((content, index) => (
+            contents.map((content, index) => (
               <li
                 key           = { content.title }
                 data-index    = { index }
@@ -82,7 +82,7 @@ class TechnologyTriangle extends Component {
         </ul>
 
         <div className="text">
-          { content[current_index].text }
+          { contents[current_index].text }
         </div>
       </div>
     )
@@ -90,7 +90,7 @@ class TechnologyTriangle extends Component {
 }
 
 TechnologyTriangle.propTypes = {
-  content: PropTypes.arrayOf(
+  contents: PropTypes.arrayOf(
     PropTypes.shape({
       title : PropTypes.string.isRequired,
       text  : PropTypes.string.isRequired,

@@ -3,7 +3,7 @@ import MediaQuery from 'react-responsive'
 import TechnologyTriangle from './TechnologyTriangle'
 import { PAD_WIDTH } from '../../constants/deviceTypes'
 
-const content = [{
+const contents = [{
   title : '人工智慧',
   text  : '透過多層級機器學習(Machine Learning)演算法，持續將內在、外在因素資訊進行深度運算，做出準確性的預測',
 }, {
@@ -22,14 +22,14 @@ const Technology = () => {
       </div>
 
       <MediaQuery minWidth={ PAD_WIDTH + 1 }>
-        <TechnologyTriangle content={ content } />
+        <TechnologyTriangle contents={ contents } />
       </MediaQuery>
 
       <MediaQuery maxWidth={ PAD_WIDTH }>
         <div className="container">
           <ul>
             {
-              content.map((content) => (
+              contents.map((content) => (
                 <li key= { content.title }>
                   <div className="circle">{ content.title }</div>
                   <p>{ content.text }</p>
