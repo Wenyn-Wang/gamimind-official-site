@@ -63,7 +63,9 @@ class ContactForm extends Component {
   submitForm = () => {
     const { contact, error } = this.state
     if (values(error).indexOf(true) != -1) return
-    createContact(contact)
+    createContact(contact).then(res => {
+      this.props.goNext()
+    })
   }
 
   render() {
@@ -116,6 +118,7 @@ class ContactForm extends Component {
 
 ContactForm.propTypes = {
   goBack : PropTypes.func,
+  goNext : PropTypes.func,
 }
 
 export default ContactForm

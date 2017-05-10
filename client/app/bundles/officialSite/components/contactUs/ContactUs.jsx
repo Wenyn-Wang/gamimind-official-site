@@ -21,6 +21,10 @@ export default class ContactUs extends Component {
     this.setState({ step : steps[1] })
   }
 
+  goSuccess = () => {
+    this.setState({ step : steps[2] })
+  }
+
   render() {
     const { step } = this.state
 
@@ -37,7 +41,7 @@ export default class ContactUs extends Component {
           }
           {
             step == steps[1] &&
-              <ContactForm goBack={ this.goWelcome } />
+              <ContactForm goBack={ this.goWelcome } goNext={ this.goSuccess } />
           }
           {
             step == steps[2] &&
