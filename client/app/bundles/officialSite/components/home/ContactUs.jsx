@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import keys from 'lodash/keys'
 import TextField from 'material-ui/TextField'
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
 
@@ -14,6 +15,13 @@ class ContactUs extends Component {
 
     this.state = {
       show_form : true,
+      contact   : {
+        name    : "",
+        company : "",
+        phone   : "",
+        email   : "",
+        time    : "",
+      },
     }
   }
 
@@ -25,8 +33,22 @@ class ContactUs extends Component {
     this.setState({ show_form : false })
   }
 
+  handleInputChange = (event) => {
+    const { name, value } = event.target
+    const { contact } = this.state
+    const fields = keys(contact)
+    if (fields.indexOf(name) == -1) return
+    this.setState({
+      ...this.state,
+      contact: {
+        ...contact,
+        [name] : value,
+      },
+    })
+  }
+
   render() {
-    const { show_form } = this.state
+    const { show_form, contact } = this.state
 
     return (
       <section id="contact-us">
@@ -51,11 +73,31 @@ class ContactUs extends Component {
                 </div>
 
                 <div className="contact-us-form">
-                  <TextField floatingLabelText="姓名" /><br />
-                  <TextField floatingLabelText="公司名稱" /><br />
-                  <TextField floatingLabelText="電話" /><br />
-                  <TextField floatingLabelText="Email" /><br />
-                  <TextField floatingLabelText="希望聯絡時間" /><br />
+                  <TextField
+                    floatingLabelText="姓名"
+                    name="name"
+                    value={ contact.name }
+                    onChange={ this.handleInputChange } /><br />
+                  <TextField
+                    floatingLabelText="公司名稱"
+                    name="company"
+                    value={ contact.company }
+                    onChange={ this.handleInputChange } /><br />
+                  <TextField
+                    floatingLabelText="電話"
+                    name="phone"
+                    value={ contact.phone }
+                    onChange={ this.handleInputChange } /><br />
+                  <TextField
+                    floatingLabelText="Email"
+                    name="email"
+                    value={ contact.email }
+                    onChange={ this.handleInputChange } /><br />
+                  <TextField
+                    floatingLabelText="希望聯絡時間"
+                    name="time"
+                    value={ contact.time }
+                    onChange={ this.handleInputChange } /><br />
                 </div>
 
                 <div className="btn primary" onClick={ this.hideForm }>立即送出</div>
