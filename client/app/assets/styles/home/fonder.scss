@@ -2,6 +2,10 @@ main {
   section#founder {
     background: $lighter-blue;
 
+    .section-title {
+      padding-bottom: 50px;
+    }
+
     .founders {
       width: 90%;
       margin: auto;
