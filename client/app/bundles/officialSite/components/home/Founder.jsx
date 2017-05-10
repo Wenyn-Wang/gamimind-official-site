@@ -8,14 +8,14 @@ const founders = [{
   name_en       : 'Sean Chen',
   title         : '執行董事暨共同創辦人',
   introduction  : '資深專業經理人、商業智慧',
-  link          : '',
+  link          : 'https://www.linkedin.com/in/sean-chen-08a7ba11/',
 }, {
   selfie        : require('images/home/founder/lichieh.png'),
   name_ch       : '楊立潔',
   name_en       : 'Lichieh Young',
   title         : '行銷長暨共同創辦人',
   introduction  : '商業策略與開發、專案管理 資料視覺化',
-  link          : '',
+  link          : 'https://www.linkedin.com/in/li-chieh-young-052b2b99/',
 }, {
   selfie        : require('images/home/founder/mia.png'),
   name_ch       : '陳昭廷',
@@ -29,14 +29,14 @@ const founders = [{
   name_en       : 'Wenyn Wang',
   title         : '執行董事暨共同創辦人',
   introduction  : '人工智慧、機器學習與產品策略',
-  link          : '',
+  link          : 'http://linkedin.com/in/wenynwang',
 }, {
   selfie        : require('images/home/founder/bryan.png'),
   name_ch       : '黃沛聲',
   name_en       : 'Bryan Huang',
   title         : '執行董事暨法律顧問',
   introduction  : '法律顧問、跨國合作戰略規劃',
-  link          : '',
+  link          : 'https://www.linkedin.com/in/pei-sheng-bryan-huang-59bb6333/',
 }]
 
 const Founder = () => {
@@ -93,7 +93,7 @@ const Founder = () => {
                   <p className="introduction">{ founder.introduction }</p>
                   <p className="name-ch">{ founder.name_ch }</p>
                   <p className="name-en">{ founder.name_en }</p>
-                  <a className="linkedin-icon" href={ founder.link } />
+                  <a className="linkedin-icon" href={ founder.link } target="_blank" />
                 </div>
               </MediaQuery>
             )]
