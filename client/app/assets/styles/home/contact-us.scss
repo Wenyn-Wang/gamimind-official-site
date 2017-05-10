@@ -1,12 +1,12 @@
 main {
   section#contact-us {
-    background: url('~images/home/contactUs/contact-us-bg.jpg');
+    background: url('~images/home/cover/cover-bg.png');
     background-size: cover;
     background-position: 50%;
     text-align: center;
 
     .contact-us-center {
-      background: rgba(255, 255, 255, 0.8);
+      background: $white;
       width: 65%;
       margin: 60px auto;
       display: inline-block;
