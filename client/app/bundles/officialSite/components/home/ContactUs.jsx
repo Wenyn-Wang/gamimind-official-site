@@ -13,7 +13,7 @@ class ContactUs extends Component {
     super(props)
 
     this.state = {
-      show_form : true,
+      show_form : false,
     }
   }
 

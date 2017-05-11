@@ -5,6 +5,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Header from '../components/common/Header'
+import Footer from '../components/common/Footer'
 import Home from '../components/home/Home'
 import Service from '../components/service/Service'
 import { HOME_PAGE, SERVICE_PAGE } from '../constants/url'
@@ -25,6 +26,7 @@ class HomeApp extends Component {
               <Route path={ SERVICE_PAGE } component={ Service } />
               <Redirect to={ HOME_PAGE } />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </MuiThemeProvider>
