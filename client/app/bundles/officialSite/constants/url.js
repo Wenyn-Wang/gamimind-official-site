@@ -1,5 +1,6 @@
-export const HOME_PAGE = '/'
-export const SERVICE_PAGE = '/service'
+export const HOME = '/'
+export const SERVICE = '/service'
+export const BLOG = '/blog'
 
 export const HASH = {
   SERVICES    : 'services',

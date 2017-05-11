@@ -8,7 +8,8 @@ import Header from '../components/common/Header'
 import Footer from '../components/common/Footer'
 import Home from '../components/home/Home'
 import Service from '../components/service/Service'
-import { HOME_PAGE, SERVICE_PAGE } from '../constants/url'
+import Blog from '../components/blog/Blog'
+import { HOME, SERVICE, BLOG } from '../constants/url'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import muiTheme from '../constants/materialUITheme/HomePageTheme'
@@ -22,9 +23,10 @@ class HomeApp extends Component {
           <div id="app-container">
             <Header />
             <Switch>
-              <Route exact path={ HOME_PAGE } component={ Home } />
-              <Route path={ SERVICE_PAGE } component={ Service } />
-              <Redirect to={ HOME_PAGE } />
+              <Route exact path={ HOME } component={ Home } />
+              <Route path={ SERVICE } component={ Service } />
+              <Route path={ BLOG } component={ Blog } />
+              <Redirect to={ HOME } />
             </Switch>
             <Footer />
           </div>

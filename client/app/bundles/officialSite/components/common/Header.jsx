@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import Drawer from 'material-ui/Drawer'
+import { HOME, SERVICE, BLOG, HASH } from '../../constants/url'
 import cx from 'classnames'
-import { Link as ScrollLink, scroller } from'react-scroll'
-import { HOME_PAGE, HASH } from '../../constants/url'
+import { Link as ScrollLink, scroller } from 'react-scroll'
 
 const logo_white = require('images/home/header/logo-gamemind-white.svg')
 const logo_blue = require('images/home/header/logo-gamemind-blue.svg')
@@ -81,7 +81,7 @@ class Header extends Component {
   }
 
   renderNavLink() {
-    const is_home_page = (this.props.location.pathname == HOME_PAGE)
+    const is_home_page = (this.props.location.pathname == HOME)
     const { SERVICES, TECHNOLOGY } = HASH
     const scroll_link_attr = {
       duration  : srocll_duration,
@@ -96,11 +96,11 @@ class Header extends Component {
             <ScrollLink  to={ SERVICES } { ...scroll_link_attr } key="1" >服務</ScrollLink>,
             <ScrollLink  to={ TECHNOLOGY } { ...scroll_link_attr } key="2">技術</ScrollLink>,
           ] : [
-            <Link to={ HOME_PAGE + '#' + SERVICES } className="nav-link" key="11">服務</Link>,
-            <Link to={ HOME_PAGE + '#' + TECHNOLOGY } className="nav-link" key="12">技術</Link>,
+            <Link to={ HOME + '#' + SERVICES } className="nav-link" key="11">服務</Link>,
+            <Link to={ HOME + '#' + TECHNOLOGY } className="nav-link" key="12">技術</Link>,
           ]
         }
-        <Link to={ HOME_PAGE } className="nav-link">部落格</Link>
+        <Link to={ BLOG } className="nav-link">部落格</Link>
       </div>
     )
   }
@@ -123,7 +123,7 @@ class Header extends Component {
           <div className="hamburger" onClick={ this.openHamburger }/>
         </div>
 
-        <Link to={ HOME_PAGE }>
+        <Link to={ HOME }>
           <div id="logo">
             <img src={ logo_white } />
             <img src={ logo_blue } />
@@ -132,7 +132,7 @@ class Header extends Component {
 
         <nav>
           { this.renderNavLink() }
-          <Link to={ HOME_PAGE } className={ contact_us_class }>合作洽談</Link>
+          <Link to={ HOME } className={ contact_us_class }>合作洽談</Link>
         </nav>
 
         <Drawer
