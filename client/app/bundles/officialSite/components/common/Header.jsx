@@ -9,7 +9,7 @@ import { Link as ScrollLink, scroller } from 'react-scroll'
 
 const logo_white = require('images/home/header/logo-gamemind-white.svg')
 const logo_blue = require('images/home/header/logo-gamemind-blue.svg')
-const srocll_duration = 500
+const menu_logo = require('images/home/header/menu-logo.png')
 
 class Header extends Component {
   constructor(prop){
@@ -76,31 +76,69 @@ class Header extends Component {
   }
 
   closeHamburger = () => {
-    if (this.state.hamburger_open)
+    if (this.state.hamburger_open) {
       this.setState({ hamburger_open: false })
+    }
   }
 
   renderNavLink() {
     const is_home_page = (this.props.location.pathname == HOME)
-    const { SERVICES, TECHNOLOGY } = HASH
-    const scroll_link_attr = {
-      duration  : srocll_duration,
-      smooth    : true,
+    const { SERVICES, TECHNOLOGY, CONTACT_US } = HASH
+    const common_attr = {
       className : 'nav-link',
+      onClick   : this.closeHamburger,
     }
+    const links = [{
+      name            : '服務',
+      to              : HOME + '#' + SERVICES,
+      scroll_link     : SERVICES,
+    }, {
+      name            : '技術',
+      to              : HOME + '#' + TECHNOLOGY,
+      scroll_link     : TECHNOLOGY,
+    }, {
+      name            : '部落格',
+      to              : BLOG,
+    }, {
+      name            : '合作洽談',
+      to              : HOME + '#' + CONTACT_US,
+      scroll_link     : CONTACT_US,
+      customize_attr  : { 
+        className   : 'btn',
+      },
+    }]
 
     return (
       <div className="nav-container">
         {
-          is_home_page ? [
-            <ScrollLink  to={ SERVICES } { ...scroll_link_attr } key="1" >服務</ScrollLink>,
-            <ScrollLink  to={ TECHNOLOGY } { ...scroll_link_attr } key="2">技術</ScrollLink>,
-          ] : [
-            <Link to={ HOME + '#' + SERVICES } className="nav-link" key="11">服務</Link>,
-            <Link to={ HOME + '#' + TECHNOLOGY } className="nav-link" key="12">技術</Link>,
-          ]
+          links.map((link, index) => {
+            if(is_home_page && link.scroll_link) {
+              return (
+                <ScrollLink
+                  { ...common_attr }
+                  { ...link.customize_attr }
+                  smooth
+                  to        = { link.scroll_link } 
+                  duration  = { 500 }
+                  key       = { index }
+                >
+                  { link.name }
+                </ScrollLink>
+              )
+            } else {
+              return (
+                <Link 
+                  { ...common_attr }
+                  { ...link.customize_attr }
+                  key = { index }
+                  to  = { link.to }
+                >
+                  { link.name }
+                </Link>
+              )
+            }
+          })
         }
-        <Link to={ BLOG } className="nav-link">部落格</Link>
       </div>
     )
   }
@@ -132,17 +170,18 @@ class Header extends Component {
 
         <nav>
           { this.renderNavLink() }
-          <Link to={ HOME } className={ contact_us_class }>合作洽談</Link>
         </nav>
 
         <Drawer
-          openSecondary
           docked          = { false }
           width           = { 200 }
           open            = { this.state.hamburger_open }
           onRequestChange = { (hamburger_open) => this.setState({ hamburger_open }) }
         >
           <div className="material-drawer">
+            <Link to={ HOME }>
+              <img className="menu-logo" src={ menu_logo } onClick={ this.closeHamburger } />
+            </Link>
             { this.renderNavLink() }
           </div>
         </Drawer>

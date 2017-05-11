@@ -36,6 +36,11 @@ $header-height: 60px;
             color: darken($white, 10%);
           }
         }
+
+        .btn {
+          @extend .secondary;
+          background: transparent;;
+        }
       }
     }
   }
@@ -69,13 +74,17 @@ $header-height: 60px;
       
       .nav-link {
         color: $primary;
-        padding: 0px 20px;
+        padding: 5px 20px;
         transition: all .3s;
         cursor: pointer;
 
         &:hover {
           color: lighten($primary, 10%);
         }
+      }
+
+      .btn {
+        @extend .primary;
       }
     }
   }
@@ -109,6 +118,42 @@ $header-height: 60px;
     }
   }
 
+  .material-drawer {
+    .menu-logo {
+      width: 100%;
+      height: auto;
+      padding: 30px;
+      box-sizing: border-box;
+      border-bottom: 1px solid $darker-gray;
+    }
+
+    .nav-container {
+      .nav-link {
+        border-bottom: 1px solid $darker-gray;
+        display: block;
+        font-size: 16px;
+        color: #666E70;
+        font-weight: 500;
+        padding: 20px 30px;
+        position: relative;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          right: 28px;
+          border-width: 6px;
+          border-color: transparent transparent transparent $darker-gray;
+          border-style: solid;
+        }
+      }
+
+      .btn {
+        display: none;
+      }
+    }
+  }
+
   @media (max-width: $mobile) {
     padding: 0px;
     font-size: 12px;
@@ -122,7 +167,7 @@ $header-height: 60px;
     nav {
       padding-right: 10px;
       
-      .nav-container {
+      .nav-container .nav-link{
         display: none;
       }
     }
