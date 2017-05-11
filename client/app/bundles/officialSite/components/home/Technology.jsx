@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import MediaQuery from 'react-responsive'
 import TechnologyTriangle from './TechnologyTriangle'
+import { HASH } from '../../constants/url'
+import { Element }  from'react-scroll'
 import { PAD_WIDTH } from '../../constants/deviceTypes'
 
 const contents = [{
@@ -16,7 +18,8 @@ const contents = [{
 
 const Technology = () => {
   return (
-    <section id="technology">
+    <section id={ HASH.TECHNOLOGY }>
+      <Element name={ HASH.TECHNOLOGY } className="scroll-point"/>
       <div className="section-title">
         <h1>我們的專業來自對技術的堅持</h1>
       </div>

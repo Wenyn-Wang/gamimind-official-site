@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Element }  from'react-scroll'
+import { HASH } from '../../constants/url'
 import HardwareKeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 
 const card_list = [{
@@ -16,14 +18,15 @@ const card_list = [{
   link    : '/',
 }]
 
-const Solutions = () => {
+const Services = () => {
   return (
-    <section id="solutions">
+    <section id={ HASH.SERVICES }>
+      <Element name={ HASH.SERVICES } className="scroll-point"/>
       <div className="section-title">
         <h1>為您量身打造解決方案</h1>
       </div>
 
-      <ul className="solutions-container">
+      <ul className="services-container">
         {
           card_list.map((card, index) => (
             <li key={ index }>
@@ -46,4 +49,4 @@ const Solutions = () => {
   )
 }
 
-export default Solutions
+export default Services
