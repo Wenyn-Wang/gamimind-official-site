@@ -11,6 +11,33 @@ const icon_style = {
   height: '100%',
 }
 const email_pattern = /.+@.+\..+/
+const fields = [
+  {
+    label: "姓名",
+    name: "name",
+    errorText: "請輸入姓名",
+  },
+  {
+    label: "公司名稱",
+    name: "company",
+    errorText: "請輸入公司名稱",
+  },
+  {
+    label: "電話",
+    name: "phone",
+    errorText: "請輸入聯絡電話",
+  },
+  {
+    label: "Email",
+    name: "email",
+    errorText: "請輸入正確的Email",
+  },
+  {
+    label: "方便聯絡時間",
+    name: "time",
+    errorText: "請輸入您方便聯絡的時間",
+  },
+]
 
 class ContactForm extends Component {
   constructor(props) {
@@ -76,36 +103,18 @@ class ContactForm extends Component {
         </div>
 
         <div className="contact-us-form">
-          <TextField
-            floatingLabelText="姓名"
-            name="name"
-            value={ contact.name }
-            onChange={ this.handleInputChange }
-            errorText={ error.name && "請輸入姓名" } /><br />
-          <TextField
-            floatingLabelText="公司名稱"
-            name="company"
-            value={ contact.company }
-            onChange={ this.handleInputChange }
-            errorText={ error.company && "請輸入公司名稱" } /><br />
-          <TextField
-            floatingLabelText="聯絡電話"
-            name="phone"
-            value={ contact.phone }
-            onChange={ this.handleInputChange }
-            errorText={ error.phone && "請輸入聯絡電話" } /><br />
-          <TextField
-            floatingLabelText="Email"
-            name="email"
-            value={ contact.email }
-            onChange={ this.handleInputChange }
-            errorText={ error.email && "請輸入正確的Email" } /><br />
-          <TextField
-            floatingLabelText="希望聯絡時間"
-            name="time"
-            value={ contact.time }
-            onChange={ this.handleInputChange }
-            errorText={ error.email && "請輸入您方便聯絡的時間" } /><br />
+          {
+            fields.map(field => (
+              <div key={ field.name }>
+                <TextField
+                  floatingLabelText={ field.label }
+                  name={ field.name }
+                  value={ contact[field.name] }
+                  onChange={ this.handleInputChange }
+                  errorText={ error[field.name] && field.errorText } />
+              </div>
+            ))
+          }
         </div>
 
         <div className="btn primary" onClick={ this.submitForm }>
