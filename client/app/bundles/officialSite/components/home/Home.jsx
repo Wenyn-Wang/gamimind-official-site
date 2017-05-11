@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Cover from './Cover'
 import Problems from './Problems'
-import Solutions from './Solutions'
+import Services from './Services'
 import CooperationProcess from './CooperationProcess'
 import Technology from './Technology'
+import Founder from './Founder'
 import ContactUs from '../contactUs/ContactUs'
 
 export default class Home extends Component {
@@ -12,9 +13,10 @@ export default class Home extends Component {
       <main>
         <Cover />
         <Problems />
-        <Solutions />
+        <Services />
         <CooperationProcess />
         <Technology />
+        <Founder />
         <ContactUs />
       </main>
     )

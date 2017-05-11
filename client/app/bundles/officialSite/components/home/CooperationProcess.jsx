@@ -11,7 +11,7 @@ const CooperationProcess = () => {
 
       <ul className="cooperation-process-content">
         {
-          steps.map((text, index)=>(
+          steps.map((text, index) => (
             <li key={ index }>
               <span className="point" />
               {

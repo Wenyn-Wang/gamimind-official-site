@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router'
 import Drawer from 'material-ui/Drawer'
-import { HOME, SERVICE, BLOG } from '../../constants/url'
+import { HOME, SERVICE, BLOG, HASH } from '../../constants/url'
 import cx from 'classnames'
+import { Link as ScrollLink, scroller } from 'react-scroll'
 
 const logo_white = require('images/home/header/logo-gamemind-white.svg')
 const logo_blue = require('images/home/header/logo-gamemind-blue.svg')
+const menu_logo = require('images/home/header/menu-logo.png')
 
 class Header extends Component {
   constructor(prop){
@@ -26,6 +29,16 @@ class Header extends Component {
 
   componentDidMount () {
     window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.location.pathname !== this.props.location.pathname ) {
+      if (prevProps.location.hash !== this.props.location.hash ) {
+        scroller.scrollTo(this.props.location.hash.replace('#', ''), { smooth: true })
+      } else {
+        window.scrollTo(0, 0)
+      }
+    }
   }
 
   componentWillUnmount () {
@@ -63,16 +76,69 @@ class Header extends Component {
   }
 
   closeHamburger = () => {
-    if (this.state.hamburger_open)
+    if (this.state.hamburger_open) {
       this.setState({ hamburger_open: false })
+    }
   }
 
   renderNavLink() {
+    const is_home_page = (this.props.location.pathname == HOME)
+    const { SERVICES, TECHNOLOGY, CONTACT_US } = HASH
+    const common_attr = {
+      className : 'nav-link',
+      onClick   : this.closeHamburger,
+    }
+    const links = [{
+      name            : '服務',
+      to              : HOME + '#' + SERVICES,
+      scroll_link     : SERVICES,
+    }, {
+      name            : '技術',
+      to              : HOME + '#' + TECHNOLOGY,
+      scroll_link     : TECHNOLOGY,
+    }, {
+      name            : '部落格',
+      to              : BLOG,
+    }, {
+      name            : '合作洽談',
+      to              : HOME + '#' + CONTACT_US,
+      scroll_link     : CONTACT_US,
+      customize_attr  : { 
+        className   : 'btn',
+      },
+    }]
+
     return (
       <div className="nav-container">
-        <Link to={ SERVICE } className="nav-link">服務</Link>
-        <Link to={ HOME } className="nav-link">技術</Link>
-        <Link to={ BLOG } className="nav-link">部落格</Link>
+        {
+          links.map((link, index) => {
+            if(is_home_page && link.scroll_link) {
+              return (
+                <ScrollLink
+                  { ...common_attr }
+                  { ...link.customize_attr }
+                  smooth
+                  to        = { link.scroll_link } 
+                  duration  = { 500 }
+                  key       = { index }
+                >
+                  { link.name }
+                </ScrollLink>
+              )
+            } else {
+              return (
+                <Link 
+                  { ...common_attr }
+                  { ...link.customize_attr }
+                  key = { index }
+                  to  = { link.to }
+                >
+                  { link.name }
+                </Link>
+              )
+            }
+          })
+        }
       </div>
     )
   }
@@ -104,17 +170,18 @@ class Header extends Component {
 
         <nav>
           { this.renderNavLink() }
-          <Link to={ HOME } className={ contact_us_class }>合作洽談</Link>
         </nav>
 
         <Drawer
-          openSecondary
           docked          = { false }
           width           = { 200 }
           open            = { this.state.hamburger_open }
           onRequestChange = { (hamburger_open) => this.setState({ hamburger_open }) }
         >
           <div className="material-drawer">
+            <Link to={ HOME }>
+              <img className="menu-logo" src={ menu_logo } onClick={ this.closeHamburger } />
+            </Link>
             { this.renderNavLink() }
           </div>
         </Drawer>
@@ -123,4 +190,9 @@ class Header extends Component {
   }
 }
 
-export default Header
+
+Header.propTypes = {
+  location : PropTypes.object.isRequired,
+}
+
+export default withRouter(Header)
