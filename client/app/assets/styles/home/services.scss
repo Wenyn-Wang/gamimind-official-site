@@ -1,8 +1,8 @@
 main {
-  section#solutions {
+  section#services {
     background: $lighter-blue;
    
-    .solutions-container {
+    .services-container {
       margin: auto;
       width: 90%;
       display: flex;
@@ -59,7 +59,7 @@ main {
         &:nth-child(1) {
           .card-img {
             .big-img {
-              background-image: url('~images/home/solutions/mobile.png');
+              background-image: url('~images/home/services/mobile.png');
               width: 120px;
               height: 120px;
               transform: translateX(-10px);
@@ -75,7 +75,7 @@ main {
             transform: translateX(-50%);
 
              &::before {
-              background-image: url('~images/home/solutions/mobile-icon1.png');
+              background-image: url('~images/home/services/mobile-icon1.png');
               width: 29px;
               height: 28px;
               left: 15px;
@@ -83,7 +83,7 @@ main {
             }
 
              &::after {
-              background-image: url('~images/home/solutions/mobile-icon2.png');
+              background-image: url('~images/home/services/mobile-icon2.png');
               width: 29px;
               height: 28px;
               left: 20px;
@@ -106,7 +106,7 @@ main {
         // 企業自媒體經營方案
         &:nth-child(2) {
           .card-img .big-img {
-            background-image: url('~images/home/solutions/pc.png');
+            background-image: url('~images/home/services/pc.png');
             width: 201px;
             height: 115px;
           }
@@ -121,7 +121,7 @@ main {
             transform: translateX(-50%);
 
              &::before {
-              background-image: url('~images/home/solutions/pc_view.png');
+              background-image: url('~images/home/services/pc_view.png');
               width: 95px;
               height: 39px;
               left: 7px;
@@ -144,7 +144,7 @@ main {
         // 客戶關係管理方案
         &:nth-child(3) {
           .card-img .big-img {
-            background-image: url('~images/home/solutions/crm.png');
+            background-image: url('~images/home/services/crm.png');
             width: 129px;
             height: 115px;
           }
@@ -158,7 +158,7 @@ main {
             transform: translateX(-50%);
 
              &::before {
-              background-image: url('~images/home/solutions/crm-light-bulb.png');
+              background-image: url('~images/home/services/crm-light-bulb.png');
               width: 29px;
               height: 67px;
               right: 0px;
@@ -205,7 +205,7 @@ main {
     }
 
     @media (max-width: $pad) {
-      .solutions-container {
+      .services-container {
         display: block;
         
         li {
