@@ -10,7 +10,7 @@ main section#technology {
       border-radius: 50%;
       background: $curious-blue;
       text-align: center;
-      color: white;
+      color: $white;
       line-height: 120px;
       transition: all .3s;
 
@@ -108,6 +108,7 @@ main section#technology {
           width: 85%;
           margin: 20px auto 40px;
           line-height: 22px;
+          max-width: 400px;
         }
       }
     }

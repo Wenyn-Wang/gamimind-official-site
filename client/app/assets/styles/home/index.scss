@@ -4,6 +4,7 @@
 @import '../common/fontWeight.scss';
 @import '../common/device.scss';
 @import '../common/header.scss';
+@import '../common/footer.scss';
 @import '../common/animations.scss';
 @import '../common/mixin.scss';
 
@@ -14,6 +15,8 @@
 @import './cooperation-process.scss';
 @import './fonder.scss';
 @import './contact-us.scss';
+
+@import '../blog/blog.scss';
 
 html, body , div[id^="Home-react-component"] {
   height: 100%;
