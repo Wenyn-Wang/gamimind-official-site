@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router'
 import Drawer from 'material-ui/Drawer'
-import { HOME, SERVICE, BLOG } from '../../constants/url'
+import { HOME, SERVICE, BLOG, HASH } from '../../constants/url'
 import cx from 'classnames'
+import { Link as ScrollLink, scroller } from 'react-scroll'
 
 const logo_white = require('images/home/header/logo-gamemind-white.svg')
 const logo_blue = require('images/home/header/logo-gamemind-blue.svg')
 const menu_logo = require('images/home/header/menu-logo.png')
+const srocll_duration = 500
 
 class Header extends Component {
   constructor(prop){
@@ -27,6 +30,16 @@ class Header extends Component {
 
   componentDidMount () {
     window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.location.pathname !== this.props.location.pathname ) {
+      if (prevProps.location.hash !== this.props.location.hash ) {
+        scroller.scrollTo(this.props.location.hash.replace('#', ''), { smooth: true })
+      } else {
+        window.scrollTo(0, 0)
+      }
+    }
   }
 
   componentWillUnmount () {
@@ -70,10 +83,25 @@ class Header extends Component {
   }
 
   renderNavLink() {
+    const is_home_page = (this.props.location.pathname == HOME)
+    const { SERVICES, TECHNOLOGY } = HASH
+    const scroll_link_attr = {
+      duration  : srocll_duration,
+      smooth    : true,
+      className : 'nav-link',
+    }
+
     return (
       <div className="nav-container">
-        <Link to={ SERVICE } className="nav-link">服務</Link>
-        <Link to={ HOME } className="nav-link">技術</Link>
+        {
+          is_home_page ? [
+            <ScrollLink  to={ SERVICES } { ...scroll_link_attr } key="1" >服務</ScrollLink>,
+            <ScrollLink  to={ TECHNOLOGY } { ...scroll_link_attr } key="2">技術</ScrollLink>,
+          ] : [
+            <Link to={ HOME + '#' + SERVICES } className="nav-link" key="11">服務</Link>,
+            <Link to={ HOME + '#' + TECHNOLOGY } className="nav-link" key="12">技術</Link>,
+          ]
+        }
         <Link to={ BLOG } className="nav-link">部落格</Link>
       </div>
     )
@@ -125,4 +153,9 @@ class Header extends Component {
   }
 }
 
-export default Header
+
+Header.propTypes = {
+  location : PropTypes.object.isRequired,
+}
+
+export default withRouter(Header)
