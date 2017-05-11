@@ -4,12 +4,15 @@
 @import '../common/fontWeight.scss';
 @import '../common/device.scss';
 @import '../common/header.scss';
+@import '../common/footer.scss';
 @import '../common/animations.scss';
 @import '../common/mixin.scss';
 
 @import './cover.scss';
 @import './problems.scss';
 @import './solutions.scss';
+@import './technology.scss';
+@import './cooperation-process.scss';
 @import './contact-us.scss';
 
 @import '../blog/blog.scss';
@@ -28,10 +31,6 @@ main {
 
   section {
     padding: 50px 0px;
-
-    &.blue-bottom{
-      border-bottom: 20px solid $sail;
-    }
 
     .section-title {
       text-align: center;

@@ -5,6 +5,7 @@ import {
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Header from '../components/common/Header'
+import Footer from '../components/common/Footer'
 import Home from '../components/home/Home'
 import Service from '../components/service/Service'
 import Blog from '../components/blog/Blog'
@@ -14,7 +15,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import muiTheme from '../constants/materialUITheme/HomePageTheme'
 
 injectTapEventPlugin()
- class HomeApp extends Component {
+class HomeApp extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={ muiTheme }>
@@ -27,6 +28,7 @@ injectTapEventPlugin()
               <Route path={ BLOG } component={ Blog } />
               <Redirect to={ HOME } />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </MuiThemeProvider>

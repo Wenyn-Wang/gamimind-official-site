@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Cover extends Component {
   render() {
     return (
-      <section id="cover" className="blue-bottom">
+      <section id="cover">
         <div className="cover-left">
           <div className="center">
             <h1>人工智慧，為你解析數據下的商機</h1>
