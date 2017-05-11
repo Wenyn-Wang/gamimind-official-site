@@ -31,6 +31,7 @@ main {
         box-sizing: border-box;
         background: white;
         position: relative;
+        cursor: pointer;
 
         .card-img {
           height: 120px;
@@ -92,7 +93,7 @@ main {
           }
 
           &:hover .icon-container {
-              @include slideUpAnimation;
+            @include slideUpAnimation;
           }
 
           @media (max-width: $pad) {
@@ -181,25 +182,20 @@ main {
           text-align: center;
         }
 
-        p {
+        .content {
           line-height: 27px;
           margin-bottom: 30px;
         }
 
-        a {
+        .read-more {
           width: 105px;
           margin: auto;
           display: block;
           color: $primary;
-          transition: all .3s;
           position: absolute;
           bottom: 20px;
           left: 0;
           right: 0;
-
-          &:hover {
-            color: lighten($primary, 10%);
-          }
 
           svg {
             vertical-align: top;
