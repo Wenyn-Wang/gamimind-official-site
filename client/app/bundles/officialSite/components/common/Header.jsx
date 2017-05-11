@@ -7,6 +7,7 @@ import cx from 'classnames'
 
 const logo_white = require('images/home/header/logo-gamemind-white.svg')
 const logo_blue = require('images/home/header/logo-gamemind-blue.svg')
+const menu_logo = require('images/home/header/menu-logo.png')
 
 class Header extends Component {
   constructor(prop){
@@ -63,8 +64,9 @@ class Header extends Component {
   }
 
   closeHamburger = () => {
-    if (this.state.hamburger_open)
+    if (this.state.hamburger_open) {
       this.setState({ hamburger_open: false })
+    }
   }
 
   renderNavLink() {
@@ -114,6 +116,7 @@ class Header extends Component {
           onRequestChange = { (hamburger_open) => this.setState({ hamburger_open }) }
         >
           <div className="material-drawer">
+            <img className="menu-logo" src={ menu_logo } onClick={ this.closeHamburger } />
             { this.renderNavLink() }
           </div>
         </Drawer>
