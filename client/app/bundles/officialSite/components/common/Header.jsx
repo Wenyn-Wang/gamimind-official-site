@@ -89,21 +89,21 @@ class Header extends Component {
       onClick   : this.closeHamburger,
     }
     const links = [{
-      name          : '服務',
-      to            : HOME + '#' + SERVICES,
-      scroll_link   : SERVICES,
+      name            : '服務',
+      to              : HOME + '#' + SERVICES,
+      scroll_link     : SERVICES,
     }, {
-      name          : '技術',
-      to            : HOME + '#' + TECHNOLOGY,
-      scroll_link   : TECHNOLOGY,
+      name            : '技術',
+      to              : HOME + '#' + TECHNOLOGY,
+      scroll_link     : TECHNOLOGY,
     }, {
-      name          : '部落格',
-      to            : BLOG,
+      name            : '部落格',
+      to              : BLOG,
     }, {
-      name          : '合作洽談',
-      to            : HOME + '#' + CONTACT_US,
-      scroll_link   : CONTACT_US,
-      overlay_attr  : { 
+      name            : '合作洽談',
+      to              : HOME + '#' + CONTACT_US,
+      scroll_link     : CONTACT_US,
+      customize_attr  : { 
         className   : 'btn',
       },
     }]
@@ -116,11 +116,11 @@ class Header extends Component {
               return (
                 <ScrollLink
                   { ...common_attr }
+                  { ...link.customize_attr }
                   smooth
                   to        = { link.scroll_link } 
                   duration  = { 500 }
                   key       = { index }
-                  { ...link.overlay_attr }
                 >
                   { link.name }
                 </ScrollLink>
@@ -129,9 +129,9 @@ class Header extends Component {
               return (
                 <Link 
                   { ...common_attr }
+                  { ...link.customize_attr }
                   key = { index }
                   to  = { link.to }
-                  { ...link.overlay_attr }
                 >
                   { link.name }
                 </Link>
