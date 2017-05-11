@@ -37,7 +37,6 @@ $header-height: 60px;
           }
         }
 
-
         .btn {
           @extend .secondary;
           background: transparent;;
@@ -129,7 +128,7 @@ $header-height: 60px;
     }
 
     .nav-container {
-      a {
+      .nav-link {
         border-bottom: 1px solid $darker-gray;
         display: block;
         font-size: 16px;
@@ -148,6 +147,10 @@ $header-height: 60px;
           border-style: solid;
         }
       }
+
+      .btn {
+        display: none;
+      }
     }
   }
 
@@ -164,7 +167,7 @@ $header-height: 60px;
     nav {
       padding-right: 10px;
       
-      .nav-container {
+      .nav-container .nav-link{
         display: none;
       }
     }
