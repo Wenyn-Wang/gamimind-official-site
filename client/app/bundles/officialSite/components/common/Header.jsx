@@ -108,7 +108,6 @@ class Header extends Component {
         </nav>
 
         <Drawer
-          openSecondary
           docked          = { false }
           width           = { 200 }
           open            = { this.state.hamburger_open }
