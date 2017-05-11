@@ -208,10 +208,15 @@ main {
       }
     }
 
-
     @media (max-width: $pad) {
       .solutions-container {
         display: block;
+        
+        li {
+          width: 100%;
+          max-width: 500px;
+          margin: 10px auto;
+        }
       }
     }
   }

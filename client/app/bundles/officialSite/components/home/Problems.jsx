@@ -10,9 +10,9 @@ const radar_icon4 = require('images/home/problems/radar-icon-4.png')
 const radar_icon5 = require('images/home/problems/radar-icon-5.png')
 const radar_icon6 = require('images/home/problems/radar-icon-6.png')
 const problems = [
-  {img: problem_img1, text: "總是抓不住用戶的心，花大錢買廣告卻看不到業績起飛？"},
-  {img: problem_img2, text: "經營 Facebook/Line 社群許久，卻苦於無法將粉絲轉為忠實顧客？"},
-  {img: problem_img3, text: "有百萬粉絲，卻全是殭屍，想成為客戶肚子裡的蛔蟲，卻永遠只能當旁邊的蒼蠅？"},
+  { img: problem_img1, text: '總是抓不住用戶的心，花大錢買廣告卻看不到業績起飛？' },
+  { img: problem_img2, text: '經營 Facebook/Line 社群許久，卻苦於無法將粉絲轉為忠實顧客？' },
+  { img: problem_img3, text: '有百萬粉絲，卻全是殭屍，想成為客戶肚子裡的蛔蟲，卻永遠只能當旁邊的蒼蠅？' },
 ]
 
 const Problems = () => {
