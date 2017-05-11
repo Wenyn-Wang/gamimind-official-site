@@ -17,15 +17,15 @@ const card_list = [{
   link    : '/',
 }]
 
-const Solutions = () => {
+const Services = () => {
   return (
-    <section id="solutions">
-      <Element name="solutions" className="scroll-point"/>
+    <section id="services">
+      <Element name="services" className="scroll-point"/>
       <div className="section-title">
         <h1>為您量身打造解決方案</h1>
       </div>
 
-      <ul className="solutions-container">
+      <ul className="services-container">
         {
           card_list.map((card, index) => (
             <li key={ index }>
@@ -48,4 +48,4 @@ const Solutions = () => {
   )
 }
 
-export default Solutions
+export default Services
