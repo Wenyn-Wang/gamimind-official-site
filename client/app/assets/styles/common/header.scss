@@ -36,6 +36,12 @@ $header-height: 60px;
             color: darken($white, 10%);
           }
         }
+
+
+        .btn {
+          @extend .secondary;
+          background: transparent;;
+        }
       }
     }
   }
@@ -76,6 +82,10 @@ $header-height: 60px;
         &:hover {
           color: lighten($primary, 10%);
         }
+      }
+
+      .btn {
+        @extend .primary;
       }
     }
   }

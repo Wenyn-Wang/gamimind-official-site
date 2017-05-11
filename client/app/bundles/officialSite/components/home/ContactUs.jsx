@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import TextField from 'material-ui/TextField'
 import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-arrow-left'
+import { Element }  from'react-scroll'
+import { HASH } from '../../constants/url'
 
 const icon_style = {
   width: '100%',
@@ -29,7 +31,9 @@ class ContactUs extends Component {
     const { show_form } = this.state
 
     return (
-      <section id="contact-us">
+      <section id={ HASH.CONTACT_US }>
+        <Element name={ HASH.CONTACT_US } className="scroll-point"/>
+
         <div className="contact-us-center">
           {
             !show_form ?
