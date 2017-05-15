@@ -4,6 +4,7 @@ import HardwareKeyboardArrowLeft from 'material-ui/svg-icons/hardware/keyboard-a
 import TextField from 'material-ui/TextField'
 import keys from 'lodash/keys'
 import values from 'lodash/values'
+import findKey from 'lodash/findKey'
 import { createContact } from '../../apis/contactApis'
 
 const icon_style = {
@@ -88,7 +89,17 @@ class ContactForm extends Component {
   submitForm = () => {
     const { contact, error } = this.state
     if (values(error).indexOf(true) != -1) return
-    if (values(contact).indexOf("") != -1) return
+    const key = findKey(contact, (val) => { return val == "" })
+    if (key) {
+      this.setState({
+        ...this.state,
+        error : {
+          ...error,
+          [key] : true,
+        },
+      })
+      return
+    }
     createContact(contact).then(res => {
       this.props.goNext()
     })
