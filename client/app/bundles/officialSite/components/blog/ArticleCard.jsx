@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const ArticleCard = ({ title, slug, img, brief, date }) => {
   return (
-    <div className="article-card">
+    <li className="article-card">
       <div className="card-img" style={{ backgroundImage: `url(${img})` }} />
       <div className="card-info">
         <div className="date upper">{ date }</div>
@@ -12,7 +12,7 @@ const ArticleCard = ({ title, slug, img, brief, date }) => {
         <div className="reading">繼續閱讀</div>
         <div className="date downer">{ date }</div>
       </div>
-    </div>
+    </li>
   )
 }
 
