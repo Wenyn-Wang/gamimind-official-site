@@ -2,11 +2,13 @@ main#social-media {
   section#trouble {
     text-align: center;
     background: $lighter-blue;
+      position: relative;
 
-    .trouble-title {
+    .section-title {
       color: $curious-blue;
+      padding-bottom: 20px;
 
-      h2 {
+      h1 {
         display: inline-block;
 
         &::after {
@@ -21,9 +23,39 @@ main#social-media {
       }
     }
 
-    p {
-      color: $darker-gray;
-      line-height: 45px;
+    .trouble-text {
+      position: relative;
+      z-index: 2;
+      max-width: 85%;
+      margin: auto;
+
+      p {
+        color: $darker-gray;
+        margin: 25px 0px;
+      }
+    }
+
+    &::after, &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      background: url('~images/service/socialMedia/trouble/cloud-left.png') no-repeat;
+      width: 240px;
+      height: 172px;
+      left: 0;
+    }
+
+    &::after {
+      background: url('~images/service/socialMedia/trouble/cloud-right.png') no-repeat;
+      width: 154px;
+      height: 206px;
+      right: 0;
     }
   }
 }
