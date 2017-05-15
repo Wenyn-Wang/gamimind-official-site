@@ -1,7 +1,20 @@
 main#social-media {
   section#solutions {
-    .solutions-title {
-      
+    padding: 0;
+
+    .section-title {
+      height: 100px;
+      line-height: 100px;
+      padding: 0;
+
+      h1 {
+        margin: 0;
+        padding: 0;
+
+        &::after {
+          transform: translateY(-23px);
+        }
+      }
     }
   }
 }
