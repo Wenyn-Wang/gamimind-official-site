@@ -9,15 +9,8 @@ main#social-media {
       padding-bottom: 20px;
 
       h1 {
-        display: inline-block;
-
         &::after {
-          content: '';
-          width: 85%;
-          height: 2px;
           background: $curious-blue;
-          display: block;
-          margin: auto;
           transform: translateY(5px);
         }
       }
