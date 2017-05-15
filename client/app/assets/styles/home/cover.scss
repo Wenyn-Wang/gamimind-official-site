@@ -6,6 +6,7 @@ main {
     background-size: cover;
     display: flex;
     position: relative;
+    box-sizing: border-box;
 
     .cover-left {
       flex: 1;
