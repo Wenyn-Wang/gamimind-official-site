@@ -4,7 +4,7 @@ module Api
 
     def index
       posts = Post.published.last(POSTS_PER_PAGE)
-      ok(posts)
+      ok(posts.as_json)
     end
 
     def show
