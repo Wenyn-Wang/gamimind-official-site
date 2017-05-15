@@ -57,5 +57,11 @@ main#social-media {
       height: 206px;
       right: 0;
     }
+
+    @media (max-width: $pad) {
+      &::after, &::before {
+        display: none;
+      }
+    }
   }
 }
