@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+import { Element }  from'react-scroll'
+import { HASH } from '../../constants/url'
 import HardwareKeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 
 const card_list = [{
@@ -16,34 +19,35 @@ const card_list = [{
   link    : '/',
 }]
 
-const Solutions = () => {
+const Services = withRouter(({ history }) => {
   return (
-    <section id="solutions">
+    <section id={ HASH.SERVICES }>
+      <Element name={ HASH.SERVICES } className="scroll-point"/>
       <div className="section-title">
         <h1>為您量身打造解決方案</h1>
       </div>
 
-      <ul className="solutions-container">
+      <ul className="services-container">
         {
           card_list.map((card, index) => (
-            <li key={ index }>
+            <li key={ index } onClick={ () => history.push(card.link) }>
               <div className="card-img">
                 <div className="icon-container" />
                 <div className="big-img" />
               </div>
 
               <h3>{ card.title }</h3>
-              <p>{ card.content }</p>
-              <Link to={ card.link }>
+              <p className="content">{ card.content }</p>
+              <p className="read-more">
                 <span>暸解更多</span>
                 <HardwareKeyboardArrowRight />
-              </Link>
+              </p>
             </li>
           ))
         }
       </ul>
     </section>
   )
-}
+})
 
-export default Solutions
+export default Services
