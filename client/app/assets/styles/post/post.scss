@@ -1,8 +1,12 @@
 @import './socialShare.scss';
 
 main#post {
-  margin-top: 60px;
-
+  .banner {
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+  }
   article {
     max-width: 768px;
     width: 100%;
