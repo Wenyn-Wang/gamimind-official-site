@@ -5,7 +5,7 @@ import Services from './Services'
 import CooperationProcess from './CooperationProcess'
 import Technology from './Technology'
 import Founder from './Founder'
-import ContactUs from './ContactUs'
+import ContactUs from '../contactUs/ContactUs'
 
 export default class Home extends Component {
   render() {
