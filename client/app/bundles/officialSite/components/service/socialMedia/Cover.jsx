@@ -11,6 +11,8 @@ const Cover = () => {
       </div>
 
       <div className="cover-right">
+        <span className="fb-logo" />
+        <span className="line-logo" />
       </div>
     </section>
   )
