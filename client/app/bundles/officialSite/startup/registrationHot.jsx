@@ -14,15 +14,12 @@ consoleErrorReporter.propTypes = {
 }
 
 const HomeHotLoader = (props, railsContext, domNodeId) => {
-  const renderApp = (Component) => {
-    const element = (
-      <AppContainer errorReporter={ consoleErrorReporter }>
-        <Component { ...props } { ...railsContext } />
-      </AppContainer>
-    )
-    render(element, document.getElementById(domNodeId))
-  }
-  renderApp(HomeApp)
+  const element = (
+    <AppContainer errorReporter={ consoleErrorReporter }>
+      <HomeApp { ...props } { ...railsContext } />
+    </AppContainer>
+  )
+  render(element, document.getElementById(domNodeId))
 }
 
 ReactOnRails.register({

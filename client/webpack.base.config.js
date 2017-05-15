@@ -2,8 +2,8 @@
  {"functions": "never", "arrays": "only-multiline", "objects":
  "only-multiline"} ] */
 
-const webpack = require('webpack')
 const pathLib = require('path')
+const { HMR_PORT } = process.env
 
 const config = {
   entry     : [
@@ -14,6 +14,7 @@ const config = {
   output    : {
     filename    : 'bundle.js',
     path        : pathLib.resolve(__dirname, '../app/assets/javascripts/webpack/'),
+    publicPath  : `http://localhost:${HMR_PORT}/`,
   },
   resolve   : {
     modules     : [__dirname, 'node_modules'],
