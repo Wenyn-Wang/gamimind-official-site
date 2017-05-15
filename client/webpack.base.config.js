@@ -12,7 +12,7 @@ const config = {
     'babel-polyfill',
   ],
   output    : {
-    filename    : 'webpack-bundle.js',
+    filename    : 'bundle.js',
     path        : pathLib.resolve(__dirname, '../app/assets/javascripts/webpack/'),
     publicPath  : `http://localhost:${HMR_PORT}/`,
   },

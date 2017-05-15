@@ -1,0 +1,2 @@
+rails: REACT_ON_RAILS_ENV= rails s -b 0.0.0.0 -p 3000
+client: sh -c 'rm app/assets/javascripts/webpack/* || true && cd client && bundle exec rake react_on_rails:locale && yarn run build:production'
