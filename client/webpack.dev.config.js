@@ -3,7 +3,6 @@
  "only-multiline"} ] */
 
 const webpack = require('webpack')
-const pathLib = require('path')
 const config = require('./webpack.base.config.js')
 
 config.entry.push(

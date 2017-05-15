@@ -16,6 +16,10 @@ config.entry.push(
 
 config.devtool = 'eval-source-map'
 config.devServer = {
+  headers   : {
+    "Access-Control-Allow-Origin": "http://localhost:3000",
+    "Access-Control-Allow-Methods": "GET",
+  },
   port: HMR_PORT,
   hot: true,
   stats: {
