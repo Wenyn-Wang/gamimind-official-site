@@ -1,4 +1,29 @@
 main#social-media {
   section#trouble {
+    text-align: center;
+    background: $lighter-blue;
+
+    .trouble-title {
+      color: $curious-blue;
+
+      h2 {
+        display: inline-block;
+
+        &::after {
+          content: '';
+          width: 85%;
+          height: 2px;
+          background: $curious-blue;
+          display: block;
+          margin: auto;
+          transform: translateY(5px);
+        }
+      }
+    }
+
+    p {
+      color: $darker-gray;
+      line-height: 45px;
+    }
   }
 }
