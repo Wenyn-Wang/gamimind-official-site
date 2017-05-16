@@ -1,4 +1,6 @@
 import React from 'react'
+import MediaQuery from 'react-responsive'
+import { PAD_WIDTH } from '../../../constants/deviceTypes'
 
 const solutions = [{
   title : '評估',
@@ -32,10 +34,17 @@ const Solutions = () => {
               <div className="solution-container">
                 <div className="solution-title">
                   <div className="circle" />
-                  <h2>{ solution.title }</h2>
+                  <MediaQuery minWidth={ PAD_WIDTH + 1 } component="h2">
+                    { solution.title }
+                  </MediaQuery>
                 </div>
 
-                <p className="solution-text">{ solution.text }</p>
+                <p className="solution-text">
+                  <MediaQuery maxWidth={ PAD_WIDTH } component="h2">
+                    { solution.title }
+                  </MediaQuery>
+                  <span>{ solution.text }</span>
+                </p>
 
                 <div className="solution-img">
                   <img src={ solution.img } />
