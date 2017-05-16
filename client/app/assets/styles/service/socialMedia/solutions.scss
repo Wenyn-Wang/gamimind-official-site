@@ -82,7 +82,6 @@ main#social-media {
           width: 100%;
           margin: auto;
           display: flex;
-          text-align: center;
           height: 100%;
           position: relative;
 
@@ -135,6 +134,10 @@ main#social-media {
               padding-bottom: 5px;
             }
           }
+
+          .solution-text {
+            line-height: 25px;
+          }
         }
       }
     }
@@ -175,7 +178,6 @@ main#social-media {
             flex-direction: column;
             align-items: baseline;
             padding: 20px;
-            text-align: left;
           }
         }
       }
