@@ -6,14 +6,15 @@ import React, { Component } from 'react'
 import Header from '../components/common/Header'
 import Footer from '../components/common/Footer'
 import Home from '../components/home/Home'
-import Service from '../components/service/Service'
+import SocialMedia from '../components/service/socialMedia/SocialMedia'
 import Blog from '../components/blog/Blog'
-import { HOME, SERVICE, BLOG } from '../constants/url'
+import { HOME, SERVICE_SOCIAL_MEDIA, BLOG } from '../constants/url'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import muiTheme from '../constants/materialUITheme/HomePageTheme'
 
 injectTapEventPlugin()
+
 class HomeApp extends Component {
   render() {
     return (
@@ -23,7 +24,7 @@ class HomeApp extends Component {
             <Header />
             <Switch>
               <Route exact path={ HOME } component={ Home } />
-              <Route path={ SERVICE } component={ Service } />
+              <Route path={ SERVICE_SOCIAL_MEDIA } component={ SocialMedia } />
               <Route path={ BLOG } component={ Blog } />
               <Redirect to={ HOME } />
             </Switch>

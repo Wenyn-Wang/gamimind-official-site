@@ -1,0 +1,29 @@
+main#social-media {
+  section#cover {
+    box-sizing: border-box;
+    
+    .cover-right {
+      position: relative;
+
+      & > * {
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .fb-logo {
+        background-image: url('~images/service/socialMedia/cover/fb-icon.png');
+        padding: 12%;
+        top: 30%;
+        right: 14%;
+      }
+
+      .line-logo {
+        background-image: url('~images/service/socialMedia/cover/line-icon.png');
+        padding: 9%;
+        top: 43%;
+        right: 50%;
+      }
+    }
+  }
+}
