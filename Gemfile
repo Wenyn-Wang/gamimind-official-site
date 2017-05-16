@@ -9,7 +9,7 @@ gem 'mysql2', '~> 0.4.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0'
 
-gem 'webpacker'
+gem 'webpacker', '~> 1.2'
 gem 'webpacker-react', "~> 0.2.0"
 
 # Use Puma as the app server
