@@ -1,0 +1,13 @@
+@import './common/normalize.scss';
+@import './common/color.scss';
+@import './common/fontWeight.scss';
+@import './common/device.scss';
+@import './common/mixin.scss';
+
+@import './common/button.scss';
+@import './common/header.scss';
+@import './common/footer.scss';
+@import './common/animations.scss';
+
+@import './home/index.scss';
+@import './blog/blog.scss';
