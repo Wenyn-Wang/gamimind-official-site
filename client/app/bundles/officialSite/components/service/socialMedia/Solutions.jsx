@@ -29,14 +29,17 @@ const Solutions = () => {
         {
           solutions.map((solution, index) => (
             <li key={ index }>
-              <div className="solution-title">
-                <h2>{ solution.title }</h2>
-              </div>
+              <div className="solution-container">
+                <div className="solution-title">
+                  <div className="circle" />
+                  <h2>{ solution.title }</h2>
+                </div>
 
-              <p className="solution-text">{ solution.text }</p>
+                <p className="solution-text">{ solution.text }</p>
 
-              <div className="solution-img">
-                <img src={ solution.img } />
+                <div className="solution-img">
+                  <img src={ solution.img } />
+                </div>
               </div>
             </li>
           ))

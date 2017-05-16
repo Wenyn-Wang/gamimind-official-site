@@ -24,44 +24,6 @@ main#social-media {
 
       li {
         height: 500px;
-        display: flex;
-        text-align: center;
-
-        & > * {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex: 1;
-        }
-
-        .solution-title {
-          flex-direction: column;
-
-          &::before {
-            content: counter(solution-counter);
-            counter-increment: solution-counter;
-            display: block;
-            height: 200px;
-            width: 200px;
-            font-size: 100px;
-            font-weight: $medium;
-            text-align: center;
-            line-height: 190px;
-            border-radius: 100px;
-            box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.3);
-          }
-
-          h2 {
-            border-bottom: 2px solid;
-            padding-bottom: 5px;
-          }
-        }
-
-        .solution-text {
-        }
-
-        .solution-img {
-        }
 
         @for $i from 1 through 4 {
           &:nth-child(#{$i}) {
@@ -71,21 +33,30 @@ main#social-media {
         }
 
         &:nth-child(odd) {
-          .solution-title {
-            &::before { 
+          .solution-container .solution-title {
+            .circle { 
               background: $darker-cerulean;
               color: $white;
+
+              &::after {
+                transform: rotate(32deg);
+              }
             }
           }
         }
 
         &:nth-child(even) {
-          .solution-title {
+          .solution-container .solution-title {
             order: 3;
 
-            &::before { 
+            .circle { 
               background: $white;
               color: $darker-cerulean;
+
+              &::after {
+                transform: rotate(148deg);
+                left: 0%;
+              }
             }
           }
 
@@ -95,6 +66,71 @@ main#social-media {
 
           .solution-img {
             order: 1;
+          }
+        }
+
+        &:last-child() { 
+          .solution-container .solution-title .circle::after{
+            display: none;
+          }
+        }
+
+        .solution-container {
+          max-width: $pad;
+          width: 100%;
+          margin: auto;
+          display: flex;
+          text-align: center;
+          height: 100%;
+
+          & > * {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+          }
+
+          .solution-title {
+            position: relative;
+            top: 20px;
+            flex-direction: column;
+            opacity: .99;
+
+            .circle {
+              height: 200px;
+              width: 200px;
+              border-radius: 100px;
+              box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.3);
+              position: relative;
+
+              &::before {
+                content: counter(solution-counter);
+                counter-increment: solution-counter;
+                display: block;
+                font-size: 100px;
+                font-weight: $medium;
+                text-align: center;
+                line-height: 190px;
+              }
+
+              &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: -1;
+                left: 100%;
+                top: 100%;
+                background: $white;
+                width: 570px;
+                height: 2px;
+                transform-origin: left;
+              }
+            }
+
+            h2 {
+              border-bottom: 2px solid;
+              padding-bottom: 5px;
+            }
           }
         }
       }
