@@ -28,6 +28,7 @@ gem 'webpacker-react', "~> 0.2.0"
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'listen', '~> 3.0.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug', platform: :mri
   gem 'foreman', '~> 0.84.0'
