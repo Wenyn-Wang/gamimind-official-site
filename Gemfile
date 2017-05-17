@@ -42,6 +42,8 @@ group :development do
   #gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+gem 'puma', '~> 3.8.2'
+
 gem "react_on_rails", "~> 6"
 
 gem 'mini_racer', platforms: :ruby
