@@ -6,11 +6,6 @@
     "node": "6.9.0",
     "npm": "4.1.1"
   },
-  "scripts": {
-    "build:development": "webpack -w --config ./config/webpack/development.js --color",
-    "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
-    "test": "rspec"
-  },
   "cacheDirectories": [
     "node_modules"
   ],
