@@ -7,7 +7,6 @@
     "npm": "4.1.1"
   },
   "scripts": {
-    "build:production": "NODE_ENV=production webpack --config ./config/webpack/production.js --color",
     "build:development": "webpack -w --config ./config/webpack/development.js --color",
     "rails-server": "echo 'visit http://localhost:3000/hello_world' && foreman start -f Procfile.dev",
     "test": "rspec"
