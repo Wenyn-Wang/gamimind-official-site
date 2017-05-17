@@ -1,5 +1,5 @@
 export const HOME = '/'
-export const SERVICE = '/service'
+export const SERVICE_SOCIAL_MEDIA = '/service/social-media'
 export const BLOG = '/blog'
 
 export const HASH = {
