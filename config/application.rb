@@ -13,5 +13,6 @@ module OffcialSite
     # -- all .rb files in that directory are automatically loaded.
 
     config.host = "https://www.gamiconsultant.com"
+    config.enable_s3 = Rails.env.production?
   end
 end
