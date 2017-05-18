@@ -26,7 +26,7 @@ const ArticleCard = ({ title, slug, thumbnail, brief, date, history }) => {
   )
 }
 
-ArticleCard.defaultProps = {
+ArticleCard.propTypes = {
   title     : PropTypes.string,
   slug      : PropTypes.string,
   thumbnail : PropTypes.string,
