@@ -8,7 +8,8 @@ import Footer from '../components/common/Footer'
 import Home from '../components/home/Home'
 import Service from '../components/service/Service'
 import Blog from '../components/blog/Blog'
-import { HOME, SERVICE, BLOG } from '../constants/url'
+import Post from '../components/post/Post'
+import { HOME, SERVICE, BLOG, POST } from '../constants/url'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import muiTheme from '../constants/materialUITheme/HomePageTheme'
@@ -25,6 +26,7 @@ export default class App extends Component {
               <Route exact path={ HOME } component={ Home } />
               <Route path={ SERVICE } component={ Service } />
               <Route path={ BLOG } component={ Blog } />
+              <Route path={ `${POST}/:slug` } component={ Post } />
               <Redirect to={ HOME } />
             </Switch>
             <Footer />
