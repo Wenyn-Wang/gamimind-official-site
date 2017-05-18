@@ -1,8 +1,7 @@
 import {
   BrowserRouter as Router,
-  Route, Link, Redirect, Switch,
+  Route, Redirect, Switch,
 } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Header from '../components/common/Header'
 import Footer from '../components/common/Footer'
@@ -16,7 +15,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 import muiTheme from '../constants/materialUITheme/HomePageTheme'
 
 injectTapEventPlugin()
-class HomeApp extends Component {
+export default class App extends Component {
   render() {
     return (
       <MuiThemeProvider muiTheme={ muiTheme }>
@@ -37,5 +36,3 @@ class HomeApp extends Component {
     )
   }
 }
-
-export default HomeApp
