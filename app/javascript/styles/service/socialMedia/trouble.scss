@@ -2,7 +2,7 @@ main#social-media {
   section#trouble {
     text-align: center;
     background: $lighter-blue;
-      position: relative;
+    position: relative;
 
     .section-title {
       color: $curious-blue;
@@ -53,6 +53,7 @@ main#social-media {
 
     @media (max-width: $pad) {
       &::after, &::before {
+        background: none;
         display: none;
       }
     }
