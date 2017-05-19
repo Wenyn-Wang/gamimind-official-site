@@ -6,8 +6,44 @@ main#social-media {
       width: 80%;
       margin: auto;
 
+      .kinds {
+        display: flex;
+        
+        li {
+          flex: 1;
+          text-align: center;
+
+          h2 {
+            font-size: 20px;
+          }
+
+          h5 {
+            font-size: 16px;
+            color: $gray;
+          }
+
+          p {
+            font-size: 16px;
+            color: $primary;
+            margin-top: 130px;
+            box-sizing: border-box;
+            padding: 0px 30px;
+            line-height: 25px;
+            opacity: 0;
+            transition: all .3s;
+          }
+
+          &.active {
+            p {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
       .slide-bar-container {
         position: absolute;
+        top: 130px;
       }
     }
   }
