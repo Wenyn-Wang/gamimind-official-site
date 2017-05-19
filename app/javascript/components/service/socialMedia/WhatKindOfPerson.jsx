@@ -24,6 +24,10 @@ class WhatKindOfPerson extends Component {
     }
   }
 
+  handleSlideBarChange = (index) => {
+    this.setState({ current_index : index })
+  }
+
   render() {
     const { current_index } = this.state
 
@@ -49,7 +53,7 @@ class WhatKindOfPerson extends Component {
             }
           </ul>
 
-          <SlideBar points={ kinds.length } />
+          <SlideBar points={ kinds.length } onChange={ this.handleSlideBarChange } />
         </div>
       </section>
     )

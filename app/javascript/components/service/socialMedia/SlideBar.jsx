@@ -46,11 +46,14 @@ class SlideBar extends Component {
   
 
    handleDrag = (e, ui) => {
-    const { x, y } = this.state
+    const { x, y, grid, padding } = this.state
+    const nex_x = toFixed(x + ui.deltaX)
+    const index = toFixed((nex_x - padding) / grid)
 
     this.setState({
-      x: toFixed(x + ui.deltaX),
+      x: nex_x,
     })
+    this.props.onChange(index)
   }
 
   render() {
@@ -87,7 +90,12 @@ class SlideBar extends Component {
 }
 
 SlideBar.propTypes = {
-  points : PropTypes.number.isRequired,
+  points    : PropTypes.number.isRequired,
+  onChange  : PropTypes.func,
+}
+
+SlideBar.defaultProps = {
+  onChange : () => {},
 }
 
 export default SlideBar
