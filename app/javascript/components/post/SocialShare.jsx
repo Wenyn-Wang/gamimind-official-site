@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const host = "http://localhost:3000"
+const { HOST } = process.env
 
 const SocialShare = ({ slug }) => {
-  const url = `${host}/post/${slug}`
+  const url = `${HOST}/post/${slug}`
   return (
     <div className="shares">
       <div className="share fb">
