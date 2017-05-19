@@ -14,10 +14,10 @@ const ExpectedResult = () => {
 
       <div className="expected-result-content">
 
-        <MediaQuery minWidth={ PAD_WIDTH }>
+        <MediaQuery minWidth={ PAD_WIDTH + 1}>
           <img src={ arrow_target } />
         </MediaQuery>
-        <MediaQuery maxWidth={ PAD_WIDTH + 1 }>
+        <MediaQuery maxWidth={ PAD_WIDTH }>
           <img src={ arrow_target_m } />
         </MediaQuery>
         
