@@ -1,10 +1,16 @@
 import React from 'react'
-import Cover from './Cover'
+import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from './Solutions'
 import ExpectedResult from './ExpectedResult'
 
 const SocialMedia = () => {
+  const cover_decorations = (
+    <div className="cover-right">
+      <span className="fb-logo" />
+      <span className="line-logo" />
+    </div>
+  )
   const trouble_text = (
     <div>
       <p>你了解你的社群用戶嗎？</p>
@@ -14,7 +20,11 @@ const SocialMedia = () => {
   )
   return (
     <main id="social-media">
-      <Cover />
+      <Cover
+        title="Line／Facebook 行銷方案"
+        desc="把沈睡的用戶，一次叫醒！變身為忠誠的品牌VIP"
+        decorations={ cover_decorations }
+      />
       <Trouble text={ trouble_text } />
       <Solutions />
       <ExpectedResult />
