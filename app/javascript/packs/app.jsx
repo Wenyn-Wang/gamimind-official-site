@@ -9,7 +9,7 @@ import Home from '../components/home/Home'
 import SocialMedia from '../components/service/socialMedia/SocialMedia'
 import Blog from '../components/blog/Blog'
 import Post from '../components/post/Post'
-import { HOME, SERVICE_SOCIAL_MEDIA, BLOG, POST } from '../constants/url'
+import { HOME, SERVICES, BLOG, POST } from '../constants/url'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import muiTheme from '../constants/materialUITheme/HomePageTheme'
@@ -24,7 +24,7 @@ export default class App extends Component {
             <Header />
             <Switch>
               <Route exact path={ HOME } component={ Home } />
-              <Route path={ SERVICE_SOCIAL_MEDIA } component={ SocialMedia } />
+              <Route path={ SERVICES.SOCIAL_MEDIA } component={ SocialMedia } />
               <Route path={ BLOG } component={ Blog } />
               <Route path={ `${POST}/:slug` } component={ Post } />
               <Redirect to={ HOME } />
