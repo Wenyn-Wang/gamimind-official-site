@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SlideBar from './SlideBar'
 
 const kinds = [{
   title     : '社群起步',
@@ -47,6 +48,8 @@ class WhatKindOfPerson extends Component {
               ))
             }
           </ul>
+
+          <SlideBar points={ kinds.length } />
         </div>
       </section>
     )
