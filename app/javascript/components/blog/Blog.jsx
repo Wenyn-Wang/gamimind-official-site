@@ -12,6 +12,7 @@ export default class Blog extends Component {
       this.setState({ articles })
     })
   }
+
   render() {
     const { articles } = this.state
     return (
@@ -19,10 +20,13 @@ export default class Blog extends Component {
         <h1 className="hidden-title">遊戲思維 - 部落格</h1>
         <div className="banner">
           <MediaQuery minWidth={ MOBILE_WIDTH + 1 }>
-            <img src={ require("images/blog/banner.png") } />
-          </MediaQuery>
-          <MediaQuery maxWidth={ MOBILE_WIDTH }>
-            <img src={ require("images/blog/banner-m.png") } />
+            {
+              (matches) => {
+                return matches ?
+                  <img src={ require("images/blog/banner.png") } /> :
+                  <img src={ require("images/blog/banner-m.png") } />
+              }
+            }
           </MediaQuery>
         </div>
         <ul className="articles">
