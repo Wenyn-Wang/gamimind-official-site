@@ -31,6 +31,12 @@ $scale-height: 38px;
     top: $slide-bar-height;
     height: $scale-height;
     width: 100%;
-    background: rgba(0, 0, 255, 0.09);
+
+    li {
+      height: 100%;
+      width: 2px;
+      background: $spindle;
+      position: absolute;
+    }
   }
 }
