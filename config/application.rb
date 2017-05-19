@@ -13,6 +13,5 @@ module OffcialSite
     # -- all .rb files in that directory are automatically loaded.
 
     config.host = Rails.env.production? ? "https://www.gamemind.org" : "http://localhost:3000"
-    config.enable_s3 = Rails.env.production?
   end
 end
