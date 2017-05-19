@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import SlideBar from './SlideBar'
+import MediaQuery from 'react-responsive'
+import { PAD_WIDTH } from '../../../constants/deviceTypes'
 
 const kinds = [{
   title     : '社群起步',
@@ -23,7 +25,7 @@ class WhatKindOfPerson extends Component {
       current_index : 0,
     }
   }
-
+  
   handleSlideBarChange = (index) => {
     this.setState({ current_index : index })
   }
@@ -43,7 +45,7 @@ class WhatKindOfPerson extends Component {
               kinds.map((kind, index) => (
                 <li
                   key       = { index }
-                  className = { ( current_index == index)? "active" : "" }
+                  className = { (current_index == index)? "active" : "" }
                 >
                   <h2>{ kind.title }</h2>
                   <h5>{ kind.subtitle }</h5>
@@ -53,7 +55,9 @@ class WhatKindOfPerson extends Component {
             }
           </ul>
 
-          <SlideBar points={ kinds.length } onChange={ this.handleSlideBarChange } />
+          <MediaQuery minWidth={ PAD_WIDTH + 1 }>
+            <SlideBar points={ kinds.length } onChange={ this.handleSlideBarChange } />
+          </MediaQuery>
         </div>
       </section>
     )

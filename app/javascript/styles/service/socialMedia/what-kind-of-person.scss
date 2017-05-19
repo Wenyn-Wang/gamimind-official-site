@@ -1,6 +1,5 @@
 main#social-media {
   section#what-kind-of-person {
-    
     .kinds-container {
       position: relative;
       width: 80%;
@@ -67,6 +66,44 @@ main#social-media {
       .slide-bar-container {
         position: absolute;
         top: 160px;
+      }
+
+      @media (max-width: $pad) {
+        width: 90%;
+
+        .kinds {
+          display: block;
+
+          li {
+            text-align: left;
+            margin: 80px auto 120px;
+
+            &::before { 
+              opacity: 1;
+              transform: translateY(20px);
+            }
+
+            h5 {
+              color: $font-black;
+              margin: 0 0 20px;
+            }
+
+            p {
+              opacity: 1;
+              margin: 0;
+              padding: 0;
+              color: $font-black;
+            }
+          }
+        }
+      }
+
+
+      @media (max-width: $mobile) {
+        .kinds li::before {
+          transform: scale(.7);
+          transform-origin: 50% 30%;
+        }
       }
     }
   }
