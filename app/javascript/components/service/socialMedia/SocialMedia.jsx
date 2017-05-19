@@ -2,6 +2,7 @@ import React from 'react'
 import Cover from './Cover'
 import Trouble from './Trouble'
 import Solutions from './Solutions'
+import ExpectedResult from './ExpectedResult'
 
 const SocialMedia = () => {
   return (
@@ -9,6 +10,7 @@ const SocialMedia = () => {
       <Cover />
       <Trouble />
       <Solutions />
+      <ExpectedResult />
     </main>
   )
 }
