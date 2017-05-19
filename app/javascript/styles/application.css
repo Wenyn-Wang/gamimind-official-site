@@ -1,16 +1,16 @@
-@import './common/normalize.scss';
-@import './common/color.scss';
-@import './common/fontWeight.scss';
-@import './common/device.scss';
-@import './common/mixin.scss';
+@import './common/normalize';
+@import './common/color';
+@import './common/fontWeight';
+@import './common/device';
+@import './common/mixin';
 
-@import './common/button.scss';
-@import './common/header.scss';
-@import './common/footer.scss';
-@import './common/animations.scss';
-@import './common/contact-us.scss';
+@import './common/button';
+@import './common/header';
+@import './common/footer';
+@import './common/animations';
+@import './common/contact-us';
 
-@import './home/index.scss';
-@import './blog/blog.scss';
-@import './post/post.scss';
-@import './service/service.scss';
+@import './home/index';
+@import './blog/blog';
+@import './post/post';
+@import './service/service';
