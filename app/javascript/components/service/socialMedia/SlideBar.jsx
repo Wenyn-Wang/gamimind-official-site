@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Draggable from 'react-draggable'
 
-
-  const toFixed = (number, fixed = 2) => {
-    return Number(number.toFixed(fixed))
-  }
+const toFixed = (number, fixed = 2) => Number(number.toFixed(fixed))
 
 class SlideBar extends Component {
   constructor(props) {
