@@ -8,7 +8,7 @@
 @import './common/header';
 @import './common/footer';
 @import './common/animations';
-@import './common/contact-us';
+@import './common/contactUs';
 
 @import './home/index';
 @import './blog/blog';
