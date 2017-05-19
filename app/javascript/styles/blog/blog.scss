@@ -25,6 +25,17 @@
           width: 40%;
           height: 100%;
         }
+        .card-info {
+          padding: 20px 2%;
+          width: 56%;
+        }
+        @media (max-width: $smaller-mobile) {
+          width: 94%;
+          margin: 10px auto;
+          .card-info {
+            width: auto;
+          }
+        }
       }
     }
     @media (max-width: $pad)    { width: 90%; }
