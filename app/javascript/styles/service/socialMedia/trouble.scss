@@ -60,6 +60,7 @@ main#social-media {
 
     @media (max-width: $pad) {
       &::after, &::before {
+        background: none;
         display: none;
       }
     }
