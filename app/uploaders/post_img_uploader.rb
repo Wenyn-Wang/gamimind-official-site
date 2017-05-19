@@ -19,8 +19,8 @@ class PostImgUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    enable_s3 = OffcialSite::Application.config.enable_s3
-    return "posts/imgs/#{model.id}" if enable_s3
+    # enable_s3 = OffcialSite::Application.config.enable_s3
+    # return "posts/imgs/#{model.id}" if enable_s3
     return "#{Rails.root}/public/uploads/posts/imgs/#{model.id}"
   end
 
