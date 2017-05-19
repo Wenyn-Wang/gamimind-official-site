@@ -3,13 +3,6 @@ import MediaQuery from 'react-responsive'
 import { PAD_WIDTH } from '../../constants/deviceTypes'
 
 const founders = [{
-  selfie        : require('images/home/founder/seanc.png'),
-  name_ch       : '陳識仁',
-  name_en       : 'Sean Chen',
-  title         : '執行董事暨資深顧問',
-  introduction  : '資深專業經理人、商業智慧',
-  link          : 'https://www.linkedin.com/in/sean-chen-08a7ba11/',
-}, {
   selfie        : require('images/home/founder/lichieh.png'),
   name_ch       : '楊立潔',
   name_en       : 'Lichieh Young',
@@ -30,6 +23,13 @@ const founders = [{
   title         : '執行董事暨共同創辦人',
   introduction  : '人工智慧、機器學習與產品策略',
   link          : 'http://linkedin.com/in/wenynwang',
+}, {
+  selfie        : require('images/home/founder/seanc.png'),
+  name_ch       : '陳識仁',
+  name_en       : 'Sean Chen',
+  title         : '執行董事暨資深顧問',
+  introduction  : '資深專業經理人、商業智慧',
+  link          : 'https://www.linkedin.com/in/sean-chen-08a7ba11/',
 }, {
   selfie        : require('images/home/founder/bryan.png'),
   name_ch       : '黃沛聲',
