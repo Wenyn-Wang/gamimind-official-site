@@ -3,7 +3,7 @@ module Api
     POSTS_PER_PAGE = 30
 
     def index
-      posts = Post.published.last(POSTS_PER_PAGE)
+      posts = Post.published.order(created_at: :desc).last(POSTS_PER_PAGE)
       ok(posts.as_json)
     end
 
