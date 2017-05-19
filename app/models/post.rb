@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
     tmp.merge({
       img: self.img.try(:url),
       thumbnail: self.img.thumbnail.try(:url),
+      date: self.created_at.strftime("%Y/%m/%d"),
     })
   end
 end
