@@ -34,9 +34,9 @@ $scale-height: 38px;
 
   .scale {
     position: relative;
-    top: $slide-bar-height;
-    height: $scale-height;
+    height: $scale-height + $slide-bar-height;
     width: 100%;
+    cursor: pointer;
 
     li {
       height: 100%;

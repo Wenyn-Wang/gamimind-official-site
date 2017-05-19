@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import Draggable from 'react-draggable'
 
 
-  const toFixed = (number) => {
-    return Number(number.toFixed(2))
+  const toFixed = (number, fixed = 2) => {
+    return Number(number.toFixed(fixed))
   }
 
 class SlideBar extends Component {
@@ -23,6 +23,7 @@ class SlideBar extends Component {
 
   componentDidMount () {
     this.slider_bar = this.refs.slider_bar
+    this.scale = this.refs.scale
     this.handleResize()
     window.addEventListener('resize', this.handleResize)
   }
@@ -44,7 +45,6 @@ class SlideBar extends Component {
     })
     this.props.onChange(0)
   }
-  
 
    handleDrag = (e, ui) => {
     const { x, y, grid, padding } = this.state
@@ -57,16 +57,26 @@ class SlideBar extends Component {
     this.props.onChange(index)
   }
 
+  handleSelect = (e) => {
+    const { grid, padding } = this.state
+    const click_position = toFixed(e.clientX - this.scale.getBoundingClientRect().left)
+    const index = Math.floor(click_position / grid)
+
+    this.setState({
+      x: (index * grid) + padding,
+    })
+    this.props.onChange(index)
+  }
+
   render() {
     const { x, grid, width, padding } = this.state
     const { points } = this.props
 
     return (
       <div className="slide-bar-container" ref="slider_bar">
-        <ul className="scale">
+        <ul className="scale" onClick={ this.handleSelect } ref="scale">
           {
             [...Array(points)].map((x, index) => {
-              
               return (
                  <li key={ index } style={{ left: padding + index * grid }}/>
               )
