@@ -8,6 +8,6 @@ export const HASH = {
   CONTACT_US  : 'contact-us',
 }
 
-export const SERVICE = {
+export const SERVICES = {
   SOCIAL_MEDIA : '/service/social-media',
 }
