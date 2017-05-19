@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Draggable from 'react-draggable'
 
+
+  const toFixed = (number) => {
+    return Number(number.toFixed(2))
+  }
+
 class SlideBar extends Component {
   constructor(props) {
     super(props)
@@ -28,10 +33,9 @@ class SlideBar extends Component {
 
   handleResize = (e) => {
     const width = this.slider_bar.offsetWidth
-    const grid = width / this.props.points
-    const padding = grid / 2
+    const grid = toFixed((width / this.props.points))
+    const padding = toFixed(grid / 2)
 
-    
     this.setState({
       width,
       grid,
@@ -45,7 +49,7 @@ class SlideBar extends Component {
     const { x, y } = this.state
 
     this.setState({
-      x: x + ui.deltaX,
+      x: toFixed(x + ui.deltaX),
     })
   }
 
@@ -56,9 +60,14 @@ class SlideBar extends Component {
     return (
       <div className="slide-bar-container" ref="slider_bar">
         <ul className="scale">
-          {[...Array(points)].map((x, index) =>
-            <li key={ index } />
-          )}
+          {
+            [...Array(points)].map((x, index) => {
+              
+              return (
+                 <li key={ index } style={{ left: padding + index * grid }}/>
+              )
+            })
+          }
         </ul>
         
         <Draggable
