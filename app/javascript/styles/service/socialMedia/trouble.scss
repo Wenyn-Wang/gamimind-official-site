@@ -2,22 +2,15 @@ main#social-media {
   section#trouble {
     text-align: center;
     background: $lighter-blue;
-      position: relative;
+    position: relative;
 
     .section-title {
       color: $curious-blue;
       padding-bottom: 20px;
 
       h1 {
-        display: inline-block;
-
         &::after {
-          content: '';
-          width: 85%;
-          height: 2px;
           background: $curious-blue;
-          display: block;
-          margin: auto;
           transform: translateY(5px);
         }
       }
@@ -26,7 +19,7 @@ main#social-media {
     .trouble-text {
       position: relative;
       z-index: 2;
-      max-width: 85%;
+      max-width: 90%;
       margin: auto;
 
       p {
@@ -60,6 +53,7 @@ main#social-media {
 
     @media (max-width: $pad) {
       &::after, &::before {
+        background: none;
         display: none;
       }
     }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GameMind Inc.</title>
+    <title>GAMEMIND</title>
 
     <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
@@ -10,13 +10,19 @@
     <%= javascript_pack_tag "application" %>
     <%= stylesheet_pack_tag "application" %>
 
+    <%
+      desc = "企業做到精準才有未來，融入遊戲思維，運用有溫度人工智慧，精準掌握客戶行為與喜好，找出數據下的商機。為您量身打造方案，成為您最可靠的顧問。"
+      keywords = "遊戲思維,人工智慧,數據,行銷,精準,內容,社群經營,顧問"
+      title = "GAMEMIND 遊戲思維 | 為你解析數據下的商機"
+    %>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
-    <meta name="description" content="遊戲思維股份有限公司" />
-    <meta name="keywords" content="遊戲,CRM" />
+    <meta name="description" content="<%= desc %>" />
+    <meta name="keywords" content="<%= keywords %>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= OffcialSite::Application.config.host %>" />
-    <meta property="og:title" content="GameMind" />
-    <meta property="og:description" content="遊戲思維股份有限公司" />
+    <meta property="og:title" content="<%= title %>" />
+    <meta property="og:description" content="<%= desc %>" />
     <meta property="og:image" content="https://TODO" />
   </head>
 

@@ -12,7 +12,6 @@ module OffcialSite
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    config.host = "https://www.gamiconsultant.com"
-    config.enable_s3 = Rails.env.production?
+    config.host = Rails.env.production? ? "https://www.gamemind.org" : "http://localhost:3000"
   end
 end

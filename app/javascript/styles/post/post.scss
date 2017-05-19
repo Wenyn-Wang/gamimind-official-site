@@ -1,0 +1,27 @@
+@import './social-share.scss';
+
+main#post {
+  .banner {
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+  }
+  article {
+    max-width: 768px;
+    width: 100%;
+    margin: 30px auto;
+    .content {
+      font-size: 18px;
+      line-height: 30px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    @media (max-width: $mobile) {
+      width: 94%;
+      padding: 0 3%;
+    }
+  }
+}

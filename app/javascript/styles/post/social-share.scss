@@ -1,0 +1,32 @@
+.shares {
+  display: block;
+  text-align: right;
+  margin: 16px 0;
+  .share {
+    display: inline-block;
+    padding: 2px 8px;
+    line-height: 20px;
+    vertical-align: text-bottom;
+    border-radius: 5px;
+    margin: 0 4px;
+    &.fb {
+      background-color: $fb-blue;
+      span { background-image: url("~images/socialShares/facebook.svg"); }
+    }
+    &.line {
+      background-color: $line-green;
+      span { background-image: url("~images/socialShares/line.svg"); }
+    }
+    a {
+      text-decoration: none;
+      color: $white;
+      font-size: 14px;
+      span {
+        width: 102px;
+        padding-left: 22px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

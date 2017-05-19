@@ -16,6 +16,8 @@ const devServerUrl = `http://${devServer.host}:${devServer.port}/${paths.entry}/
 const publicUrl = ifHasCDN ? `${env.ASSET_HOST}/${paths.entry}/` : `/${paths.entry}/`
 const publicPath = env.NODE_ENV !== 'production' ? devServerUrl : publicUrl
 
+if (env.NODE_ENV === 'development') env.HOST = 'http://localhost:3000'
+
 module.exports = {
   devServer,
   env,
