@@ -12,6 +12,29 @@ main#social-media {
         li {
           flex: 1;
           text-align: center;
+          position: relative;
+          
+          &::before {
+            content: '';
+            display: block;
+            background-repeat: no-repeat;
+            position: absolute;
+            opacity: 0;
+          }
+
+          $width : 61px, 85px, 190px;
+          $height: 66px, 83px, 130px;
+          $right: 12%, 2%, 2%;
+          $top: -35px, -28px, -80px;
+          @for $i from 1 through 3 {
+             &:nth-child(#{$i})::before {
+               background-image: url('~images/service/socialMedia/whatKindOfPerson/people-#{$i}.png');
+               width: nth($width, $i);
+               height: nth($height, $i);
+               right: nth($right, $i);
+               top: nth($top, $i);
+             }
+          }
 
           h2 {
             font-size: 20px;
@@ -34,7 +57,7 @@ main#social-media {
           }
 
           &.active {
-            p {
+            p, &::before {
               opacity: 1;
             }
           }

@@ -42,6 +42,7 @@ class SlideBar extends Component {
       x: padding,
       padding,
     })
+    this.props.onChange(0)
   }
   
 
