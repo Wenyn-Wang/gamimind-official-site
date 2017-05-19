@@ -39,12 +39,12 @@ const Solutions = () => {
                   </MediaQuery>
                 </div>
 
-                <p className="solution-text">
+                <div className="solution-text">
                   <MediaQuery maxWidth={ PAD_WIDTH } component="h2">
                     { solution.title }
                   </MediaQuery>
                   <span>{ solution.text }</span>
-                </p>
+                </div>
 
                 <div className="solution-img">
                   <img src={ solution.img } />
