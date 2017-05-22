@@ -15,7 +15,7 @@ const card_list = [{
 }, {
   title   : '客戶關係管理方案',
   content : '你的KPI就是我的KPI！預測用戶行為、掌握最佳時機，上門就下單',
-  link    : '/',
+  link    : SERVICES.CUSTOMER_RELATIONSHIP,
 }]
 
 const Services = withRouter(({ history }) => {
