@@ -6,6 +6,11 @@ import ExpectedResult from './ExpectedResult'
 import WhatKindOfPerson from './WhatKindOfPerson'
 import ContactUs from '../../common/contactUs/ContactUs'
 
+const contact_us_attr = {
+  title     : '聯絡我們',
+  sub_title : '立即啟動你的粉絲細胞',
+}
+
 const SocialMedia = () => {
   return (
     <main id="social-media">
@@ -14,7 +19,7 @@ const SocialMedia = () => {
       <Solutions />
       <ExpectedResult />
       <WhatKindOfPerson />
-      <ContactUs />
+      <ContactUs { ...contact_us_attr } />
     </main>
   )
 }
