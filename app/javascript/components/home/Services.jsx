@@ -11,7 +11,7 @@ const card_list = [{
 }, {
   title   : '企業自媒體經營方案',
   content : '不要再把流量送給對手了！掌握自己的流量、分析客群、精準銷售',
-  link    : '/',
+  link    : SERVICES.WE_MEDIA,
 }, {
   title   : '客戶關係管理方案',
   content : '你的KPI就是我的KPI！預測用戶行為、掌握最佳時機，上門就下單',

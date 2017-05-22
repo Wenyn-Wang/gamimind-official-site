@@ -10,5 +10,6 @@ export const HASH = {
 
 export const SERVICES = {
   SOCIAL_MEDIA          : '/service/social-media',
+  WE_MEDIA              : '/service/we-media',
   CUSTOMER_RELATIONSHIP : '/service/customer-relationship',
 }
