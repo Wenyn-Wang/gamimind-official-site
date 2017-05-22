@@ -14,8 +14,6 @@ class SlideBar extends Component {
       width   : 1024,
       padding : 0,
     }
-
-    this.handleResize = this.handleResize.bind(this)
   }
 
   componentDidMount () {
@@ -44,12 +42,12 @@ class SlideBar extends Component {
   }
 
    handleDrag = (e, ui) => {
-    const { x, y, grid, padding } = this.state
-    const nex_x = toFixed(x + ui.deltaX)
-    const index = toFixed((nex_x - padding) / grid)
+    const { x, grid, padding } = this.state
+    const next_x = toFixed(ui.x)
+    const index =  Math.floor((next_x - padding) / grid)
 
     this.setState({
-      x: nex_x,
+      x: next_x,
     })
     this.props.onChange(index)
   }
