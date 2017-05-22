@@ -25,7 +25,7 @@ const SocialMedia = () => {
         desc="把沈睡的用戶，一次叫醒！變身為忠誠的品牌VIP"
         decorations={ cover_decorations }
       />
-      <Trouble text={ trouble_text } />
+      <Trouble title="困擾" text={ trouble_text } />
       <Solutions />
       <ExpectedResult />
     </main>

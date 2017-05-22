@@ -16,7 +16,7 @@ const CustomerRelationship = () => {
         title="客戶關係管理方案"
         desc="客戶維繫並不難，我們讓你比客戶更懂自己"
       />
-      <Trouble text={ trouble_text } />
+      <Trouble title="困擾" text={ trouble_text } />
     </main>
   )
 }
