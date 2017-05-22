@@ -43,9 +43,9 @@ const SocialMedia = () => {
   return (
     <main id="social-media">
       <Cover
-        title="Line／Facebook 行銷方案"
-        desc="把沈睡的用戶，一次叫醒！變身為忠誠的品牌VIP"
-        decorations={ cover_decorations }
+        title       = "Line／Facebook 行銷方案"
+        desc        = "把沈睡的用戶，一次叫醒！變身為忠誠的品牌VIP"
+        decorations = { cover_decorations }
       />
       <Trouble title="困擾" text={ trouble_text } />
       <Solutions steps={ solution_steps }/>
