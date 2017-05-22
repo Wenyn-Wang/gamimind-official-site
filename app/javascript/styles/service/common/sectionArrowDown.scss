@@ -1,0 +1,16 @@
+ .section-arrow-down {
+   position: relative;
+   
+   &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border-color: $white-lilac transparent transparent;
+    border-width: 40px 20px;
+    border-style: solid;
+    transform: translate(-50%, 100%);
+  }
+}
+ 

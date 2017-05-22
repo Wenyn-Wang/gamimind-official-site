@@ -12,7 +12,7 @@ const Solutions = ({ steps, upper }) => {
 
       {
         upper && 
-          <ul className="solution-upper">
+          <ul className="solution-upper section-arrow-down">
             {
               upper.map((content, index) => (
                 <li key={ index }>
