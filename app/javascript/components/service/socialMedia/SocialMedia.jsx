@@ -1,7 +1,7 @@
 import React from 'react'
 import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
-import Solutions from './Solutions'
+import Solutions from '../common/Solutions'
 import ExpectedResult from './ExpectedResult'
 
 const SocialMedia = () => {
