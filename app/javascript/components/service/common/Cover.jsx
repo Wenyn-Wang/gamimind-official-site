@@ -17,8 +17,8 @@ const Cover = ({ title, desc, decorations }) => {
 }
 
 Cover.propTypes = {
-  title : PropTypes.string.isRequired,
-  desc  : PropTypes.string.isRequired,
+  title       : PropTypes.string.isRequired,
+  desc        : PropTypes.string.isRequired,
   decorations : PropTypes.element,
 }
 
