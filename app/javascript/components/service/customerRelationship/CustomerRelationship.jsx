@@ -2,7 +2,7 @@ import React from 'react'
 import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 
-const CustomerRelationShip = () => {
+const CustomerRelationship = () => {
   const trouble_text = (
     <div>
       <p>現在用line經營不方便，滑開手機看到100個未讀好緊張！</p>
@@ -21,4 +21,4 @@ const CustomerRelationShip = () => {
   )
 }
 
-export default CustomerRelationShip
+export default CustomerRelationship
