@@ -2,7 +2,7 @@ import React from 'react'
 import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
-import ExpectedResult from './ExpectedResult'
+import ExpectedResult from '../common/ExpectedResult'
 
 const cover_decorations = (
   <div className="cover-right">
@@ -37,6 +37,8 @@ const solutions = [{
   img   : require('images/service/socialMedia/common/solutions/operation.png'),
 }]
 
+const results = ['擴大追蹤用戶數', '提升活躍用戶數', '增加品牌認同感', '提高目標轉換率，增加分享、按讚及留言數']
+
 const SocialMedia = () => {
   return (
     <main id="social-media">
@@ -47,7 +49,7 @@ const SocialMedia = () => {
       />
       <Trouble text={ trouble_text } />
       <Solutions solutions={ solutions }/>
-      <ExpectedResult />
+      <ExpectedResult results={ results } />
     </main>
   )
 }
