@@ -3,16 +3,16 @@ import PropTypes from 'prop-types'
 import MediaQuery from 'react-responsive'
 import { PAD_WIDTH } from '../../../constants/deviceTypes'
 
-const Solutions = ({ solutions }) => {
+const Solutions = ({ steps }) => {
   return (
     <section id="solutions">
       <div className="section-title">
         <h1>我們的方法</h1>
       </div>
       
-      <ul>
+      <ul className="solution-step">
         {
-          solutions.map((solution, index) => (
+          steps.map((solution, index) => (
             <li key={ index }>
               <div className="solution-container">
                 <div className="solution-title">
@@ -42,7 +42,7 @@ const Solutions = ({ solutions }) => {
 }
 
 Solutions.propTypes = {
-  solutions : PropTypes.array.isRequired,
+  steps : PropTypes.array.isRequired,
 }
 
 export default Solutions
