@@ -9,10 +9,10 @@ class SlideBar extends Component {
     super(props)
 
     this.state = {
-      x: 0,
-      grid: 0,
-      width: 1024,
-      padding: 0,
+      x       : 0,
+      grid    : 0,
+      width   : 1024,
+      padding : 0,
     }
 
     this.handleResize = this.handleResize.bind(this)
