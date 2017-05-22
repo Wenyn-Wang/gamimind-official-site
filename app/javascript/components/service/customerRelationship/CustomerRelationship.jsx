@@ -2,6 +2,7 @@ import React from 'react'
 import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
+import ExpectedResult from '../common/ExpectedResult'
 
 const trouble_text = (
   <div>
@@ -33,6 +34,13 @@ const solution_steps = [{
   img   : require('images/service/customerRelationship/exceedTargets.png'),
 }]
 
+const expected_results = [
+  '高效管理百位用戶',
+  '企業可一手掌握全體客戶動態',
+  '準確預測客戶最佳成單時機',
+  '增進品牌影響力'
+]
+
 const CustomerRelationship = () => {
   return (
     <main id="customer-relationship">
@@ -42,6 +50,7 @@ const CustomerRelationship = () => {
       />
       <Trouble title="困擾" text={ trouble_text } />
       <Solutions steps={ solution_steps }/>
+      <ExpectedResult results={ expected_results } />
     </main>
   )
 }
