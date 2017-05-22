@@ -19,19 +19,19 @@ const solution_steps = [{
 }, {
   title : '導入遊戲化',
   text  : '根據用戶屬性，設計“高活躍度”遊戲化機制，深化與客戶的關係',
-  img   : require('images/service/socialMedia/common/solutions/game.png'),
+  img   : require('images/service/common/solutions/game.png'),
 }, {
   title : '跨端開發',
   text  : 'RWD 響應式網站設計、Android / iOS APP 開發',
-  img   : require('images/service/customerRelationship/crossScreen.png'),
+  img   : require('images/service/customerRelationship/cross-screen.png'),
 }, {
   title : '人工智慧',
   text  : '追蹤用戶行為軌跡形塑個人特質輪廓，挖掘隱性偏好',
-  img   : require('images/service/customerRelationship/personalAi.png'),
+  img   : require('images/service/common/solutions/personal.png'),
 }, {
   title : '超越商業目標',
   text  : '定期數據追蹤、隨時調整參數，最大化成效',
-  img   : require('images/service/customerRelationship/exceedTargets.png'),
+  img   : require('images/service/common/solutions/milestone.png'),
 }]
 
 const expected_results = [

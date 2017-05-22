@@ -22,19 +22,19 @@ const trouble_text = (
 const solution_steps = [{
   title : '評估',
   text  : '企業形象、品牌定位、市場動態',
-  img   : require('images/service/socialMedia/common/solutions/form.png'),
+  img   : require('images/service/common/solutions/form.png'),
 }, {
   title : '遊戲化導入',
   text  : '設計遊戲化文案，深化使用者互動',
-  img   : require('images/service/socialMedia/common/solutions/game.png'),
+  img   : require('images/service/common/solutions/game.png'),
 }, {
   title : '工具開發',
   text  : '建置 Line Add-on 遊戲化工具，Facebook 小遊戲',
-  img   : require('images/service/socialMedia/common/solutions/development.png'),
+  img   : require('images/service/common/solutions/development.png'),
 }, {
   title : '營運',
   text  : '結合「企業自媒體平台」整合性營運，分析用戶需求、標定客戶樣貌、發送客製化推薦',
-  img   : require('images/service/socialMedia/common/solutions/operation.png'),
+  img   : require('images/service/common/solutions/operation.png'),
 }]
 
 const results = ['擴大追蹤用戶數', '提升活躍用戶數', '增加品牌認同感', '提高目標轉換率，增加分享、按讚及留言數']
