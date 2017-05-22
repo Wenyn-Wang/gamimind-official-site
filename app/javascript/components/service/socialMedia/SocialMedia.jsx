@@ -19,7 +19,7 @@ const trouble_text = (
   </div>
 )
 
-const solutions = [{
+const solution_steps = [{
   title : '評估',
   text  : '企業形象、品牌定位、市場動態',
   img   : require('images/service/socialMedia/common/solutions/form.png'),
@@ -48,7 +48,7 @@ const SocialMedia = () => {
         decorations={ cover_decorations }
       />
       <Trouble text={ trouble_text } />
-      <Solutions solutions={ solutions }/>
+      <Solutions steps={ solution_steps }/>
       <ExpectedResult results={ results } />
     </main>
   )
