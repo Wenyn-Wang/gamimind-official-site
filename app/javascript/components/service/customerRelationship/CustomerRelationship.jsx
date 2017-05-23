@@ -15,7 +15,7 @@ const trouble_text = (
 const solution_steps = [{
   title : '設計CRM方案',
   text  : '以實踐業務需求為目標，設計符合品牌定位、產品特質的CRM方案',
-  img   : require('images/service/customerRelationship/crm.png'),
+  img   : require('images/service/common/solutions/crm.png'),
 }, {
   title : '導入遊戲化',
   text  : '根據用戶屬性，設計“高活躍度”遊戲化機制，深化與客戶的關係',
@@ -23,7 +23,7 @@ const solution_steps = [{
 }, {
   title : '跨端開發',
   text  : 'RWD 響應式網站設計、Android / iOS APP 開發',
-  img   : require('images/service/customerRelationship/cross-screen.png'),
+  img   : require('images/service/common/solutions/cross-screen.png'),
 }, {
   title : '人工智慧',
   text  : '追蹤用戶行為軌跡形塑個人特質輪廓，挖掘隱性偏好',
