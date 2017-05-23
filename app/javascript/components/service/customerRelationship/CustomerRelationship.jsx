@@ -38,7 +38,7 @@ const expected_results = [
   '高效管理百位用戶',
   '企業可一手掌握全體客戶動態',
   '準確預測客戶最佳成單時機',
-  '增進品牌影響力'
+  '增進品牌影響力',
 ]
 
 const CustomerRelationship = () => {
