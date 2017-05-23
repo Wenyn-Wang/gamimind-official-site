@@ -1,0 +1,48 @@
+$slide-bar-height: 22px;
+$scale-height: 38px;
+
+.slide-bar-container {
+  position: relative;
+  background: $spindle;
+  height: $slide-bar-height;
+  width: 100%;
+  border-radius: 50px;
+  margin-bottom: $scale-height;
+
+  .ball {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    cursor: move;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      background: url('~images/service/socialMedia/whatKindOfPerson/slider.svg') no-repeat;
+      width: 38px;
+      height: 38px;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .scale {
+    position: relative;
+    height: $scale-height + $slide-bar-height;
+    width: 100%;
+    cursor: pointer;
+
+    li {
+      height: 100%;
+      width: 2px;
+      background: $spindle;
+      position: absolute;
+    }
+  }
+}
