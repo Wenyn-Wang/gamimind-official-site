@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import ContactForm from './ContactForm'
 import CompanyInfo from './CompanyInfo'
 
@@ -26,6 +27,7 @@ export default class ContactUs extends Component {
   }
 
   render() {
+    const { title, sub_title } = this.props
     const { step } = this.state
 
     return (
@@ -34,7 +36,10 @@ export default class ContactUs extends Component {
           {
             step == steps[0] &&
               <div className="company-info-container">
-                <h1>和我們一起精準預測！</h1>
+                <h1>{ title }</h1>
+                { 
+                  sub_title && <h3>{ sub_title }</h3>
+                }
                 <CompanyInfo />
                 <div className="btn primary" onClick={ this.goForm }>合作洽談</div>
               </div>
@@ -54,4 +59,9 @@ export default class ContactUs extends Component {
       </section>
     )
   }
+}
+
+ContactUs.propTypes = {
+  title     : PropTypes.string.isRequired,
+  sub_title : PropTypes.string,
 }

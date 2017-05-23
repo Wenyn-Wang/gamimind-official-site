@@ -1,0 +1,110 @@
+main#social-media {
+  section#what-kind-of-person {
+    .kinds-container {
+      position: relative;
+      width: 80%;
+      margin: 0px auto 40px;
+
+      .kinds {
+        display: flex;
+        
+        li {
+          flex: 1;
+          text-align: center;
+          position: relative;
+          
+          &::before {
+            content: '';
+            display: block;
+            background-repeat: no-repeat;
+            position: absolute;
+            opacity: 0.4;
+          }
+
+          $width : 61px, 85px, 190px;
+          $height: 66px, 83px, 130px;
+          $right: 12%, 2%, 2%;
+          $top: -35px, -28px, -80px;
+          @for $i from 1 through 3 {
+             &:nth-child(#{$i})::before {
+               background-image: url('~images/service/socialMedia/whatKindOfPerson/people-#{$i}.png');
+               width: nth($width, $i);
+               height: nth($height, $i);
+               right: nth($right, $i);
+               top: nth($top, $i);
+             }
+          }
+
+          h2 {
+            font-size: 20px;
+          }
+
+          h5 {
+            font-size: 16px;
+            color: $gray;
+          }
+
+          p {
+            font-size: 16px;
+            color: $primary;
+            margin-top: 180px;
+            box-sizing: border-box;
+            padding: 0px 30px;
+            line-height: 25px;
+            opacity: 0.4;
+            transition: all .3s;
+          }
+
+          &.active {
+            p, &::before {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .slide-bar-container {
+        position: absolute;
+        top: 160px;
+      }
+
+      @media (max-width: $pad) {
+        width: 90%;
+
+        .kinds {
+          display: block;
+
+          li {
+            text-align: left;
+            margin: 80px auto 120px;
+
+            &::before { 
+              opacity: 1;
+              transform: translateY(20px);
+            }
+
+            h5 {
+              color: $font-black;
+              margin: 0 0 20px;
+            }
+
+            p {
+              opacity: 1;
+              margin: 0;
+              padding: 0;
+              color: $font-black;
+            }
+          }
+        }
+      }
+
+
+      @media (max-width: $mobile) {
+        .kinds li::before {
+          transform: scale(.7);
+          transform-origin: 50% 30%;
+        }
+      }
+    }
+  }
+}
