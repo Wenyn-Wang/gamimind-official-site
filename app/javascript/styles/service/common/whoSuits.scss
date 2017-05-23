@@ -1,11 +1,11 @@
 main section#who-suits{
   background-color: $lighter-blue;
-  ul.conditions {
+  .conditions {
     text-align: center;
   }
-  li.condition {
+  .condition {
     box-sizing: border-box;
-    width: 26%;
+    width: 22%;
     margin: 0 0.5%;
     padding: 30px 2.5%;
     vertical-align: top;
@@ -14,8 +14,8 @@ main section#who-suits{
     background-color: $pure-white;
     .img {
       width: 70%;
-      height: 180px;
-      margin: 0 auto 20px;
+      height: 160px;
+      margin: 0 auto;
       background-size: 80%;
       background-repeat: no-repeat;
       background-position: 50%;
@@ -36,6 +36,36 @@ main section#who-suits{
       margin: 30px auto 0;
       width: 80%;
       height: 115px;
+      text-align: left;
+    }
+  }
+  @media (max-width: $mobile) {
+    .condition {
+      display: table;
+      border: none;
+      background-color: transparent;
+      width: 80%;
+      margin: 0 auto;
+      padding: 0;
+      .img {
+        display: table-cell;
+        width: 30%;
+      }
+      .bar {
+        display: none;
+      }
+      p {
+        display: table-cell;
+        vertical-align: middle;
+        width: 64%;
+        height: auto;
+        margin: 0;
+      }
+    }
+  }
+  @media (max-width: $smaller-mobile) {
+    .condition .img {
+      height: 100px;
     }
   }
 }
