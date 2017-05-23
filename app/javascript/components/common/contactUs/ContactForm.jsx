@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField'
 import keys from 'lodash/keys'
 import values from 'lodash/values'
 import findKey from 'lodash/findKey'
-import { createContact } from '../../apis/contactApis'
+import { createContact } from '../../../apis/contactApis'
 
 const icon_style = {
   width: '100%',
@@ -82,7 +82,7 @@ class ContactForm extends Component {
       error : {
         ...error,
         [name]: field_error,
-      }
+      },
     })
   }
 

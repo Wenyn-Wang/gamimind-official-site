@@ -4,6 +4,12 @@ import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
 import ExpectedResult from '../common/ExpectedResult'
 import WhatKindOfPerson from './WhatKindOfPerson'
+import ContactUs from '../../common/contactUs/ContactUs'
+
+const contact_us_attr = {
+  title     : '聯絡我們',
+  sub_title : '立即啟動你的粉絲細胞',
+}
 
 const cover_decorations = (
   <div className="cover-right">
@@ -57,6 +63,7 @@ const SocialMedia = () => {
       <Solutions steps={ solution_steps }/>
       <ExpectedResult results={ results } />
       <WhatKindOfPerson />
+      <ContactUs { ...contact_us_attr } />
     </main>
   )
 }
