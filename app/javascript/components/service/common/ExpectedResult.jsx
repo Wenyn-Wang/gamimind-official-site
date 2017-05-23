@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import MediaQuery from 'react-responsive'
 import { PAD_WIDTH } from '../../../constants/device'
 
-const arrow_target = require('images/service/socialMedia/expectedResult/arrow-target.png')
-const arrow_target_m = require('images/service/socialMedia/expectedResult/arrow-target-m.png')
+const arrow_target = require('images/service/socialMedia/common/expectedResult/arrow-target.png')
+const arrow_target_m = require('images/service/socialMedia/common/expectedResult/arrow-target-m.png')
 
-const ExpectedResult = () => {
+const ExpectedResult = ({ results }) => {
   return (
     <section id="expected-result">
       <div className="section-title">
@@ -22,15 +23,20 @@ const ExpectedResult = () => {
         </MediaQuery>
         
         <ul>
-          <li>擴大追蹤用戶數</li>
-          <li>提升活躍用戶數</li>
-          <li>增加品牌認同感</li>
-          <li>提高目標轉換率，增加分享、按讚及留言數</li>
+          {
+            results.map((text, index)=> (
+              <li key={ index }>{ text }</li>
+            ))
+          }
         </ul>
 
       </div>
     </section>
   )
+}
+
+ExpectedResult.propTypes = {
+  results : PropTypes.array.isRequired,
 }
 
 export default ExpectedResult
