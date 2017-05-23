@@ -1,35 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import MediaQuery from 'react-responsive'
 import { PAD_WIDTH } from '../../../constants/deviceTypes'
 
-const solutions = [{
-  title : '評估',
-  text  : '企業形象、品牌定位、市場動態',
-  img   : require('images/service/socialMedia/solutions/step1.png'),
-}, {
-  title : '遊戲化導入',
-  text  : '設計遊戲化文案，深化使用者互動',
-  img   : require('images/service/socialMedia/solutions/step2.png'),
-}, {
-  title : '工具開發',
-  text  : '建置 Line Add-on 遊戲化工具，Facebook 小遊戲',
-  img   : require('images/service/socialMedia/solutions/step3.png'),
-}, {
-  title : '營運',
-  text  : '結合「企業自媒體平台」整合性營運，分析用戶需求、標定客戶樣貌、發送客製化推薦',
-  img   : require('images/service/socialMedia/solutions/step4.png'),
-}]
-
-const Solutions = () => {
+const Solutions = ({ steps }) => {
   return (
     <section id="solutions">
       <div className="section-title">
         <h1>我們的方法</h1>
       </div>
       
-      <ul>
+      <ul className="solution-steps">
         {
-          solutions.map((solution, index) => (
+          steps.map((solution, index) => (
             <li key={ index }>
               <div className="solution-container">
                 <div className="solution-title">
@@ -54,9 +37,12 @@ const Solutions = () => {
           ))
         }
       </ul>
-      
     </section>
   )
+}
+
+Solutions.propTypes = {
+  steps : PropTypes.array.isRequired,
 }
 
 export default Solutions
