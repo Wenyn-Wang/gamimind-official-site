@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import MediaQuery from 'react-responsive'
 import { PAD_WIDTH } from '../../../constants/device'
 
-const arrow_target = require('images/service/socialMedia/common/expectedResult/arrow-target.png')
-const arrow_target_m = require('images/service/socialMedia/common/expectedResult/arrow-target-m.png')
+const arrow_target = require('images/service/common/expectedResult/arrow-target.png')
+const arrow_target_m = require('images/service/common/expectedResult/arrow-target-m.png')
 
 const ExpectedResult = ({ results }) => {
   return (
