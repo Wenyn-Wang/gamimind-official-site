@@ -56,8 +56,9 @@ const WeMedia = () => {
         desc  = "強力磁鐵把粉絲都吸過來！讓我們幫你輕鬆打造品牌生態圈，成為業界意見領袖！"
       />
       <Trouble
-        title = "在這個快速變化的時代，品牌需的要是打造生態圈"
-        text  = { trouble_text }
+        className = "blue-cloud"
+        title     = "在這個快速變化的時代，品牌需的要是打造生態圈"
+        text      = { trouble_text }
       />
       <Solutions { ...solution_attr } />
     </main>
