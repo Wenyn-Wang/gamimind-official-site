@@ -12,6 +12,22 @@ const trouble_text = (
   </div>
 )
 
+const solution_unordered_steps = [{
+  img   : require('images/service/common/solutions/form.png'),
+  title : '評估',
+  text  : (
+    <div>
+      <p>企業形象</p>
+      <p>品牌定位</p>
+      <p>市場動態</p>
+    </div>
+  ),
+}, {
+  img   : require('images/service/common/solutions/company.png'),
+  title : '釐清需求',
+  text  : '企業端、業務員端與客戶端需求釐清',
+}]
+
 const solution_steps = [{
   title : '設計CRM方案',
   text  : '以實踐業務需求為目標，設計符合品牌定位、產品特質的CRM方案',
@@ -49,7 +65,7 @@ const CustomerRelationship = () => {
         desc="客戶維繫並不難，我們讓你比客戶更懂自己"
       />
       <Trouble title="困擾" text={ trouble_text } />
-      <Solutions steps={ solution_steps }/>
+      <Solutions steps={ solution_steps } unordered_steps={ solution_unordered_steps } />
       <ExpectedResult results={ expected_results } />
     </main>
   )
