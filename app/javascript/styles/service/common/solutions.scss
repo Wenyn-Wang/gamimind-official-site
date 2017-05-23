@@ -17,7 +17,7 @@ main#social-media {
       }
     }
 
-    ul.solution-step {
+    ul.solution-steps {
       counter-reset: solution-counter;
       $bg-color: $cerulean, $darker-cerulean, $line-water, $golden;
       $color: $white, $white, $curious-blue, $font-black;
@@ -143,7 +143,7 @@ main#social-media {
     }
 
     @media (max-width: $pad) {
-      ul.solution-step li {
+      ul.solution-steps li {
         height: 250px;
 
         &:nth-child(even) {
@@ -185,7 +185,7 @@ main#social-media {
 
 
     @media (max-width: $smaller-mobile) {
-      ul.solution-step li {
+      ul.solution-steps li {
         .solution-container {
           .solution-title {
             flex: none;
