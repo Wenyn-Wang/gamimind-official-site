@@ -3,6 +3,7 @@ import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
 import ExpectedResult from '../common/ExpectedResult'
+import WhatKindOfPerson from './WhatKindOfPerson'
 
 const cover_decorations = (
   <div className="cover-right">
@@ -37,7 +38,12 @@ const solution_steps = [{
   img   : require('images/service/common/solutions/operation.png'),
 }]
 
-const results = ['擴大追蹤用戶數', '提升活躍用戶數', '增加品牌認同感', '提高目標轉換率，增加分享、按讚及留言數']
+const results = [
+  '擴大追蹤用戶數',
+  '提升活躍用戶數',
+  '增加品牌認同感',
+  '提高目標轉換率，增加分享、按讚及留言數'
+]
 
 const SocialMedia = () => {
   return (
@@ -50,6 +56,7 @@ const SocialMedia = () => {
       <Trouble title="困擾" text={ trouble_text } />
       <Solutions steps={ solution_steps }/>
       <ExpectedResult results={ results } />
+      <WhatKindOfPerson />
     </main>
   )
 }
