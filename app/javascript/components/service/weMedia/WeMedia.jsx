@@ -26,19 +26,19 @@ const solution_attr = {
   steps : [{
     title : '導入遊戲化',
     text  : '已達成企業目標為原則，設計適合的遊戲化元素',
-    img   : require('images/service/socialMedia/common/solutions/form.png'),
+    img   : require('images/service/socialMedia/common/solutions/game-b.png'),
   }, {
     title : 'RWD響應式網站設計',
     text  : 'Android / IOS APP 開發',
-    img   : require('images/service/socialMedia/common/solutions/game.png'),
+    img   : require('images/service/socialMedia/common/solutions/cross-platform.png'),
   }, {
     title : '人工智慧',
     text  : '追蹤用戶行為軌跡形塑個人特質輪廓，挖掘隱私偏好',
-    img   : require('images/service/socialMedia/common/solutions/development.png'),
+    img   : require('images/service/socialMedia/common/solutions/ai.png'),
   }, {
     title : '超越商業目標',
     text  : '定期數據追蹤、隨時調整參數，最大化成效',
-    img   : require('images/service/socialMedia/common/solutions/operation.png'),
+    img   : require('images/service/socialMedia/common/solutions/trophy.png'),
   }],
 }
 
