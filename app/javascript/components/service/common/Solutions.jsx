@@ -10,7 +10,7 @@ const Solutions = ({ steps }) => {
         <h1>我們的方法</h1>
       </div>
       
-      <ul className="solution-step">
+      <ul className="solution-steps">
         {
           steps.map((solution, index) => (
             <li key={ index }>
