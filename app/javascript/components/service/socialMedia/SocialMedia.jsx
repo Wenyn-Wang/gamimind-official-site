@@ -3,6 +3,7 @@ import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from './Solutions'
 import ExpectedResult from './ExpectedResult'
+import WhatKindOfPerson from './WhatKindOfPerson'
 
 const SocialMedia = () => {
   const cover_decorations = (
@@ -28,6 +29,7 @@ const SocialMedia = () => {
       <Trouble title="困擾" text={ trouble_text } />
       <Solutions />
       <ExpectedResult />
+      <WhatKindOfPerson />
     </main>
   )
 }
