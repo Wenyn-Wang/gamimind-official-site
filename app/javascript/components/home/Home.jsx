@@ -5,7 +5,9 @@ import Services from './Services'
 import CooperationProcess from './CooperationProcess'
 import Technology from './Technology'
 import Founder from './Founder'
-import ContactUs from '../contactUs/ContactUs'
+import ContactUs from '../common/contactUs/ContactUs'
+
+const contact_us_title = '和我們一起精準預測！'
 
 export default class Home extends Component {
   render() {
@@ -17,7 +19,7 @@ export default class Home extends Component {
         <CooperationProcess />
         <Technology />
         <Founder />
-        <ContactUs />
+        <ContactUs title={ contact_us_title } />
       </main>
     )
   }
