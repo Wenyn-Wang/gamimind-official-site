@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import MediaQuery from 'react-responsive'
 import { PAD_WIDTH } from '../../../constants/deviceTypes'
 
-const Solutions = ({ steps, upper }) => {
+const Solutions = ({ steps, unordered_steps }) => {
   return (
     <section id="solutions">
       <div className="section-title">
@@ -11,16 +11,16 @@ const Solutions = ({ steps, upper }) => {
       </div>
 
       {
-        upper && 
-          <ul className="solution-upper section-arrow-down">
+        unordered_steps && 
+          <ul className="solution-unordered-steps section-arrow-down">
             {
-              upper.map((content, index) => (
+              unordered_steps.map((content, index) => (
                 <li key={ index }>
-                  <div className="upper-img">
+                  <div className="unordered-step-img">
                     <img src={ content.img }/>
                   </div>
 
-                  <div className="upper-text">
+                  <div className="unordered-step-text">
                     <h3>{ content.title }</h3>
                     <div>{ content.text }</div>
                   </div>
@@ -69,7 +69,7 @@ Solutions.propTypes = {
       text  : PropTypes.string.isRequired,
     })
   ).isRequired,
-  upper : PropTypes.arrayOf(
+  unordered_steps : PropTypes.arrayOf(
     PropTypes.shape({
       img   : PropTypes.string.isRequired,
       title : PropTypes.string.isRequired,

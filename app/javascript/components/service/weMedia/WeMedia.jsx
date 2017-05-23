@@ -8,7 +8,7 @@ const cover_attr = {
 }
 
 const solution_attr = {
-  upper : [{
+  unordered_steps : [{
     img   : require('images/service/common/solutions/form.png'),
     title : '評估',
     text  : (
