@@ -1,10 +1,10 @@
-@import './cover.scss';
-@import './problems.scss';
-@import './services.scss';
-@import './technology.scss';
-@import './cooperation-process.scss';
-@import './fonder.scss';
-@import './contact-us.scss';
+@import './cover';
+@import './problems';
+@import './services';
+@import './technology';
+@import './cooperation-process';
+@import './fonder';
+@import './contact-us';
 
 html, body , div[id^="Home-react-component"] {
   height: 100%;
