@@ -42,7 +42,6 @@ const solution_attr = {
   }],
 }
 
-
 const WeMedia = () => {
   return (
     <main id="social-media">
