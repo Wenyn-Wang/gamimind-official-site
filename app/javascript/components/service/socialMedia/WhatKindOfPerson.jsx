@@ -56,7 +56,11 @@ class WhatKindOfPerson extends Component {
           </ul>
 
           <MediaQuery minWidth={ PAD_WIDTH + 1 }>
-            <SlideBar points={ kinds.length } onChange={ this.handleSlideBarChange } />
+            <SlideBar
+              points        = { kinds.length }
+              onChange      = { this.handleSlideBarChange }
+              default_index = { current_index }
+            />
           </MediaQuery>
         </div>
       </section>

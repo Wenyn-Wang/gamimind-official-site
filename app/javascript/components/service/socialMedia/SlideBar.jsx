@@ -13,6 +13,7 @@ class SlideBar extends Component {
       grid    : 0,
       width   : 1024,
       padding : 0,
+      index   : props.default_index,
     }
   }
 
@@ -28,6 +29,7 @@ class SlideBar extends Component {
   }
 
   handleResize = (e) => {
+    const { index } = this.state
     const width = this.slider_bar.offsetWidth
     const grid = toFixed((width / this.props.points))
     const padding = toFixed(grid / 2)
@@ -35,10 +37,9 @@ class SlideBar extends Component {
     this.setState({
       width,
       grid,
-      x: padding,
       padding,
+      x: (index * grid)+ padding,
     })
-    this.props.onChange(0)
   }
 
    handleDrag = (e, ui) => {
@@ -47,6 +48,7 @@ class SlideBar extends Component {
     const index = toFixed((next_x - padding) / grid)
 
     this.setState({
+      index,
       x: next_x,
     })
     this.props.onChange(index)
@@ -58,6 +60,7 @@ class SlideBar extends Component {
     const index = Math.floor(click_position / grid)
 
     this.setState({
+      index,
       x: (index * grid) + padding,
     })
     this.props.onChange(index)
@@ -96,12 +99,14 @@ class SlideBar extends Component {
 }
 
 SlideBar.propTypes = {
-  points    : PropTypes.number.isRequired,
-  onChange  : PropTypes.func,
+  points        : PropTypes.number.isRequired,
+  default_index : PropTypes.number,
+  onChange      : PropTypes.func,
 }
 
 SlideBar.defaultProps = {
-  onChange : () => {},
+  onChange      : () => {},
+  default_index : 0,
 }
 
 export default SlideBar
