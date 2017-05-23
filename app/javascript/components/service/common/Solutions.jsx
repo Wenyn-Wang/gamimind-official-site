@@ -30,7 +30,7 @@ const Solutions = ({ steps, upper }) => {
           </ul>
       }
       
-      <ul className="solution-step">
+      <ul className="solution-steps">
         {
           steps.map((solution, index) => (
             <li key={ index }>
