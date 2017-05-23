@@ -8,23 +8,6 @@ const cover_attr = {
 }
 
 const solution_attr = {
-  steps : [{
-    title : '評估',
-    text  : '企業形象、品牌定位、市場動態',
-    img   : require('images/service/socialMedia/common/solutions/form.png'),
-  }, {
-    title : '遊戲化導入',
-    text  : '設計遊戲化文案，深化使用者互動',
-    img   : require('images/service/socialMedia/common/solutions/game.png'),
-  }, {
-    title : '工具開發',
-    text  : '建置 Line Add-on 遊戲化工具，Facebook 小遊戲',
-    img   : require('images/service/socialMedia/common/solutions/development.png'),
-  }, {
-    title : '營運',
-    text  : '結合「企業自媒體平台」整合性營運，分析用戶需求、標定客戶樣貌、發送客製化推薦',
-    img   : require('images/service/socialMedia/common/solutions/operation.png'),
-  }],
   upper : [{
     img   : require('images/service/socialMedia/common/solutions/form.png'),
     title : '評估',
@@ -39,6 +22,23 @@ const solution_attr = {
     img   : require('images/service/socialMedia/common/solutions/company.png'),
     title : '定調自媒體',
     text  : '與企業形象同步、規劃自媒體平台視覺及經營策略',
+  }],
+  steps : [{
+    title : '導入遊戲化',
+    text  : '已達成企業目標為原則，設計適合的遊戲化元素',
+    img   : require('images/service/socialMedia/common/solutions/form.png'),
+  }, {
+    title : 'RWD響應式網站設計',
+    text  : 'Android / IOS APP 開發',
+    img   : require('images/service/socialMedia/common/solutions/game.png'),
+  }, {
+    title : '人工智慧',
+    text  : '追蹤用戶行為軌跡形塑個人特質輪廓，挖掘隱私偏好',
+    img   : require('images/service/socialMedia/common/solutions/development.png'),
+  }, {
+    title : '超越商業目標',
+    text  : '定期數據追蹤、隨時調整參數，最大化成效',
+    img   : require('images/service/socialMedia/common/solutions/operation.png'),
   }],
 }
 
