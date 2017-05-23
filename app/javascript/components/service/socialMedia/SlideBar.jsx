@@ -42,7 +42,7 @@ class SlideBar extends Component {
     })
   }
 
-   handleDrag = (e, ui) => {
+  handleDrag = (e, ui) => {
     const { x, grid, padding } = this.state
     const next_x = x + ui.deltaX
     const index = toFixed((next_x - padding) / grid)
