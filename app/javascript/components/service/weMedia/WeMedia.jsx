@@ -46,7 +46,10 @@ const solution_attr = {
 const WeMedia = () => {
   return (
     <main id="social-media">
-      <Cover { ...cover_attr } />
+      <Cover
+        title = "品牌自媒體經營方案"
+        desc  = "強力磁鐵把粉絲都吸過來！讓我們幫你輕鬆打造品牌生態圈，成為業界意見領袖！"
+      />
       <Solutions { ...solution_attr } />
     </main>
   )
