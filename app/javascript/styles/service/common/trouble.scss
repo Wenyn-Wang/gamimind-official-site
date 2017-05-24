@@ -2,9 +2,12 @@ main section#trouble {
   text-align: center;
   background: $lighter-blue;
   position: relative;
+
   .section-title {
     color: $curious-blue;
     padding-bottom: 20px;
+    width: 90%;
+    margin: auto;
 
     h1 {
       &::after {
@@ -13,6 +16,7 @@ main section#trouble {
       }
     }
   }
+
   .trouble-text {
     position: relative;
     z-index: 2;
@@ -36,7 +40,7 @@ main section#trouble {
 
   &::before {
     background: url('~images/service/common/trouble/cloud-left.png') no-repeat;
-    width: 240px;
+    width: 245px;
     height: 172px;
     left: 0;
   }
@@ -46,6 +50,18 @@ main section#trouble {
     width: 154px;
     height: 206px;
     right: 0;
+  }
+
+  &.blue-cloud {
+    background: white;
+    
+    &::before {
+      background: url('~images/service/socialMedia/trouble/blue-cloud-left.png') no-repeat;
+    }
+
+    &::after {
+      background: url('~images/service/socialMedia/trouble/blue-cloud-right.png') no-repeat;
+    }
   }
 
   @media (max-width: $pad) {
