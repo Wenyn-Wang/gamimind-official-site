@@ -7,7 +7,7 @@ main section#who-suits{
     box-sizing: border-box;
     width: 22%;
     margin: 0 0.5%;
-    padding: 30px 2.5%;
+    padding: 30px 1%;
     vertical-align: top;
     display: inline-block;
     border: $darker-white 1px solid;
@@ -34,8 +34,13 @@ main section#who-suits{
     p {
       margin: 30px auto 0;
       width: 80%;
-      height: 115px;
+      height: 5em;
       text-align: left;
+    }
+  }
+  @media (max-width: $pad) {
+    .condition p {
+      height: 7em;
     }
   }
   @media (max-width: $mobile) {
