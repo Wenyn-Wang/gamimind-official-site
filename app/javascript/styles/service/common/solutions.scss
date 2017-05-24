@@ -1,4 +1,4 @@
-main#social-media {
+main {
   section#solutions {
     padding: 0;
 
@@ -17,7 +17,7 @@ main#social-media {
       }
     }
 
-    ul.solution-upper {
+    ul.solution-unordered-steps {
       display: flex;
 
       li {
@@ -33,14 +33,14 @@ main#social-media {
           background: $white-smoke;
         }
 
-        .upper-img {
+        .unordered-step-img {
           img {
             height: 180px;
             width: auto;
           }
         }
 
-        .upper-text {
+        .unordered-step-text {
           h3 {
             font-size: 20px;
             border-bottom: 1px solid;
@@ -55,7 +55,7 @@ main#social-media {
       }
     }
 
-    ul.solution-step {
+    ul.solution-steps {
       counter-reset: solution-counter;
       $bg-color: $cerulean, $darker-cerulean, $line-water, $golden;
       $color: $white, $white, $curious-blue, $font-black;
@@ -64,7 +64,7 @@ main#social-media {
         height: 500px;
 
         @for $i from 1 through 4 {
-          &:nth-child(#{$i}n) {
+          &:nth-child(4n+#{$i}) {
             background: nth($bg-color, $i);
             color: nth($color, $i);
           }
@@ -188,7 +188,7 @@ main#social-media {
     }
 
     @media (max-width: $pad) {
-      ul.solution-step li {
+      ul.solution-steps li {
         height: 250px;
 
         &:nth-child(even) {
@@ -230,7 +230,7 @@ main#social-media {
 
 
     @media (max-width: $smaller-mobile) {
-      ul.solution-upper {
+      ul.solution-unordered-steps {
         display: block;
 
         li {
@@ -241,7 +241,7 @@ main#social-media {
             background: $white-lilac;
           }
 
-          .upper-img {
+          .unordered-step-img {
             display: inline-block;
             width: 40%;
 
@@ -251,7 +251,7 @@ main#social-media {
             }
           }
 
-          .upper-text {
+          .unordered-step-text {
             display: inline-block;
             width: 60%;
             padding-left: 20px;
@@ -261,7 +261,7 @@ main#social-media {
         }
       }
 
-      ul.solution-step li {
+      ul.solution-steps li {
         .solution-container {
           .solution-title {
             flex: none;
