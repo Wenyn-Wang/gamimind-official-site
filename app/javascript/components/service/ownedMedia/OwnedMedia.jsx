@@ -1,6 +1,7 @@
 import React from 'react'
 import Cover from '../common/Cover'
 import Solutions from '../common/Solutions'
+import Ecosphere from './Ecosphere'
 
 const cover_attr = {
   title : '品牌自媒體經營方案',
@@ -49,6 +50,7 @@ const WeMedia = () => {
         title = "品牌自媒體經營方案"
         desc  = "強力磁鐵把粉絲都吸過來！讓我們幫你輕鬆打造品牌生態圈，成為業界意見領袖！"
       />
+      <Ecosphere />
       <Solutions { ...solution_attr } />
     </main>
   )
