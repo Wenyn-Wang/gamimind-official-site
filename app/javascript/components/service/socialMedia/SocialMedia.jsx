@@ -6,11 +6,6 @@ import ExpectedResult from '../common/ExpectedResult'
 import WhatKindOfPerson from './WhatKindOfPerson'
 import ContactUs from '../../common/contactUs/ContactUs'
 
-const contact_us_attr = {
-  title     : '聯絡我們',
-  sub_title : '立即啟動你的粉絲細胞',
-}
-
 const cover_decorations = (
   <div className="cover-right">
     <span className="fb-logo" />
@@ -53,7 +48,7 @@ const results = [
 
 const SocialMedia = () => {
   return (
-    <main id="social-media">
+    <div id="social-media">
       <Cover
         title       = "Line／Facebook 行銷方案"
         desc        = "把沈睡的用戶，一次叫醒！變身為忠誠的品牌VIP"
@@ -63,8 +58,7 @@ const SocialMedia = () => {
       <Solutions steps={ solution_steps }/>
       <ExpectedResult results={ results } />
       <WhatKindOfPerson />
-      <ContactUs { ...contact_us_attr } />
-    </main>
+    </div>
   )
 }
 

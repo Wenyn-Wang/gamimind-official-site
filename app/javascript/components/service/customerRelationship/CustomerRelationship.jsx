@@ -71,7 +71,7 @@ const suit_conditions = [{
 
 const CustomerRelationship = () => {
   return (
-    <main id="customer-relationship">
+    <div id="customer-relationship">
       <Cover
         title="客戶關係管理方案"
         desc="客戶維繫並不難，我們讓你比客戶更懂自己"
@@ -80,7 +80,7 @@ const CustomerRelationship = () => {
       <Solutions steps={ solution_steps } unordered_steps={ solution_unordered_steps } />
       <ExpectedResult results={ expected_results } />
       <WhoSuits conditions={ suit_conditions } />
-    </main>
+    </div>
   )
 }
 
