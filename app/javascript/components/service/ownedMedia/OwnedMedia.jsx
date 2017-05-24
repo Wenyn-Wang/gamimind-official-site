@@ -2,6 +2,11 @@ import React from 'react'
 import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
+import ContactUs from '../../common/contactUs/ContactUs'
+
+const contact_us_attr = {
+  title : '立刻打造品牌生態圈',
+}
 
 const trouble_text = (
   <div>
@@ -60,6 +65,7 @@ const WeMedia = () => {
         text      = { trouble_text }
       />
       <Solutions { ...solution_attr } />
+      <ContactUs { ...contact_us_attr } />
     </main>
   )
 }
