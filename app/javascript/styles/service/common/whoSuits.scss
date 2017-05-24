@@ -24,12 +24,11 @@ main section#who-suits{
       width: 70%;
       height: 16px;
       margin: 0 auto;
-
-      $colors: $darker-cerulean, $bright-blue, $darker-cerulean;
-      @for $i from 1 through 3 {
-        &:nth-child(#{$i}) {
-          background-color: nth($colors, $i);
-        }
+    }
+    $colors: $darker-cerulean, $bright-blue, $darker-cerulean;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) .bar {
+        background-color: nth($colors, $i);
       }
     }
     p {
