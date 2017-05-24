@@ -8,20 +8,20 @@ const WhoSuits = ({ conditions }) => {
         <h1>誰適合這個方案？</h1>
       </div>
 
-      <div className="conditions">
+      <ul className="conditions">
         {
           conditions.map((cond, idx) => (
-            <div key={ idx } className="condition">
+            <li key={ idx } className="condition">
               <div
                 className="img"
                 style={ { backgroundImage: `url(${cond.img})` } }
               />
               <div className="bar" />
               <p>{ cond.desc }</p>
-            </div>
+            </li>
           ))
         }
-      </div>
+      </ul>
     </section>
   )
 }
