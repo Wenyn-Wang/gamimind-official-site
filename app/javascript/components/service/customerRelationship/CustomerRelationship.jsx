@@ -4,6 +4,11 @@ import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
 import ExpectedResult from '../common/ExpectedResult'
 import WhoSuits from '../common/WhoSuits'
+import ContactUs from '../../common/contactUs/ContactUs'
+
+const contact_us_attr = {
+  title : '以一抵百的業務推廣力',
+}
 
 const trouble_text = (
   <div>
@@ -80,6 +85,7 @@ const CustomerRelationship = () => {
       <Solutions steps={ solution_steps } unordered_steps={ solution_unordered_steps } />
       <ExpectedResult results={ expected_results } />
       <WhoSuits conditions={ suit_conditions } />
+      <ContactUs { ...contact_us_attr } />
     </main>
   )
 }
