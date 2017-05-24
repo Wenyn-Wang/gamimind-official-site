@@ -1,0 +1,75 @@
+main section#who-suits{
+  background-color: $lighter-blue;
+  .conditions {
+    text-align: center;
+  }
+  .condition {
+    box-sizing: border-box;
+    width: 22%;
+    margin: 0 0.5%;
+    padding: 30px 1%;
+    vertical-align: top;
+    display: inline-block;
+    border: $darker-white 1px solid;
+    background-color: $pure-white;
+    .img {
+      width: 70%;
+      height: 160px;
+      margin: 0 auto;
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+    .bar {
+      width: 70%;
+      height: 16px;
+      margin: 0 auto;
+    }
+    $colors: $darker-cerulean, $bright-blue, $darker-cerulean;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) .bar {
+        background-color: nth($colors, $i);
+      }
+    }
+    p {
+      margin: 30px auto 0;
+      width: 80%;
+      height: 5em;
+      text-align: left;
+    }
+  }
+  @media (max-width: $pad) {
+    .condition p {
+      height: 7em;
+    }
+  }
+  @media (max-width: $mobile) {
+    .condition {
+      display: table;
+      border: none;
+      background-color: transparent;
+      width: 80%;
+      margin: 0 auto;
+      padding: 0;
+      .img {
+        display: table-cell;
+        width: 30%;
+      }
+      .bar {
+        display: none;
+      }
+      p {
+        display: table-cell;
+        vertical-align: middle;
+        width: 64%;
+        height: auto;
+        margin: 0;
+      }
+    }
+  }
+  @media (max-width: $smaller-mobile) {
+    .condition .img {
+      height: 100px;
+    }
+  }
+}
