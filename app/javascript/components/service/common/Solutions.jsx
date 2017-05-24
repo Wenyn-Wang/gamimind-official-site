@@ -3,12 +3,32 @@ import PropTypes from 'prop-types'
 import MediaQuery from 'react-responsive'
 import { PAD_WIDTH } from '../../../constants/deviceTypes'
 
-const Solutions = ({ steps }) => {
+const Solutions = ({ steps, unordered_steps }) => {
   return (
     <section id="solutions">
       <div className="section-title">
         <h1>我們的方法</h1>
       </div>
+
+      {
+        unordered_steps && 
+          <ul className="solution-unordered-steps section-arrow-down">
+            {
+              unordered_steps.map((content, index) => (
+                <li key={ index }>
+                  <div className="unordered-step-img">
+                    <img src={ content.img }/>
+                  </div>
+
+                  <div className="unordered-step-text">
+                    <h3>{ content.title }</h3>
+                    <div>{ content.text }</div>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+      }
       
       <ul className="solution-steps">
         {
@@ -42,7 +62,22 @@ const Solutions = ({ steps }) => {
 }
 
 Solutions.propTypes = {
-  steps : PropTypes.array.isRequired,
+  steps : PropTypes.PropTypes.arrayOf(
+    PropTypes.shape({
+      img   : PropTypes.string.isRequired,
+      title : PropTypes.string.isRequired,
+      text  : PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  unordered_steps : PropTypes.arrayOf(
+    PropTypes.shape({
+      img   : PropTypes.string.isRequired,
+      title : PropTypes.string.isRequired,
+      text  : PropTypes.oneOfType(
+        [PropTypes.element, PropTypes.string]
+      ).isRequired,
+    })
+  ),
 }
 
 export default Solutions

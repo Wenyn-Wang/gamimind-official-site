@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   match '/blog' => 'home#index', via: :get
   match '/post/:slug' => 'home#index', via: :get
   match '/service/social-media' => 'home#index', via: :get
+  match '/service/owned-media' => 'home#index', via: :get
   match '/service/customer-relationship' => 'home#index', via: :get
 
   namespace :api do
