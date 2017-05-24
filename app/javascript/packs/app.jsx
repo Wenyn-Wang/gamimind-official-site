@@ -9,7 +9,7 @@ import Home from '../components/home/Home'
 import Service from '../components/service/Service'
 import Blog from '../components/blog/Blog'
 import Post from '../components/post/Post'
-import { HOME, BLOG, POST } from '../constants/url'
+import { HOME, SERVICES, BLOG, POST } from '../constants/url'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import muiTheme from '../constants/materialUITheme/HomePageTheme'
@@ -25,7 +25,7 @@ export default class App extends Component {
             <Switch>
               <Route exact path={ HOME } component={ Home } />
 
-              <Route path={ "/service" } component={ Service } />
+              <Route path={ SERVICES.INDEX } component={ Service } />
 
               <Route path={ BLOG } component={ Blog } />
               <Route path={ `${POST}/:slug` } component={ Post } />
