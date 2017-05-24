@@ -13,12 +13,12 @@ const contact_us_attr = {
 
 const Service = () => {
   return (
-    <div>
+    <main>
       <Route path={ SERVICES.SOCIAL_MEDIA } component={ SocialMedia } />
       <Route path={ SERVICES.OWNED_MEDIA } component={ OwnedMedia } />
       <Route path={ SERVICES.CUSTOMER_RELATIONSHIP } component={ CustomerRelationship } />
       <ContactUs { ...contact_us_attr } />
-    </div>
+    </main>
   )
 }
 
