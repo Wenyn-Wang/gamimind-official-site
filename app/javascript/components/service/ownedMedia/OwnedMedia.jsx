@@ -2,6 +2,7 @@ import React from 'react'
 import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
+import ExpectedResult from '../common/ExpectedResult'
 import WhoSuits from '../common/WhoSuits'
 import ContactUs from '../../common/contactUs/ContactUs'
 
@@ -53,6 +54,13 @@ const solution_attr = {
   }],
 }
 
+const expected_results = [
+  '累積品牌SEO',
+  '深化會員關係，增進顧客黏著度',
+  '雇客互動指標顯著提升：停留時間、平均跳出率、CPC 等',
+  '自媒體將延伸為品牌重要資產',
+]
+
 const suit_conditions = [{
   desc : '想將社群媒體上的流量，轉換回自家的品牌官網',
   img  : require('images/service/common/whoSuits/company.png'),
@@ -64,7 +72,7 @@ const suit_conditions = [{
   img  : require('images/service/common/whoSuits/client-info.png'),
 }]
 
-const WeMedia = () => {
+const OwnedMedia = () => {
   return (
     <main id="social-media">
       <Cover
@@ -77,10 +85,11 @@ const WeMedia = () => {
         text      = { trouble_text }
       />
       <Solutions { ...solution_attr } />
+      <ExpectedResult results={ expected_results } />
       <WhoSuits conditions={ suit_conditions } />
       <ContactUs { ...contact_us_attr } />
     </main>
   )
 }
 
-export default WeMedia
+export default OwnedMedia
