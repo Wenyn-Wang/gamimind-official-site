@@ -7,11 +7,36 @@ main#owned-media {
     }
 
     .ecosphere-container {
+      opacity: 0.99;
+      
       canvas {
         width: 1024px;
         height: 600px;
         margin: auto;
         display: block;
+      }
+
+      &::after, &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::before {
+        background: url('~images/service/common/trouble/cloud-left.png') no-repeat;
+        width: 245px;
+        height: 172px;
+        left: 0;
+      }
+
+      &::after {
+        background: url('~images/service/common/trouble/cloud-right.png') no-repeat;
+        width: 154px;
+        height: 206px;
+        right: 0;
       }
     }
 
