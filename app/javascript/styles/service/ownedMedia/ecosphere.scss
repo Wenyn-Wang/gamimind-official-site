@@ -1,5 +1,7 @@
 main#owned-media {
   section#ecosphere {
+    background: $lighter-blue;
+
     .section-title {
       padding-bottom: 20px;
     }
@@ -11,6 +13,13 @@ main#owned-media {
         margin: auto;
         display: block;
       }
+    }
+
+    &.section-arrow-down::after {
+      top: 0;
+      bottom: initial;
+      transform: translate(-50%, 0%);
+      border-color: $pure-white transparent transparent;
     }
   }
 }
