@@ -52,7 +52,7 @@ class Ecosphere extends Component {
     const icon_radius = 30
     const eraser_width = 10
     const letter_radius = outer_radius + 30
-    const text_radius = outer_radius - 80
+    const text_radius = outer_radius - 85
     let startPoint = Math.PI
     
     items.map((item, i) => {
@@ -150,7 +150,7 @@ class Ecosphere extends Component {
   wrapText = (ctx, text, x, y, maxWidth, lineHeight) => {
     const words = text.split('')
     let line = ''
-    if ( words.length > 30) y -=30
+    if ( words.length > 30) y -=35
 
     for(let n = 0; n < words.length; n++) {
       const testLine = line + words[n]
@@ -171,7 +171,7 @@ class Ecosphere extends Component {
 
   render() {
     return (
-      <section id="ecosphere">
+      <section id="ecosphere" className="section-arrow-down">
         <div className="section-title">
           <h1>如何打造品牌生態圈</h1>
         </div>
