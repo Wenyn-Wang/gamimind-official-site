@@ -55,8 +55,14 @@ const Ecosphere = () => (
       <MediaQuery maxWidth={ PAD_WIDTH } component="ul">
         {
           items.map((item, index) => (
-            <li key={ index }>
-              {item.text}
+            <li key={ index } style={{ backgroundColor: item.bg_color }}>
+              <div className="img-container"  style={{ backgroundColor: item.icon_bg_color }}>
+                <img src={ item.img } />
+              </div>
+
+              <p className="text">
+                { item.text }
+              </p>
             </li>
           ))
         }
