@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Trouble = ({ title, text }) => {
+const Trouble = ({ title, text, className }) => {
   return (
-    <section id="trouble">
+    <section id="trouble" className={ className }>
       <div className="section-title">
         <h1>{ title }</h1>
       </div>
@@ -16,8 +16,9 @@ const Trouble = ({ title, text }) => {
 }
 
 Trouble.propTypes = {
-  title : PropTypes.string,
-  text  : PropTypes.element,
+  className : PropTypes.string,
+  title     : PropTypes.string,
+  text      : PropTypes.element,
 }
 
 export default Trouble

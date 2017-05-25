@@ -3,6 +3,12 @@ import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
 import ExpectedResult from '../common/ExpectedResult'
+import WhoSuits from '../common/WhoSuits'
+import ContactUs from '../../common/contactUs/ContactUs'
+
+const contact_us_attr = {
+  title : '以一抵百的業務推廣力',
+}
 
 const trouble_text = (
   <div>
@@ -57,6 +63,17 @@ const expected_results = [
   '增進品牌影響力',
 ]
 
+const suit_conditions = [{
+  desc : "大批的業務員，每人須管理百位以上的客戶",
+  img  : require('images/service/common/whoSuits/people.png'),
+}, {
+  desc : "公司產品更新速度快，協助業務員更快速地傳遞訊息給客戶",
+  img  : require('images/service/common/whoSuits/company.png'),
+}, {
+  desc : "希望\"客戶可以自己找上門來\"，業務員可以更效率地進行\"關鍵行動\"",
+  img  : require('images/service/common/whoSuits/client-info.png'),
+}]
+
 const CustomerRelationship = () => {
   return (
     <main id="customer-relationship">
@@ -67,6 +84,8 @@ const CustomerRelationship = () => {
       <Trouble title="困擾" text={ trouble_text } />
       <Solutions steps={ solution_steps } unordered_steps={ solution_unordered_steps } />
       <ExpectedResult results={ expected_results } />
+      <WhoSuits conditions={ suit_conditions } />
+      <ContactUs { ...contact_us_attr } />
     </main>
   )
 }
