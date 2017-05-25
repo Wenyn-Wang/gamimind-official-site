@@ -25,6 +25,8 @@ const items = [{
   text   : '定期數據追蹤、隨時調整參數，最大化成效',
   img    : require('images/service/ownedMedia/ecosphere/icon6.png'),
 }]
+const map_img_src = require('images/service/ownedMedia/ecosphere/world-map.png')
+const arrow_img_src = require('images/service/ownedMedia/ecosphere/arrow.png')
 
 const bg_color = ["#0082D2" , "#00AAE1" , "#00D7E1" , "#00D2AA" , "#8CD26E" , "#00AAE1"]
 const icon_bg_color = ["#0A62A5" , "#008CB4" , "#00AAB4" , "#00AA87" , "#64B44B" , "#008CB4"]
@@ -46,14 +48,18 @@ class Ecosphere extends Component {
     const center_y = height - 100
     const outer_radius = 450
     const inner_radius = 250
+    const arrow_radius = 210
     const icon_radius = 30
     const eraser_width = 10
     const letter_radius = outer_radius + 30
     const text_radius = outer_radius - 80
     let startPoint = Math.PI
-    let angle, text_x, text_y
+    let  text_x, text_y
     
     items.map((item, i) => {
+      let shape_center_angle = (180 / items.length * i) + (180 / items.length / 2)
+      let shape_end_angle = 180 / items.length * i
+
       // 扇型
       let endPoint = startPoint + Math.PI * (1 / items.length)
       ctx.fillStyle = bg_color[i]
@@ -67,22 +73,22 @@ class Ecosphere extends Component {
 
       // ABCDEF 文字
       ctx.save()
-      ctx.translate(-10, 10)
-      angle = (180 / items.length * i) + (180 / items.length / 2)
-      text_x = center_x - Math.cos(toRadians(angle)) * letter_radius
-      text_y = center_y - Math.sin(toRadians(angle)) * letter_radius
+      ctx.translate(0, 10)
+      text_x = center_x - Math.cos(toRadians(shape_center_angle)) * letter_radius
+      text_y = center_y - Math.sin(toRadians(shape_center_angle)) * letter_radius
       ctx.font = "36px sans-serif"
+      ctx.textAlign = "center"
       ctx.fillText(item.letter, text_x, text_y)
       ctx.restore()
 
 
       // 扇形間的空白
       if(i !== 0 ) {
-        angle = 180 / items.length * i
+        shape_end_angle = 180 / items.length * i
         ctx.save()
         ctx.lineJoin = 'round'
         ctx.translate(center_x, center_y )
-        ctx.rotate(Math.PI + toRadians(angle))
+        ctx.rotate(Math.PI + toRadians(shape_end_angle))
         ctx.clearRect(-eraser_width / 2, -eraser_width / 2, center_x, eraser_width)
         ctx.restore()
       }
@@ -95,9 +101,8 @@ class Ecosphere extends Component {
 
       // 內文
       ctx.save()
-      angle =  (180 / items.length * i) + (180 / items.length / 2)
-      text_x = center_x - Math.cos(toRadians(angle)) * text_radius
-      text_y = center_y - Math.sin(toRadians(angle)) * text_radius
+      text_x = center_x - Math.cos(toRadians(shape_center_angle)) * text_radius
+      text_y = center_y - Math.sin(toRadians(shape_center_angle)) * text_radius
       ctx.fillStyle = '#FFFFFF'
       ctx.textAlign = "center"
       ctx.font = '13px sans-serif'
@@ -107,32 +112,52 @@ class Ecosphere extends Component {
       // icon 們
       ctx.save()
       ctx.beginPath()
-      angle = (180 / items.length * i) + (180 / items.length / 2)
-      let icon_bg_x = center_x - Math.cos(toRadians(angle)) * inner_radius
-      let icon_bg_y = center_y - Math.sin(toRadians(angle)) * inner_radius
+      let icon_bg_x = center_x - Math.cos(toRadians(shape_center_angle)) * inner_radius
+      let icon_bg_y = center_y - Math.sin(toRadians(shape_center_angle)) * inner_radius
       ctx.fillStyle = icon_bg_color[i]
       ctx.arc(icon_bg_x, icon_bg_y, icon_radius, 0, Math.PI * 2, false )
       ctx.fill()
 
       let icon_img = new Image();
-      icon_img.onload = () => ctx.drawImage(icon_img, icon_bg_x - 18 , icon_bg_y - 18 , 35, 35)
       icon_img.src = item.img
+      icon_img.onload = () => ctx.drawImage(icon_img, icon_bg_x - 18 , icon_bg_y - 18 , 35, 35)
       ctx.restore()
+
+      // arrow
+      ctx.save()
+      let arrow_x = center_x - Math.cos(toRadians(shape_center_angle)) * arrow_radius
+      let arrow_y = center_y - Math.sin(toRadians(shape_center_angle)) * arrow_radius
+      let arrow = new Image();
+      arrow.src = arrow_img_src
+      arrow.onload = (a, b) => {
+        ctx.translate(arrow_x, arrow_y )
+        ctx.rotate(toRadians(shape_center_angle + 5))
+        ctx.drawImage(arrow, 0, 0, 40 ,15 )
+        console.log(Math.PI + toRadians(shape_center_angle), arrow_x, arrow_y)
+        ctx.restore()
+      }
     })
+
+    // map
+    let map = new Image();
+    map.src = map_img_src
+    map.onload = (a, b) => {
+      ctx.drawImage(map, center_x - map.width / 2 , center_y - map.width * 0.3)
+    }
   }
 
-  wrapText = (context, text, x, y, maxWidth, lineHeight) => {
+  wrapText = (ctx, text, x, y, maxWidth, lineHeight) => {
     const words = text.split('')
     let line = ''
     if ( words.length > 30) y -=30
 
     for(let n = 0; n < words.length; n++) {
       const testLine = line + words[n]
-      const metrics = context.measureText(testLine)
+      const metrics = ctx.measureText(testLine)
       const testWidth = metrics.width
 
       if (testWidth > maxWidth && n > 0) {
-        context.fillText(line, x, y)
+        ctx.fillText(line, x, y)
         line = words[n]
         y += lineHeight
       }
@@ -140,7 +165,7 @@ class Ecosphere extends Component {
         line = testLine
       }
     }
-    context.fillText(line, x, y)
+    ctx.fillText(line, x, y)
   }
 
   render() {
