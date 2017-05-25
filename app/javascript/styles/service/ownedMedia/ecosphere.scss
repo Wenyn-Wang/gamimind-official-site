@@ -1,0 +1,16 @@
+main#owned-media {
+  section#ecosphere {
+    .section-title {
+      padding-bottom: 20px;
+    }
+
+    .ecosphere-container {
+      canvas {
+        width: 1024px;
+        height: 600px;
+        margin: auto;
+        display: block;
+      }
+    }
+  }
+}

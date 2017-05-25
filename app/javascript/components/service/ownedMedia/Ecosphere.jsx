@@ -26,19 +26,24 @@ const items = [{
   img    : require('images/service/ownedMedia/ecosphere/icon6.png'),
 }]
 
+const bg_color = ["#0082D2" , "#00AAE1" , "#00D7E1" , "#00D2AA" , "#8CD26E" , "#00AAE1"]
+const icon_bg_color = ["#0A62A5" , "#008CB4" , "#00AAB4" , "#00AA87" , "#64B44B" , "#008CB4"]
+
 const toRadians = (angle) => angle * (Math.PI / 180)
 
 class Ecosphere extends Component {
   componentDidMount () {
-    this.draw(this.refs.canvas, items)
+    const { canvas } = this.refs
+
+    canvas.width  = canvas.offsetWidth
+    canvas.height = canvas.offsetHeight
+    this.draw(canvas, items, canvas.width, canvas.height)
   }
   
-  draw(canvas, items){
-    const bg_color = [ "#0082D2" , "#00AAE1" , "#00D7E1" , "#00D2AA" , "#8CD26E" , "#00AAE1" ]
-    const icon_bg_color = [ "#0A62A5" , "#008CB4" , "#00AAB4" , "#00AA87" , "#64B44B" , "#008CB4" ]
+  draw(canvas, items, width ,height){
     const ctx = canvas.getContext("2d")
-    const center_x = canvas.offsetWidth / 2
-    const center_y = canvas.offsetHeight - 60
+    const center_x = width / 2
+    const center_y = height - 100
     const outer_radius = 450
     const inner_radius = 250
     const icon_radius = 30
@@ -49,9 +54,8 @@ class Ecosphere extends Component {
     let angle, text_x, text_y
     
     items.map((item, i) => {
-      let endPoint = startPoint + Math.PI * (1 / items.length)
-
       // 扇型
+      let endPoint = startPoint + Math.PI * (1 / items.length)
       ctx.fillStyle = bg_color[i]
       ctx.beginPath()
       ctx.moveTo(center_x, center_y)
@@ -110,9 +114,9 @@ class Ecosphere extends Component {
       ctx.arc(icon_bg_x, icon_bg_y, icon_radius, 0, Math.PI * 2, false )
       ctx.fill()
 
-      let imageObj = new Image();
-      imageObj.onload = () => ctx.drawImage(imageObj, icon_bg_x - 18 , icon_bg_y - 18 , 35, 35)
-      imageObj.src = item.img
+      let icon_img = new Image();
+      icon_img.onload = () => ctx.drawImage(icon_img, icon_bg_x - 18 , icon_bg_y - 18 , 35, 35)
+      icon_img.src = item.img
       ctx.restore()
     })
   }
@@ -147,7 +151,7 @@ class Ecosphere extends Component {
         </div>
         
         <div className="ecosphere-container">
-          <canvas ref="canvas" width="1024" height="600"/>
+          <canvas ref="canvas" />
         </div>
       </section>
     )
