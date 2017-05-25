@@ -2,6 +2,7 @@ import React from 'react'
 import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
+import WhoSuits from '../common/WhoSuits'
 import ContactUs from '../../common/contactUs/ContactUs'
 
 const contact_us_attr = {
@@ -52,6 +53,17 @@ const solution_attr = {
   }],
 }
 
+const suit_conditions = [{
+  desc : '想將社群媒體上的流量，轉換回自家的品牌官網',
+  img  : require('images/service/common/whoSuits/company.png'),
+}, {
+  desc : '想更了解用戶的輪廓，預測百萬粉絲需求',
+  img  : require('images/service/common/whoSuits/people2.png'),
+}, {
+  desc : '想讓用戶收到“個別化”推薦，提高轉換率',
+  img  : require('images/service/common/whoSuits/client-info.png'),
+}]
+
 const WeMedia = () => {
   return (
     <main id="social-media">
@@ -65,6 +77,7 @@ const WeMedia = () => {
         text      = { trouble_text }
       />
       <Solutions { ...solution_attr } />
+      <WhoSuits conditions={ suit_conditions } />
       <ContactUs { ...contact_us_attr } />
     </main>
   )
