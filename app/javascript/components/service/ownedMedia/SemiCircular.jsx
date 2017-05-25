@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 
 const map_img_src = require('images/service/ownedMedia/ecosphere/world-map.png')
 const arrow_img_src = require('images/service/ownedMedia/ecosphere/arrow.png')
-const bg_color = ["#0082D2" , "#00AAE1" , "#00D7E1" , "#00D2AA" , "#8CD26E" , "#00AAE1"]
-const icon_bg_color = ["#0A62A5" , "#008CB4" , "#00AAB4" , "#00AA87" , "#64B44B" , "#008CB4"]
 
 const toRadians = (angle) => angle * (Math.PI / 180)
 
@@ -36,7 +34,7 @@ class SemiCircular extends Component {
 
       // 扇型
       let endPoint = startPoint + Math.PI * (1 / items.length)
-      ctx.fillStyle = bg_color[i]
+      ctx.fillStyle = item.bg_color
       ctx.beginPath()
       ctx.moveTo(this.center_x, this.center_y)
       ctx.arc(this.center_x, this.center_y, outer_radius, startPoint, endPoint, false )
@@ -86,7 +84,7 @@ class SemiCircular extends Component {
       ctx.save()
       ctx.beginPath()
       let icon_pos = this.getCirclePosition(shape_center_angle, inner_radius)
-      ctx.fillStyle = icon_bg_color[i]
+      ctx.fillStyle = item.icon_bg_color
       ctx.arc(icon_pos.x, icon_pos.y, icon_radius, 0, Math.PI * 2, false )
       ctx.fill()
 
@@ -153,9 +151,11 @@ class SemiCircular extends Component {
 
 SemiCircular.propTypes = {
   items : PropTypes.arrayOf(PropTypes.shape({
-    letter : PropTypes.string.isRequired,
-    text   : PropTypes.string.isRequired,
-    img    : PropTypes.string.isRequired,
+    letter        : PropTypes.string.isRequired,
+    text          : PropTypes.string.isRequired,
+    img           : PropTypes.string.isRequired,
+    bg_color      : PropTypes.string.isRequired,
+    icon_bg_color : PropTypes.string.isRequired,
   })).isRequired,
 }
 
