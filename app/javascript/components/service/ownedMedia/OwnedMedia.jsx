@@ -2,6 +2,7 @@ import React from 'react'
 import Cover from '../common/Cover'
 import Trouble from '../common/Trouble'
 import Solutions from '../common/Solutions'
+import Ecosphere from './Ecosphere'
 import ExpectedResult from '../common/ExpectedResult'
 import WhoSuits from '../common/WhoSuits'
 import ContactUs from '../../common/contactUs/ContactUs'
@@ -74,7 +75,7 @@ const suit_conditions = [{
 
 const OwnedMedia = () => {
   return (
-    <main id="social-media">
+    <main id="owned-media">
       <Cover
         title = "品牌自媒體經營方案"
         desc  = "強力磁鐵把粉絲都吸過來！讓我們幫你輕鬆打造品牌生態圈，成為業界意見領袖！"
@@ -84,6 +85,7 @@ const OwnedMedia = () => {
         title     = "在這個快速變化的時代，品牌需的要是打造生態圈"
         text      = { trouble_text }
       />
+      <Ecosphere />
       <Solutions { ...solution_attr } />
       <ExpectedResult results={ expected_results } />
       <WhoSuits conditions={ suit_conditions } />

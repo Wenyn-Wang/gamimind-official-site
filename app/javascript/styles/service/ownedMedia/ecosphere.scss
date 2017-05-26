@@ -1,0 +1,108 @@
+main#owned-media {
+  section#ecosphere {
+    background: $lighter-blue;
+
+    .section-title {
+      padding-bottom: 20px;
+    }
+
+    .ecosphere-container {
+      opacity: 0.99;
+
+      canvas {
+        width: 1024px;
+        height: 600px;
+        margin: auto;
+        display: block;
+      }
+
+      ul {
+        li {
+          height: 150px;
+          display: flex;
+          align-items: center;
+          padding: 0% 10%;
+          box-sizing: border-box;
+
+          .img-container {
+            flex: none;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            position: relative;
+            margin-right: 10%;
+
+            img {
+              margin: auto;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+            }
+          }
+
+          p {
+            color: $pure-white;
+          }
+        }
+      }
+
+      &::after, &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &::before {
+        background: url('~images/service/common/trouble/cloud-left.png') no-repeat;
+        width: 245px;
+        height: 172px;
+        left: 0;
+      }
+
+      &::after {
+        background: url('~images/service/common/trouble/cloud-right.png') no-repeat;
+        width: 154px;
+        height: 206px;
+        right: 0;
+      }
+    }
+
+    &.section-arrow-down::after {
+      top: 0;
+      bottom: initial;
+      transform: translate(-50%, 0%);
+      border-color: $pure-white transparent transparent;
+    }
+
+    @media (max-width: $mobile) {
+      .ecosphere-container {
+        ul li {
+          padding: 0% 5%;
+
+          .img-container {
+            margin-right: 5%;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $smaller-mobile) {
+      .ecosphere-container {
+        ul li {
+          padding: 0px 15px;
+
+          .img-container {
+            margin-right: 0%;
+            transform: scale(.7);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+  }
+}
