@@ -2,11 +2,18 @@ main {
   section#cover {
     min-height: 100vh;
     height: 500px;
-    background: url('~images/home/cover/cover-bg.png') no-repeat;
+    background: #266CA7;
     background-size: cover;
     display: flex;
     position: relative;
     box-sizing: border-box;
+
+    canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: .5;
+    }
 
     .cover-left {
       flex: 1;

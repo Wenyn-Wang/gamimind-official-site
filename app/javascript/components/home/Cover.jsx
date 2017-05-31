@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { HASH } from '../../constants/url'
 import { Link as ScrollLink } from 'react-scroll'
+import Lines from '../common/Lines/Lines'
 
 export default class Cover extends Component {
   render() {
     return (
       <section id="cover">
+        <Lines />
         <div className="cover-left">
           <div className="center">
             <h1>人工智慧，為你解析數據下的商機</h1>
