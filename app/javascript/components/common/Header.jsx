@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import Drawer from 'material-ui/Drawer'
-import { HOME, SERVICE, BLOG, HASH } from '../../constants/url'
+import { HOME, BLOG, HASH } from '../../constants/url'
 import cx from 'classnames'
 import { Link as ScrollLink, scroller } from 'react-scroll'
 
