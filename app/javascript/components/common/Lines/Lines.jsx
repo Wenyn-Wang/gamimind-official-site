@@ -15,13 +15,10 @@ export default class Lines extends Component {
     this.canvas = this.refs.canvas
     this.width = this.canvas.width =  this.canvas.offsetWidth
     this.height = this.canvas.height = this.canvas.offsetHeight
-
     this.ctx = this.canvas.getContext('2d')
-    const line_num = 20
 
-    this.lines = [ ...(new Array(line_num))].map(()=>{
-      return new Line(this.canvas)
-    })
+    const line_num = 25
+    this.lines = [...(new Array(line_num))].map(() => new Line(this.canvas))
 
     this.update()
   }
@@ -54,7 +51,7 @@ export default class Lines extends Component {
 
   render() {
     return (
-      <canvas ref='canvas' />
+      <canvas className="lines" ref='canvas' />
     )
   }
 }

@@ -15,6 +15,10 @@ export default class Line {
     }
     this.x = this.origin.x
     this.y = this.origin.y
+    this.current = {
+      x : this.x,
+      y : this.y,
+    }
     this.lines = []
     this.points = []
     this.point_radius = 2
@@ -24,14 +28,10 @@ export default class Line {
     this.dir = 'y'
     this.move = 6
     this.turn_count = 0
-    this.begin = randomRanage(0, 500)
     this.frames = 0
+    this.begin = randomRanage(0, 500)
     this.end = false
     this.dead = false
-    this.current = {
-      x : this.x,
-      y : this.y,
-    }
     this.flip = randomTrueOrFalse()
     this.rotate = randomRanage(0, 4)
 
@@ -106,7 +106,7 @@ export default class Line {
   }
 
   loadLine = () => {
-    const { ctx, lines, current } = this
+    const { ctx, lines } = this
     
     lines.map((line) => {
       ctx.beginPath()

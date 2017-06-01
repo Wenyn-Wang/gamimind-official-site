@@ -9,6 +9,7 @@
 @import './common/footer';
 @import './common/animations';
 @import './common/contactUs';
+@import './common/lines';
 
 @import './home/index';
 @import './blog/blog';
