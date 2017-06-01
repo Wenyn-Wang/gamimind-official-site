@@ -8,6 +8,7 @@ const randomTrueOrFalse = () => {
 
 export default class Line {
   constructor(canvas) {
+    this.canvas = canvas
     this.ctx = canvas.getContext('2d')
     this.origin = {
       x : randomRange(0, canvas.width),
@@ -174,7 +175,7 @@ export default class Line {
   }
 
   translate = () => {
-    const { ctx, origin, begin } = this
+    const { ctx, origin, begin, canvas } = this
 
     this.frames += 1
     if(this.frames < begin) return
@@ -182,7 +183,7 @@ export default class Line {
     ctx.save()
     if(this.flip ) {
       ctx.save()
-      ctx.translate(1000, 0)
+      ctx.translate(canvas.width, 0)
       ctx.scale(-1, 1)
     }
 
