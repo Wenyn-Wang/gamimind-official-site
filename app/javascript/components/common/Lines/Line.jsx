@@ -28,7 +28,6 @@ export default class Line {
     this.frames = 0
     this.end = false
     this.dead = false
-    this.dead_time = 100
     this.current = {
       x : this.x,
       y : this.y,
@@ -74,12 +73,10 @@ export default class Line {
     if(!this.end) {
       this.load()
       this.drawLine()
-    } else if (this.dead_time > 0) {
+    } else if (!this.dead) {
+      this.eraser()
       this.load()
-      this.dead_time -= 1
-    } else {
-      this.dead = true
-    }
+    } 
 
     ctx.restore()
   }
@@ -148,6 +145,32 @@ export default class Line {
     ctx.arc( x, y , point_radius * 2, 0, Math.PI * 2, true)
     ctx.moveTo( x, y )
     ctx.fill()
+  }
+
+  eraser = () => {
+    const { ctx, lines, move, points } = this
+    
+    lines.some((line, index) => {
+      if(line.removed) return false
+
+      if(line.x < line.to_x) {
+        line.x += move
+      } else if(line.x > line.to_x) {
+        line.x -= move
+      } else if (line.y < line.to_y) {
+        line.y += move
+      } else if (line.y > line.to_y) {
+        line.y -= move
+      } else {
+        line.removed = true
+        if(index == lines.length - 1) this.dead = true
+        points.splice(0,1)
+        return false
+      }
+
+      return true
+    })
+    
   }
 
   translate = () => {
