@@ -33,10 +33,12 @@ class Header extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname ) {
-      if (prevProps.location.hash !== this.props.location.hash ) {
-        scroller.scrollTo(this.props.location.hash.replace('#', ''), { smooth: true })
-      } else {
-        window.scrollTo(0, 0)
+      window.scrollTo(0, 0)
+
+      if (this.props.location.hash) {
+        setTimeout(()=> {
+          scroller.scrollTo(this.props.location.hash.replace('#', ''), { smooth: true })
+        }, 0)
       }
     }
   }
