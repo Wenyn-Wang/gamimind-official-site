@@ -1,5 +1,5 @@
-const randomRanage = (min, max) => {
-  return  Math.floor(Math.random() * (max - min) + min)
+const randomRange = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min)
 }
 
 const randomTrueOrFalse = () => {
@@ -10,8 +10,8 @@ export default class Line {
   constructor(canvas) {
     this.ctx = canvas.getContext('2d')
     this.origin = {
-      x : randomRanage(0, canvas.width),
-      y : randomRanage(-canvas.height / 2, canvas.height),
+      x : randomRange(0, canvas.width),
+      y : randomRange(-canvas.height / 2, canvas.height),
     }
     this.x = this.origin.x
     this.y = this.origin.y
@@ -29,11 +29,11 @@ export default class Line {
     this.move = 6
     this.turn_count = 0
     this.frames = 0
-    this.begin = randomRanage(0, 500)
+    this.begin = randomRange(0, 500)
     this.end = false
     this.dead = false
     this.flip = randomTrueOrFalse()
-    this.rotate = randomRanage(0, 4)
+    this.rotate = randomRange(0, 4)
 
     this.ctx.lineWidth = 1
     this.ctx.fillStyle = 'white'
