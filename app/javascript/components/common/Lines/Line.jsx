@@ -34,7 +34,7 @@ export default class Line {
     this.end = false
     this.dead = false
     this.flip = randomTrueOrFalse()
-    this.rotate = randomRange(0, 4)
+    this.rotate = randomRange(0, 3)
 
     this.ctx.lineWidth = 1
     this.ctx.fillStyle = 'white'

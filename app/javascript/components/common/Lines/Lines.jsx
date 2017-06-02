@@ -37,7 +37,6 @@ export default class Lines extends Component {
     })
 
     dead_lines.forEach((index) => {
-      delete this.lines[index]
       this.lines[index] = new Line(this.canvas)
     })
 
