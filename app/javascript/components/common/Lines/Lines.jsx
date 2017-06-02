@@ -25,19 +25,14 @@ export default class Lines extends Component {
 
   update = () => {
     const { ctx, lines, width, height } = this
-    const dead_lines = []
     ctx.clearRect(0, 0, width, height)
 
     this.lines.map((line, index) => {
       if(!line.dead) {
         line.update()
       } else {
-        dead_lines.push(index)
+       this.lines[index] = new Line(this.canvas)
       }
-    })
-
-    dead_lines.forEach((index) => {
-      this.lines[index] = new Line(this.canvas)
     })
 
     this.request_id = requestAnimationFrame(this.update)
